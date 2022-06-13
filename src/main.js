@@ -1,6 +1,26 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
+import {mostrarDatos } from './data.js';
+
 // import data from './data/rickandmorty/rickandmorty.js';
 
-console.log(example, data);
+let botonMostrarPersonajes = document.getElementById("botonMostrarPersonajes");
+let cajaDeDatos = document.getElementById("listaPersonajes");
+
+botonMostrarPersonajes.addEventListener("click", () =>{
+  mostrarDatos (cajaDeDatos);
+
+});
+
+import {mostrarHechizos } from './data.js';
+
+// import data from './data/rickandmorty/rickandmorty.js';
+
+let botonMostrarHechizos = document.getElementById("botonMostrarHechizos");
+let cajaDeDatos2 = document.getElementById("listaPersonajes");
+
+botonMostrarHechizos.addEventListener("click", () =>{
+  mostrarHechizos (cajaDeDatos2);
+
+});
+
+
+//console.log(example, data);

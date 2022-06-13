@@ -1,4 +1,12 @@
-footer{
-    color:blue;
-    background-color: aqua;
+
+.flexContainer{
+   display:flex;
+   flex-direction: column; 
+   flex-wrap: wrap;
+   background-color: burlywood;
+   padding: 10px;
+   border: 2px solid black;
+   align-items: flex-start;
+
 }
+
