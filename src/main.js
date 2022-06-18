@@ -46,7 +46,20 @@ function createDivs(arrayCategory){
 
 //probando función para mostar detalles
 
-function showDetails3(array){
+spaceToShowData.addEventListener("click", (event)=>{
+  harryDataCharacters.forEach(character => {
+    if(character.name === event.target.innerText){
+      nameSpace.innerHTML=character.name;
+      speciesSpace.innerHTML=character.species;
+      genderSpace.innerHTML=character.gender;
+      birthSpace.innerHTML=character.birth;
+      ancestrySpace.innerHTML=character.ancestry;
+      houseSpace.innerHTML=character.house;
+    }
+  })
+})
+
+/*function showDetails(array){
   for(let i=0; i<array.length; i++){
     array[i].addEventListener("click", ()=>{
       nameSpace.innerHTML=harryDataCharacters[i].name;
@@ -57,7 +70,7 @@ function showDetails3(array){
       houseSpace.innerHTML=harryDataCharacters[i].house;
     })
   }
-}
+}*/
 
 //intentos para mostrar detalles
 /*
@@ -93,13 +106,14 @@ btnShowCharacters.addEventListener("click", ()=>{
 
   spaceToShowData.innerHTML="";
   createDivs(arrayCharacters);
-  console.log(spaceToShowData.children)
-  showDetails3(spaceToShowData.children);
+  //showDetails(spaceToShowData.children);
 
   boxAlphabet.addEventListener("change", ()=>{ 
     spaceToShowData.innerHTML="";
-    createDivs(sortData(arrayCharacters, boxAlphabet.value));
+
     
+    createDivs(sortData(arrayCharacters, boxAlphabet.value));
+    //showDetails(sortData(spaceToShowData.children));   
   });
 
   

@@ -40,7 +40,6 @@ export const sortData = (data, sortOrder) => {
       }
     })
   }
-
   return data;
 }
 
