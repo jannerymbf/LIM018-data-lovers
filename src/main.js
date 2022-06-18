@@ -1,5 +1,6 @@
 //Interactuar con el DOM
-import {showData} from './data.js';
+import {getNames, sortData} from './data.js';
+import harryPotterData from './data/harrypotter/data.js';
 //import harryPotterData from './data/harrypotter/data.js';
 //import {characters, funFacts, spells, potions} from 'src/data/harrypotter/data.js';
 // import data from './data/lol/lol.js';
@@ -7,10 +8,144 @@ import {showData} from './data.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 let btnShowCharacters=document.getElementById("characters");
-let spaceToShowData=document.getElementById("containerDataHarry");
+let btnShowPotions=document.getElementById("potions");
+let btnShowSpells=document.getElementById("spells");
+let btnShowBooks=document.getElementById("books");
+let spaceToShowData=document.getElementById("containerDataHP");
+let spaceToSHowDetails=document.getElementById("containerDetailsHP");
+
+let nameSpace=document.getElementById("detailName");
+let speciesSpace=document.getElementById("detailSpecies");
+let genderSpace=document.getElementById("detailGender");
+let birthSpace=document.getElementById("detailBirth");
+let ancestrySpace=document.getElementById("detailAncestry");
+let houseSpace=document.getElementById("detailHouse");
+
+//Probar para limpiar
+/*let botonMostrarHechizos = document.getElementById("botonMostrarHechizos");
+botonMostrarHechizos.addEventListener("click",()=>{
+   
+cajaDeDatos.innerHTML= "";
+})*/
+let boxAlphabet=document.getElementById("selectAlphabet");
+
+const harryDataCharacters=harryPotterData.characters;
+
+//Crear divs automático
+
+function createDivs(arrayCategory){
+  for(let i=0; i<arrayCategory.length; i++){
+    let newDiv=document.createElement("div");
+    let newDivText=document.createTextNode(arrayCategory[i]);
+
+    newDiv.appendChild(newDivText);
+    newDiv.setAttribute("id",i);
+    spaceToShowData.appendChild(newDiv);
+  }
+}
+
+//probando función para mostar detalles
+
+function showDetails3(array){
+  for(let i=0; i<array.length; i++){
+    array[i].addEventListener("click", ()=>{
+      nameSpace.innerHTML=harryDataCharacters[i].name;
+      speciesSpace.innerHTML=harryDataCharacters[i].species;
+      genderSpace.innerHTML=harryDataCharacters[i].gender;
+      birthSpace.innerHTML=harryDataCharacters[i].birth;
+      ancestrySpace.innerHTML=harryDataCharacters[i].ancestry;
+      houseSpace.innerHTML=harryDataCharacters[i].house;
+    })
+  }
+}
+
+//intentos para mostrar detalles
+/*
+function showDetails(array){
+  array.forEach(function(element,index){
+    element.addEventListener("click", function(event){
+      for(let i=0; i<harryPotterData.characters; i++){
+        if(event.currentTarget.textContent==harryPotterData.characters[i].name){
+          nameSpace.innerHTML=harryDataCharacters[i].name;
+        }
+      }     
+    })
+  });       
+}
+
+function showDetails2(nodeList){
+  nodeList.forEach(function(node){
+    node.addEventListener("click", function(event){
+      event.currentTarget.style.color="black";
+           
+    })
+  });       
+}*/
+
+//aquí terminan los intentos para mostrar detalles
+
+//Aqui termina funcion showDetails
+
 
 btnShowCharacters.addEventListener("click", ()=>{
-    showData(spaceToShowData);
-})
+
+  let arrayCharacters=getNames("characters");
+
+  spaceToShowData.innerHTML="";
+  createDivs(arrayCharacters);
+  console.log(spaceToShowData.children)
+  showDetails3(spaceToShowData.children);
+
+  boxAlphabet.addEventListener("change", ()=>{ 
+    spaceToShowData.innerHTML="";
+    createDivs(sortData(arrayCharacters, boxAlphabet.value));
+    
+  });
+
+  
+});
+
+
+
+
+btnShowPotions.addEventListener("click", ()=>{
+  spaceToShowData.innerHTML="";
+  let arrayPotions=getNames("potions");
+
+  for(let i=0; i<arrayPotions.length; i++){
+    let newDiv=document.createElement("div");
+    let newDivText=document.createTextNode(arrayPotions[i]);
+
+    newDiv.appendChild(newDivText);
+    spaceToShowData.appendChild(newDiv);
+  }
+});
+
+btnShowSpells.addEventListener("click", ()=>{
+  spaceToShowData.innerHTML="";
+  let arraySpells=getNames("spells");
+
+  for(let i=0; i<arraySpells.length; i++){
+    let newDiv=document.createElement("div");
+    let newDivText=document.createTextNode(arraySpells[i]);
+
+    newDiv.appendChild(newDivText);
+    spaceToShowData.appendChild(newDiv);
+  }
+});
+
+btnShowBooks.addEventListener("click", ()=>{
+  spaceToShowData.innerHTML="";
+  let arrayBooks=getNames("books");
+
+  for(let i=0; i<arrayBooks.length; i++){
+    let newDiv=document.createElement("div");
+    let newDivText=document.createTextNode(arrayBooks[i]);
+
+    newDiv.appendChild(newDivText);
+    spaceToShowData.appendChild(newDiv);
+  }
+});
+
 
 //console.log(example, data);
