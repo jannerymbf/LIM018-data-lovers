@@ -1,43 +1,48 @@
-
 // import data from './data/lol/lol.js';
 import harryPotterData from './data/harrypotter/data.js';
 
-// función mostrar datos
+// función get names
 
-export const mostrarDatos = (container) => {
+export const getNames = (category) =>{
+  let categoryArray=[];
 
-  for (let i=0 ; i < harryPotterData.characters.length ; i++) {
-  let crearDiv = document.createElement("div"); //crear un <div></div>
-  let textCrearDiv = document.createTextNode(harryPotterData.characters[i].name); //textoque va dentro del div
-   //console.log(crearDiv);
-   //console.log(textCrearDiv);
-  //debugger;
-  crearDiv.appendChild(textCrearDiv); //colocar el texto al contenedor: div vacio
-  container.appendChild(crearDiv); // insertar el hijo al contenedor padre(container)
- 
-  }
+  for (let i in harryPotterData){// voy a recorrer los indices del obj HP
+    let keyHarryData = harryPotterData[i]; //array de propiedades de mi obj
+    //console.log(keyHarryData);
 
-  return mostrarDatos;
-
+    if(category==[i]){ //si mi array es = a 1 propiedad de mi obj que pase
+     for(let j=0 ; j<keyHarryData.length ; j++){
+        if (keyHarryData[j].hasOwnProperty("name")){ //estoy en el array de personajes
+         categoryArray.push(keyHarryData[j].name);
+        }
+        else if (keyHarryData[j].hasOwnProperty("type")){
+         categoryArray.push(keyHarryData[j].type);
+        }
+        else if (keyHarryData[j].hasOwnProperty("title")){
+         categoryArray.push(keyHarryData[j].title)
+        }
+      }
+    } 
+  } 
+  return categoryArray;
 };
 
 
-export const mostrarHechizos = (container) => {
 
-  for (let i=0 ; i < harryPotterData.spells.length ; i++) {
-    let crearDiv = document.createElement("div"); //crear un <div></div>
-    let textCrearDiv = document.createTextNode(harryPotterData.spells[i].name); //textoque va dentro del div
-     //console.log(crearDiv);
-     //console.log(textCrearDiv);
-    //debugger;
-    crearDiv.appendChild(textCrearDiv); //colocar el texto al contenedor: div vacio
-    container.appendChild(crearDiv); // insertar el hijo al contenedor padre(container)
-   
-    }
-  
-    return mostrarHechizos;
 
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

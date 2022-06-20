@@ -1,26 +1,77 @@
-import {mostrarDatos } from './data.js';
+import harryPotterData from './data/harrypotter/data.js';
+import {getNames} from './data.js';
 
-// import data from './data/rickandmorty/rickandmorty.js';
+let btnShowCharacters=document.getElementById("characters"); //los llamos por su id
+let btnShowSpells=document.getElementById("spells");
+let btnShowPotions=document.getElementById("potions");
+let btnShowBooks=document.getElementById("books");
+let spaceToShowData=document.getElementById("containerDataHarry");
 
-let botonMostrarPersonajes = document.getElementById("botonMostrarPersonajes");
-let cajaDeDatos = document.getElementById("listaPersonajes");
 
-botonMostrarPersonajes.addEventListener("click", () =>{
-  mostrarDatos (cajaDeDatos);
+btnShowCharacters.addEventListener("click", ()=> {
+  spaceToShowData.innerHTML="";
+  let arrayCharacters = getNames("characters");
 
+  for (let i=0 ; i< arrayCharacters.length ; i++){
+    let newDiv = document.createElement("div");
+    let newDivText = document.createTextNode(arrayCharacters[i]);
+
+    newDiv.appendChild(newDivText);
+    spaceToShowData.appendChild(newDiv);
+  }
 });
 
-import {mostrarHechizos } from './data.js';
+btnShowSpells.addEventListener("click", ()=> {
+  spaceToShowData.innerHTML="";
+  let arrayCharacters = getNames("spells");
 
-// import data from './data/rickandmorty/rickandmorty.js';
+  for (let i=0 ; i< arrayCharacters.length ; i++){
+    let newDiv = document.createElement("div");
+    let newDivText = document.createTextNode(arrayCharacters[i]);
 
-let botonMostrarHechizos = document.getElementById("botonMostrarHechizos");
-let cajaDeDatos2 = document.getElementById("listaPersonajes");
-
-botonMostrarHechizos.addEventListener("click", () =>{
-  mostrarHechizos (cajaDeDatos2);
-
+    newDiv.appendChild(newDivText);
+    spaceToShowData.appendChild(newDiv);
+  }
 });
 
 
-//console.log(example, data);
+btnShowPotions.addEventListener("click", ()=> {
+  spaceToShowData.innerHTML="";
+  let arrayCharacters = getNames("potions");
+
+  for (let i=0 ; i< arrayCharacters.length ; i++){
+    let newDiv = document.createElement("div");
+    let newDivText = document.createTextNode(arrayCharacters[i]);
+
+    newDiv.appendChild(newDivText);
+    spaceToShowData.appendChild(newDiv);
+  }
+});
+
+
+
+btnShowBooks.addEventListener("click", ()=> {
+  spaceToShowData.innerHTML="";
+  let arrayCharacters = getNames("books");
+
+  for (let i=0 ; i< arrayCharacters.length ; i++){
+    let newDiv = document.createElement("div");
+    let newDivText = document.createTextNode(arrayCharacters[i]);
+
+    newDiv.appendChild(newDivText);
+    spaceToShowData.appendChild(newDiv);
+  }
+});
+
+//spaceToShowData.addEventListener('click', (event)=> {
+//console.log(event.target.innerText);
+//console.log(harryPotterData.characters);
+//harryPotterData.characters.forEach (character => {
+  //if(character.name === event.target.innerText){
+    //console.log(character);
+  //}
+
+
+//})
+//})
+

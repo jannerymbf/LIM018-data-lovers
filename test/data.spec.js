@@ -1,9 +1,10 @@
-import { example, anotherExample } from '../src/data.js';
+import { showData, anotherExample } from '../src/data.js';
+//importar la data o copiar una parte pequeñitav de la data
 
 
-describe('example', () => {
+describe('showData', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof showData).toBe('function');
   });
 
   it('returns `example`', () => {
