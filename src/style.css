@@ -41,6 +41,11 @@ nav{
     font-weight: 200;
     font-size: 24px;
 
+    cursor: pointer;
+}
+
+.cat:hover{
+    border-bottom: 2px solid white;
 }
 
 .division{
@@ -59,7 +64,7 @@ select:focus{
     margin: 40px;
 }
 
-.box{
+.boxSelect{
     border: 2px solid white;
     border-radius: 50px;
     background-color: transparent;
@@ -71,16 +76,24 @@ select:focus{
     font-weight: 200;
     color:white;
     text-align: center;
+
+    cursor:pointer;
 }
 
 .selectHouse, .selectBook{
     width: 200px;
 }
 
+.boxSelect:hover{
+    background-color: rgba(217, 217, 217, 0.06);
+}
+
 main{
     display: flex;
     flex-flow: row wrap;
     justify-content:space-between;
+
+    position:relative;
 }
 
 .dataHP{
@@ -95,9 +108,6 @@ main{
     overflow: scroll;
 
     /*background-color: green;*/
-
-    
-
 }
 
 .visibleScrollBar::-webkit-scrollbar{
@@ -107,11 +117,11 @@ main{
 
 .detailsHP{
     
-    margin-right: 10px;
+    margin-right: 300px;
     
     display:flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: flex-start;
 
     width: 600px;
     height: 400px;
@@ -126,32 +136,41 @@ main{
 
 }
 
+.tableDetailsHP{
+    /*background-color: aqua;*/
+
+    margin: 40px;
+
+    height: 300px;
+}
+
+.titleTable{
+    width: 100px;
+
+    color: #986E00;
+
+    /*background-color: whitesmoke;*/
+}
+
+.detailTable{
+    width: 260px;
+}
+
 .containerPictureCategory{
     align-self: center;
 
     margin-right: 40px;
 
-    
     background-color: #4E488F;
 
     width: 250px;
     height: 250px;
 
     border-radius: 200px;
-}
+    border:20px solid #10141B;
 
-.containerTitlesHP{
-    
-
-    padding:30px;
-}
-
-.containerDetailsHP{
-    
-
-    padding:5px;
-
-    color: #986E00;
+    position:absolute;
+    right: 125px;
 }
 
 

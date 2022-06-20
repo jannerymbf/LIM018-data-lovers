@@ -1,18 +1,13 @@
 //Interactuar con el DOM
 import {getNames, sortData} from './data.js';
 import harryPotterData from './data/harrypotter/data.js';
-//import harryPotterData from './data/harrypotter/data.js';
-//import {characters, funFacts, spells, potions} from 'src/data/harrypotter/data.js';
-// import data from './data/lol/lol.js';
-//import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
 
 let btnShowCharacters=document.getElementById("characters");
 let btnShowPotions=document.getElementById("potions");
 let btnShowSpells=document.getElementById("spells");
 let btnShowBooks=document.getElementById("books");
+
 let spaceToShowData=document.getElementById("containerDataHP");
-let spaceToSHowDetails=document.getElementById("containerDetailsHP");
 
 let nameSpace=document.getElementById("detailName");
 let speciesSpace=document.getElementById("detailSpecies");
@@ -21,17 +16,21 @@ let birthSpace=document.getElementById("detailBirth");
 let ancestrySpace=document.getElementById("detailAncestry");
 let houseSpace=document.getElementById("detailHouse");
 
-//Probar para limpiar
-/*let botonMostrarHechizos = document.getElementById("botonMostrarHechizos");
-botonMostrarHechizos.addEventListener("click",()=>{
-   
-cajaDeDatos.innerHTML= "";
-})*/
 let boxAlphabet=document.getElementById("selectAlphabet");
+let boxHouse=document.getElementById("boxSelectHouse");
+let boxBook=document.getElementById("boxSelectBook");
+
+let spacePictureCategory=document.getElementById("containerPictureCategory");
 
 const harryDataCharacters=harryPotterData.characters;
+const harryDataSpells=harryPotterData.spells;
+const harryDataPotions=harryPotterData.potions;
+const harryDataBooks=harryPotterData.books;
 
-//Crear divs automático
+//Variables para jalar las filas
+ 
+
+//Función para crear Divs automáticamente
 
 function createDivs(arrayCategory){
   for(let i=0; i<arrayCategory.length; i++){
@@ -44,7 +43,7 @@ function createDivs(arrayCategory){
   }
 }
 
-//probando función para mostar detalles
+//Evento para mostar los detalles de cada dato
 
 spaceToShowData.addEventListener("click", (event)=>{
   harryDataCharacters.forEach(character => {
@@ -55,6 +54,25 @@ spaceToShowData.addEventListener("click", (event)=>{
       birthSpace.innerHTML=character.birth;
       ancestrySpace.innerHTML=character.ancestry;
       houseSpace.innerHTML=character.house;
+    }
+  })
+  harryDataSpells.forEach(spell => {
+    if(spell.name === event.target.innerText){
+      nameSpace.innerHTML=spell.name;
+      speciesSpace.innerHTML=spell.description;
+    }
+  })
+  harryDataPotions.forEach(potion => {
+    if(potion.name === event.target.innerText){
+      nameSpace.innerHTML=potion.name;
+      speciesSpace.innerHTML=potion.description;
+    }
+  })
+  harryDataBooks.forEach(book => {
+    if(book.title === event.target.innerText){
+      nameSpace.innerHTML=book.title;
+      speciesSpace.innerHTML=book.author;
+      genderSpace.innerHTML=book.description;
     }
   })
 })
@@ -71,94 +89,73 @@ spaceToShowData.addEventListener("click", (event)=>{
     })
   }
 }*/
-
-//intentos para mostrar detalles
-/*
-function showDetails(array){
-  array.forEach(function(element,index){
-    element.addEventListener("click", function(event){
-      for(let i=0; i<harryPotterData.characters; i++){
-        if(event.currentTarget.textContent==harryPotterData.characters[i].name){
-          nameSpace.innerHTML=harryDataCharacters[i].name;
-        }
-      }     
-    })
-  });       
-}
-
-function showDetails2(nodeList){
-  nodeList.forEach(function(node){
-    node.addEventListener("click", function(event){
-      event.currentTarget.style.color="black";
-           
-    })
-  });       
-}*/
-
-//aquí terminan los intentos para mostrar detalles
-
-//Aqui termina funcion showDetails
-
+//Aqui termina funcion showDetails 
 
 btnShowCharacters.addEventListener("click", ()=>{
+  const arrayCharacters=getNames("characters");
 
-  let arrayCharacters=getNames("characters");
+  boxHouse.style.visibility="visible";
+  boxBook.style.visibility="visible";
 
   spaceToShowData.innerHTML="";
   createDivs(arrayCharacters);
-  //showDetails(spaceToShowData.children);
 
   boxAlphabet.addEventListener("change", ()=>{ 
     spaceToShowData.innerHTML="";
-
-    
     createDivs(sortData(arrayCharacters, boxAlphabet.value));
-    //showDetails(sortData(spaceToShowData.children));   
-  });
-
-  
-});
-
-
-
-
-btnShowPotions.addEventListener("click", ()=>{
-  spaceToShowData.innerHTML="";
-  let arrayPotions=getNames("potions");
-
-  for(let i=0; i<arrayPotions.length; i++){
-    let newDiv=document.createElement("div");
-    let newDivText=document.createTextNode(arrayPotions[i]);
-
-    newDiv.appendChild(newDivText);
-    spaceToShowData.appendChild(newDiv);
-  }
+  }); 
 });
 
 btnShowSpells.addEventListener("click", ()=>{
-  spaceToShowData.innerHTML="";
   let arraySpells=getNames("spells");
 
-  for(let i=0; i<arraySpells.length; i++){
-    let newDiv=document.createElement("div");
-    let newDivText=document.createTextNode(arraySpells[i]);
+  boxHouse.style.visibility="hidden";
+  boxBook.style.visibility="hidden";
 
-    newDiv.appendChild(newDivText);
-    spaceToShowData.appendChild(newDiv);
-  }
+
+  //Insertar imagen --> no está cargando
+  const imageWizard=document.createElement("img");
+  imageWizard.src="src/pictures/cauldron_1.png";
+  spacePictureCategory.appendChild(imageWizard);
+  //hasta acá se inserta la imagen
+
+  spaceToShowData.innerHTML="";
+  createDivs(arraySpells);
+
+  boxAlphabet.addEventListener("change", ()=>{ 
+    spaceToShowData.innerHTML="";
+    createDivs(sortData(arraySpells, boxAlphabet.value));
+  }); 
+});
+
+btnShowPotions.addEventListener("click", ()=>{
+  let arrayPotions=getNames("potions");
+
+  boxHouse.style.visibility="hidden";
+  boxBook.style.visibility="hidden";
+
+  spaceToShowData.innerHTML="";
+  createDivs(arrayPotions);
+
+  boxAlphabet.addEventListener("change", ()=>{ 
+    spaceToShowData.innerHTML="";
+    createDivs(sortData(arrayPotions, boxAlphabet.value));
+  }); 
 });
 
 btnShowBooks.addEventListener("click", ()=>{
-  spaceToShowData.innerHTML="";
   let arrayBooks=getNames("books");
 
-  for(let i=0; i<arrayBooks.length; i++){
-    let newDiv=document.createElement("div");
-    let newDivText=document.createTextNode(arrayBooks[i]);
+  boxHouse.style.visibility="hidden";
+  boxBook.style.visibility="hidden";
 
-    newDiv.appendChild(newDivText);
-    spaceToShowData.appendChild(newDiv);
-  }
+  spaceToShowData.innerHTML="";
+  createDivs(arrayBooks);
+
+  boxAlphabet.addEventListener("change", ()=>{ 
+    spaceToShowData.innerHTML="";
+    createDivs(sortData(arrayBooks, boxAlphabet.value));
+  }); 
 });
 
 
