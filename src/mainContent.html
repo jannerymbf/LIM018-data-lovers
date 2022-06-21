@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Data Lovers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Joan&family=Poppins:ital,wght@0,200;0,600;1,700&family=Princess+Sofia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="mainContent">
+    <header>
+      <h1 class="logoHP">Harry Potter</h1>
+
+      <nav>
+        <img>
+        <h2 id="characters" class="cat showCharacters">Characters</h2>
+        <div class="division">|</div>
+        <h2 id="spells" class="cat showSpells">Spells</h2>
+        <div class="division">|</div>
+        <h2 id="potions" class="cat showPotions">Potions</h2>
+        <div class="division">|</div>
+        <h2 id="books" class="cat showBooks">Books</h2>
+        <img>
+      </nav>
+
+    </header>
+
+      <!-- Esta sección es para mostrar las cajitas para filtrar-->
+      <section id="filterHP">
+        <select id="selectAlphabet" class="boxSelect selectOrder">
+          <option value="AZ">A-Z</option>
+          <option value="ZA">Z-A</option>
+        </select>
+
+        <select id="boxSelectHouse" class="boxSelect selectHouse">
+          <option>Gryffindor</option>
+          <option>Slytherin</option>
+          <option>Ravenclaw</option>
+          <option>Hufflepuff</option>
+        </select>
+
+        <select id="boxSelectBook" class="boxSelect selectBook">
+          <option>Book 1</option>
+          <option>Book 2</option>
+          <option>Book 3</option>
+          <option>Book 4</option>
+          <option>Book 5</option>
+          <option>Book 6</option>
+          <option>Book 7</option>
+        </select>
+      </section>
+      <!-- Esta sección es para mostrar la lista de datos de la data-->
+    <main>
+      <aside>
+        <div id="containerDataHP" class="dataHP visibleScrollBar"></div>
+      </aside>
+
+      
+      <!-- Esta sección es para mostrar la cajita con los detalles de cada dato seleccionado-->
+
+      <section id="detailsHP" class="detailsHP">
+        <table id="tableDetailsHP" class="tableDetailsHP">
+          <tr id="nameRow" class="firstRow row">
+            <td id="titleName" class="titleTableColumn">Name :</td>
+            <td id="detailName" class="detailTable nameDetail">Harry</td>
+          </tr>
+          <tr id="speciesRow" class="secondRow row">
+            <td id="titleSpecies" class="titleTableColumn">Species :</td>
+            <td id="detailSpecies" class="detailTable">Human</td>
+          </tr>
+          <tr id="genderRow" class="thirdRow row">
+            <td id="titleGender" class="titleTableColumn">Gender :</td>
+            <td id="detailGender" class="detailTable">M</td>
+          </tr>
+          <tr id="birthRow" class="fourthRow row">
+            <td id="titleBirth" class="titleTableColumn">Birth :</td>
+            <td id="detailBirth" class="detailTable">July 8th</td>
+          </tr>
+          <tr id="ancestryRow" class="fifthRow row">
+            <td id="titleAncestry" class="titleTableColumn">Ancestry :</td>
+            <td id="detailAncestry" class="detailTable">Half-blood</td>
+          </tr>
+          <tr id="houseRow" class="sixthRow row">
+            <td id="titleHouse" class="titleTableColumn">House :</td>
+            <td id="detailHouse" class="detailTable">Gryffindor</td>
+          </tr> 
+        </table>
+        
+        <!--
+        <div id="containerTitlesHP" class="containerTitlesHP">
+          <p id="titleName">Name :</p>
+          <p id="titleSpecies">Species :</p>
+          <p id="titleGender">Gender :</p>
+          <p id="titleBirth">Birth :</p>
+          <p id="titleAncestry">Ancestry :</p>
+          <p id="titleHouse">House :</p>
+        </div> 
+        <div id="containerDetailsHP" class="containerDetailsHP">
+          <p id="detailName">Harry</p>
+          <p id="detailSpecies">Human</p>
+          <p id="detailGender">M</p>
+          <p id="detailBirth">July 8th</p>
+          <p id="detailAncestry">Half-blood</p>
+          <p id="detailHouse">Gryffindor</p>
+        </div>-->
+      </section>
+
+      <section id="containerPictureCategory" class="containerPictureCategory">
+        <img id="pictureCategory" class="pictureCategory" src="pictures/wizard-hat_1.png" alt="Wizard-hat">  
+      </section>
+
+    </main>
+    
+    <!-- <footer>
+      <p class="footerText">Derechos reservados</p>
+    </footer> -->
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
