@@ -2,6 +2,7 @@
 import {getNames, sortData} from './data.js';
 import harryPotterData from './data/harrypotter/data.js';
 
+//Variables para jalar las categorías en navegación
 let btnShowCharacters=document.getElementById("characters");
 let btnShowPotions=document.getElementById("potions");
 let btnShowSpells=document.getElementById("spells");
@@ -16,9 +17,13 @@ let birthSpace=document.getElementById("detailBirth");
 let ancestrySpace=document.getElementById("detailAncestry");
 let houseSpace=document.getElementById("detailHouse");
 
+//Variable para jalar la columna de detalles
+let detailColumn=document.querySelectorAll(".detailTable");
+
 let boxAlphabet=document.getElementById("selectAlphabet");
 let boxHouse=document.getElementById("boxSelectHouse");
 let boxBook=document.getElementById("boxSelectBook");
+
 
 let pictureCategory=document.getElementById("pictureCategory");
 
@@ -35,6 +40,13 @@ let houseRow=document.getElementById("houseRow");
 
 let titleSpecies2=document.getElementById("titleSpecies");
 
+let btnExplore=document.querySelector(".exploreBtn");
+
+btnExplore.addEventListener("click", () => {
+  document.querySelector(".welcomePage").style.display="none";
+  document.querySelector(".mainContent").style.display="inherit";
+})
+
 //Función para crear Divs automáticamente
 
 function createDivs(arrayCategory){
@@ -43,7 +55,7 @@ function createDivs(arrayCategory){
     let newDivText=document.createTextNode(arrayCategory[i]);
 
     newDiv.appendChild(newDivText);
-    newDiv.setAttribute("id",i);
+    //newDiv.setAttribute("id",i);
     spaceToShowData.appendChild(newDiv);
   }
 }
@@ -95,11 +107,46 @@ spaceToShowData.addEventListener("click", (event)=>{
 }*/
 //Aqui termina funcion showDetails 
 
+//Función para pintar datos en la primera carga
+function firstLoad(){
+  const arrayCharacters=getNames("characters");
+
+  spaceToShowData.innerHTML="";
+  createDivs(arrayCharacters);
+
+  harryDataCharacters.forEach(character => {
+      if(character.name === "Harry Potter"){
+        nameSpace.innerHTML=character.name;
+        speciesSpace.innerHTML=character.species;
+        genderSpace.innerHTML=character.gender;
+        birthSpace.innerHTML=character.birth;
+        ancestrySpace.innerHTML=character.ancestry;
+        houseSpace.innerHTML=character.house;
+      }
+  })
+
+  btnShowCharacters.classList.add("navCategory");
+
+  boxAlphabet.addEventListener("change", ()=>{ 
+    spaceToShowData.innerHTML="";
+    createDivs(sortData(arrayCharacters, boxAlphabet.value));
+  }); 
+}
+firstLoad();
+
 
 btnShowCharacters.addEventListener("click", ()=>{
   const arrayCharacters=getNames("characters");
 
+  detailColumn.innerHTML=""; //<-- esto no está funcionando
   pictureCategory.setAttribute("src", "pictures/wizard-hat_1.png");
+
+  //Aquí ponemos las categorías en color negrito cuando son seleccionadas
+  btnShowCharacters.classList.add("navCategory");
+  btnShowSpells.classList.remove("navCategory");
+  btnShowPotions.classList.remove("navCategory");
+  btnShowBooks.classList.remove("navCategory");
+
   boxHouse.style.visibility="visible";
   boxBook.style.visibility="visible";
   genderRow.style.display="table-row";
@@ -117,10 +164,8 @@ btnShowCharacters.addEventListener("click", ()=>{
   }); 
 });
 
-btnShowSpells.addEventListener("click", ()=>{
-  let arraySpells=getNames("spells");
-
-  pictureCategory.setAttribute("src", "pictures/magic-wand_1.png");
+//La sgt función oculta los elementos extra que solo son necesarios en Characters
+function hideData(){
   boxHouse.style.visibility="hidden";
   boxBook.style.visibility="hidden";
   genderRow.style.display="none";
@@ -128,6 +173,20 @@ btnShowSpells.addEventListener("click", ()=>{
   ancestryRow.style.display="none";
   houseRow.style.display="none";
   titleSpecies2.innerHTML="Description :";
+}
+
+btnShowSpells.addEventListener("click", ()=>{
+  let arraySpells=getNames("spells");
+
+  detailColumn.innerHTML="";
+  pictureCategory.setAttribute("src", "pictures/magic-wand_1.png");
+
+  btnShowSpells.classList.add("navCategory");
+  btnShowCharacters.classList.remove("navCategory");
+  btnShowPotions.classList.remove("navCategory");
+  btnShowBooks.classList.remove("navCategory");
+
+  hideData();
 
   spaceToShowData.innerHTML="";
   createDivs(arraySpells);
@@ -141,14 +200,15 @@ btnShowSpells.addEventListener("click", ()=>{
 btnShowPotions.addEventListener("click", ()=>{
   let arrayPotions=getNames("potions");
 
+  detailColumn.innerHTML="";
   pictureCategory.setAttribute("src", "pictures/cauldron_1.png");
-  boxHouse.style.visibility="hidden";
-  boxBook.style.visibility="hidden";
-  genderRow.style.display="none";
-  birthRow.style.display="none";
-  ancestryRow.style.display="none";
-  houseRow.style.display="none";
-  titleSpecies2.innerHTML="Description :";
+
+  btnShowPotions.classList.add("navCategory");
+  btnShowCharacters.classList.remove("navCategory");
+  btnShowSpells.classList.remove("navCategory");
+  btnShowBooks.classList.remove("navCategory");
+
+  hideData();
 
   spaceToShowData.innerHTML="";
   createDivs(arrayPotions);
@@ -162,14 +222,15 @@ btnShowPotions.addEventListener("click", ()=>{
 btnShowBooks.addEventListener("click", ()=>{
   let arrayBooks=getNames("books");
 
+  detailColumn.innerHTML="";
   pictureCategory.setAttribute("src", "pictures/open-book_1.png");
-  boxHouse.style.visibility="hidden";
-  boxBook.style.visibility="hidden";
-  genderRow.style.display="none";
-  birthRow.style.display="none";
-  ancestryRow.style.display="none";
-  houseRow.style.display="none";
-  titleSpecies2.innerHTML="Description :";
+
+  btnShowBooks.classList.add("navCategory");
+  btnShowCharacters.classList.remove("navCategory");
+  btnShowPotions.classList.remove("navCategory");
+  btnShowSpells.classList.remove("navCategory");
+
+  hideData();
 
   spaceToShowData.innerHTML="";
   createDivs(arrayBooks);
@@ -179,6 +240,8 @@ btnShowBooks.addEventListener("click", ()=>{
     createDivs(sortData(arrayBooks, boxAlphabet.value));
   }); 
 });
+
+
 
 
 //console.log(example, data);

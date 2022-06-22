@@ -43,6 +43,10 @@ export const sortData = (data, sortOrder) => {
   return data;
 }
 
+export const filterData = () => {
+  
+}
+
 /*export const showData = (container) => {
 
   //1. Con el primer for voy a recorrer las keys del objeto harryPotterData
