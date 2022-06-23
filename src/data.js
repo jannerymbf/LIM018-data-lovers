@@ -69,8 +69,40 @@ export const filterDataBook = (data,condition) => {
   return arrayDataWithCondition;
 }
 
+export const computeStatsHouse = (data,house) => {
+  let numberCharactersPerHouse=0;
 
+  data.forEach(obj => {
+    if (obj.house==house){
+      numberCharactersPerHouse++;
+    }
+  })
+  return numberCharactersPerHouse;
+}
 
+export const computeStatsBook = (data,book) => {
+  let numberCharactersPerBook=0;
+
+  data.forEach(obj => {
+    obj.books_featured_in.forEach(number => {
+      if(number==book){
+        numberCharactersPerBook++
+      }
+    })   
+  })
+  return numberCharactersPerBook;
+}
+
+export const computeStatsCharacterBook = (data) => {
+  let numberCharacterAllBook=0;
+  
+  data.forEach(obj => {
+    if(obj.books_featured_in.includes(1) && obj.books_featured_in.includes(2) && obj.books_featured_in.includes(3)&& obj.books_featured_in.includes(4) && obj.books_featured_in.includes(5) && obj.books_featured_in.includes(6) && obj.books_featured_in.includes(7)){
+      numberCharacterAllBook++;
+    }
+  })
+  return numberCharacterAllBook;
+}
 
 
 /*export const showData = (container) => {
