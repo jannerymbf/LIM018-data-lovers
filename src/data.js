@@ -43,9 +43,35 @@ export const sortData = (data, sortOrder) => {
   return data;
 }
 
-export const filterData = () => {
+export const filterDataHouse = (data,condition) => {
+  let arrayDataWithCondition;
+  let namesHouseArray=[];
   
+  arrayDataWithCondition=data.filter(obj => {
+    return obj.house==condition;
+  })
+  arrayDataWithCondition.forEach(obj => {
+    namesHouseArray.push(obj.name);
+  })
+  return namesHouseArray; //Nos arroja un array con los nombres de los personajes según la casa
 }
+
+export const filterDataBook = (data,condition) => {
+  let arrayDataWithCondition=[];
+
+  data.forEach(obj => {
+    obj.books_featured_in.forEach(number => {
+      if(number==condition){
+        arrayDataWithCondition.push(obj.name);
+      }
+    })   
+  })
+  return arrayDataWithCondition;
+}
+
+
+
+
 
 /*export const showData = (container) => {
 

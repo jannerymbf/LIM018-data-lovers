@@ -1,5 +1,5 @@
 //Interactuar con el DOM
-import {getNames, sortData} from './data.js';
+import {filterDataBook, filterDataHouse, getNames, sortData} from './data.js';
 import harryPotterData from './data/harrypotter/data.js';
 
 //Variables para jalar las categorías en navegación
@@ -131,8 +131,24 @@ function firstLoad(){
     spaceToShowData.innerHTML="";
     createDivs(sortData(arrayCharacters, boxAlphabet.value));
   }); 
+
+  boxHouse.addEventListener("change", ()=>{
+    spaceToShowData.innerHTML="";
+
+    let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
+    createDivs(namesHouse);
+  })
+
+  boxBook.addEventListener("change", ()=>{
+    spaceToShowData.innerHTML="";
+
+    let namesBook=filterDataBook(harryDataCharacters,boxBook.value);
+    createDivs(namesBook);
+  })
 }
 firstLoad();
+
+
 
 
 btnShowCharacters.addEventListener("click", ()=>{
@@ -161,7 +177,22 @@ btnShowCharacters.addEventListener("click", ()=>{
   boxAlphabet.addEventListener("change", ()=>{ 
     spaceToShowData.innerHTML="";
     createDivs(sortData(arrayCharacters, boxAlphabet.value));
-  }); 
+  });
+  
+  boxHouse.addEventListener("change", ()=>{
+    spaceToShowData.innerHTML="";
+
+    let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
+    createDivs(namesHouse);
+  })
+
+  boxBook.addEventListener("change", ()=>{
+    spaceToShowData.innerHTML="";
+
+    let namesBook=filterDataBook(harryDataCharacters,boxBook.value);
+    createDivs(namesBook);
+  })
+  
 });
 
 //La sgt función oculta los elementos extra que solo son necesarios en Characters

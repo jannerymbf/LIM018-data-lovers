@@ -12,19 +12,19 @@
     justify-content: center;
     align-items: center;
 
+    height: 100vh;
+
 }
 
 .welcomeMessage{
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
 
-    height:100vh;
+    flex: 1 0 auto;/* flex-grow flex-shrink flex-basis*/
 
-    gap:30px;   
-
-    
+    gap:30px;     
 }
 
 .welcomeLogo{
@@ -60,7 +60,9 @@
     font-size: 10px;
     color:whitesmoke;
     
-    align-self: flex-end;
+    flex-shrink: 0;
+
+    padding: 20px;
 }
 
 /*Termina estilo para WelcomePage*/
@@ -89,6 +91,8 @@ nav{
     display:flex;
     flex-flow:row wrap;
     gap: 70px;
+
+    
 
     /*background-color: #F2B800;*/
 }
@@ -178,7 +182,7 @@ main{
 }
 
 .dataHP div:nth-child(n){
-    padding:10px;
+    padding:5px;
 }
 
 .dataHP div:nth-child(n):hover{
@@ -214,7 +218,6 @@ main{
     font-weight: 200;
 
     overflow: scroll;
-
 }
 
 .tableDetailsHP{
@@ -265,6 +268,7 @@ main{
     height:100%;
 }
 
+/*Esta clase es para poner las categorías en negrita*/
 .navCategory{
     font-weight: 600;
 }
