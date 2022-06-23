@@ -1,5 +1,4 @@
 //Interactuar con el DOM
-
 import harryPotterData from './data/harrypotter/data.js';
 import {filterData, getNames, sortData} from './data.js';
 
@@ -64,7 +63,7 @@ function createDivs(arrayCategory){
 //Evento para mostar los detalles de cada dato
 
 spaceToShowData.addEventListener("click", (event)=>{
-  console.log(event.target.innerText);
+  //console.log(event.target.innerText);
   harryDataCharacters.forEach(character => { //personajes
     if(character.name === event.target.innerText){
       nameSpace.innerHTML=character.name;
@@ -160,6 +159,7 @@ btnShowCharacters.addEventListener("click", ()=>{
   spaceToShowData.innerHTML="";
   createDivs(arrayCharacters);
 
+  //traemos la fx sortData
   boxAlphabet.addEventListener("change", ()=>{ 
     spaceToShowData.innerHTML="";
     createDivs(sortData(arrayCharacters, boxAlphabet.value));

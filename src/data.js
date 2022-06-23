@@ -7,8 +7,8 @@ export const getNames = (category) => {
 
   //la 'i' representa los keys (propiedades) de la data de HP
   for(let i in harryPotterData){ //voy a recorrer los indices del obj HP
-    let keyHarryData=harryPotterData[i]; //esto es un array de las propiedades de mi obj
-
+    let keyHarryData=harryPotterData[i]; //esto es un array de las propiedades (categorias) de mi obj
+      
     if(category==i){
       for(let j=0; j<keyHarryData.length; j++){
         if(keyHarryData[j].hasOwnProperty("name")){ //estoy en el array de los personajes
