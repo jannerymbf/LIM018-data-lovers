@@ -1,5 +1,5 @@
 //Interactuar con el DOM
-import {filterDataBook, filterDataHouse, getNames, sortData} from './data.js';
+import {computeStatsBook, computeStatsHouse, filterDataBook, filterDataHouse, getNames, sortData} from './data.js';
 import harryPotterData from './data/harrypotter/data.js';
 
 //Variables para jalar las categorías en navegación
@@ -272,7 +272,34 @@ btnShowBooks.addEventListener("click", ()=>{
   }); 
 });
 
+//Variables para trbajar ComputeStatsHouse()
+let statsGryff=document.getElementById("gryffNumber");
+let statsSlyt=document.getElementById("slytNumber");
+let statsRaven=document.getElementById("ravenNumber");
+let statsHuffle=document.getElementById("huffleNumber");
 
+//La sgt función llama a computeStats para mostrar los personajes por casa
+function statsCharactersPerHouse(){
+  statsGryff.innerHTML=computeStatsHouse(harryDataCharacters,"Gryffindor");
+  statsSlyt.innerHTML=computeStatsHouse(harryDataCharacters,"Slytherin");
+  statsRaven.innerHTML=computeStatsHouse(harryDataCharacters,"Ravenclaw");
+  statsHuffle.innerHTML=computeStatsHouse(harryDataCharacters,"Hufflepuff");
+}
+statsCharactersPerHouse();
+
+//Variables para trabajar computeStatsBook()
+let statsBook1=document.getElementById("book1Number");
+let statsBook2=document.getElementById("book2Number");
+let statsBook3=document.getElementById("book3Number");
+let statsBook4=document.getElementById("book4Number");
+let statsBook5=document.getElementById("book5Number");
+let statsBook6=document.getElementById("book6Number");
+let statsBook7=document.getElementById("book7Number");
+
+//La sgt función llama a computeStats para mostrar los personajes por libro
+function statsCharactersPerBook(){
+  statsBook1.innerHTML=
+}
 
 
 //console.log(example, data);
