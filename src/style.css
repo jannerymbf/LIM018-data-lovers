@@ -164,6 +164,8 @@ main{
     flex-flow: row wrap;
     justify-content:space-between;
 
+    padding-bottom: 34px;/*ojo: cuando pasa 35px, se agrega una línea blanca*/
+
     position:relative;
 }
 
@@ -192,10 +194,10 @@ main{
     cursor:pointer;
 }
 
-.visibleScrollBar::-webkit-scrollbar{
+/*.visibleScrollBar::-webkit-scrollbar{
     scrollbar-color: red yellow;
 
-}
+}*/
 
 .detailsHP{
     
@@ -274,10 +276,71 @@ main{
 }
 
 #statsContent{
-    background-color: aqua;
+    background-color: #24152F;
+
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+
 }
 
+.boxStatsContent{
+    /*background-color: green;*/
 
+    display:flex;
+    flex-direction: row; /*flex-direction flex-wrap*/
+    align-items: center;
+    justify-content: center;
+    gap:64px;
+}
+
+.statsBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    overflow: auto;
+
+    height: 300px;
+    width: 250px;
+
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+
+    text-align: center;
+}
+
+.stats1{
+    background-color: red;
+}
+.stats2{
+    background-color: yellow;
+}
+.stats3{
+    background-color: blue;
+}
+
+.numb{
+    font-family: "Princess Sofia";
+    font-size: 128px;
+    color: #986E00;
+}
+
+.info{
+    font-family: "Poppins";
+    font-size: 20px;
+    color:whitesmoke;
+}
 
 
 

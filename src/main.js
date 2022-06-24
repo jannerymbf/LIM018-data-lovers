@@ -1,5 +1,5 @@
 //Interactuar con el DOM
-import {computeStatsBook, computeStatsHouse, filterDataBook, filterDataHouse, getNames, sortData} from './data.js';
+import {computeStatsCharacterBook, computeStatsBook, computeStatsHouse, filterDataBook, filterDataHouse, getNames, sortData} from './data.js';
 import harryPotterData from './data/harrypotter/data.js';
 
 //Variables para jalar las categorías en navegación
@@ -298,8 +298,23 @@ let statsBook7=document.getElementById("book7Number");
 
 //La sgt función llama a computeStats para mostrar los personajes por libro
 function statsCharactersPerBook(){
-  statsBook1.innerHTML=
+  statsBook1.innerHTML=computeStatsBook(harryDataCharacters,1);
+  statsBook2.innerHTML=computeStatsBook(harryDataCharacters,2);
+  statsBook3.innerHTML=computeStatsBook(harryDataCharacters,3);
+  statsBook4.innerHTML=computeStatsBook(harryDataCharacters,4);
+  statsBook5.innerHTML=computeStatsBook(harryDataCharacters,5);
+  statsBook6.innerHTML=computeStatsBook(harryDataCharacters,6);
+  statsBook7.innerHTML=computeStatsBook(harryDataCharacters,7);
 }
+statsCharactersPerBook();
 
+//Variable para trabajar computeStatsAllCharacterInTheBook 
+let statsAllCharacters=document.getElementById("allBooksNumber");
+
+//La sgt fucnión llama a computeStatsCharacterBook
+function statsCharactersInAllBooks(){
+  statsAllCharacters.innerHTML=computeStatsCharacterBook(harryDataCharacters);
+}
+statsCharactersInAllBooks();
 
 //console.log(example, data);

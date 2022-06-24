@@ -1,4 +1,4 @@
-import { getNames,sortData, filterDataHouse, filterDataBook } from '../src/data.js';
+import { getNames,sortData, filterDataHouse, filterDataBook, computeStatsHouse, computeStatsBook, computeStatsCharacterBook} from '../src/data.js';
 //importar la data o copiar una parte pequeñitav de la data
 
 //testeando getNames
@@ -61,3 +61,37 @@ describe('filterDataBook', () => {
     expect(filterDataBook([{name: "Stewart Ackerley", books_featured_in:[4]},{name: "Avery I", books_featured_in:[6]}], "4")).toContain("Stewart Ackerley");
   });
 });
+
+//testeando computeStatsHouse
+describe('computeStatsHouse', ()=> {
+  it('is a function',() => {
+    expect(typeof computeStatsHouse).toBe('function');
+  });
+
+  it('Debería retornar "2" para "Gryffindor"', () => {
+    expect(computeStatsHouse([{name: "Stewart Ackerley", house: "Gryffindor"},{name: "Avery I", house: "Gryffindor"}],"Gryffindor")).toBe(2);
+  })
+})
+
+//testeando computeStatsBook
+describe('computeStatsBook',()=> {
+  it('is a function',() => {
+    expect(typeof computeStatsBook).toBe('function');
+  });
+  
+  it('Debería retornar "2" para "book 2"', ()=> {
+    expect(computeStatsBook([{name: "Stewart Ackerley", books_featured_in:[2]},{name: "Avery I", books_featured_in:[2]}],2)).toBe(2);
+  })
+})
+
+//testeando computeStatsCharacterBook
+describe('computeStatsCharacterBook',()=> {
+  it('is a function',() => {
+    expect(typeof computeStatsCharacterBook).toBe('function');
+  });
+  
+  it('Debería retornar "2" para "harryPotterData"', () => {
+    expect(computeStatsCharacterBook([{name: "Stewart Ackerley", books_featured_in:[1, 2, 3, 4, 5, 6, 7]},{name: "Avery I", books_featured_in:[1, 2, 3, 4, 5, 6, 7]}])).toBe(2);
+  })
+
+})

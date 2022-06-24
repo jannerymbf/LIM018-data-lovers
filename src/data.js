@@ -107,6 +107,8 @@ export const computeStatsCharacterBook = (data) => {
 
 
 
+
+
 /*export const showData = (container) => {
 
   //1. Con el primer for voy a recorrer las keys del objeto harryPotterData
