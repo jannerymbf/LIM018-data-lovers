@@ -182,6 +182,7 @@ function hideData(){
   titleSpecies2.innerHTML="Description :";
 }
 
+//Botón spells
 btnShowSpells.addEventListener("click", ()=>{
   let arraySpells=getNames("spells");
 
