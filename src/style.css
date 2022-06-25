@@ -30,6 +30,7 @@
 .welcomeLogo{
     font-family: "Princess Sofia";
     font-size: 150px;
+    font-size:9.3rem;
     color: white;
 }
 
@@ -278,11 +279,13 @@ main{
 #statsContent{
     background-color: #24152F;
 
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+
+    height: 600px;
 
 }
 
@@ -303,7 +306,7 @@ main{
     justify-content: center;
     gap: 16px;
 
-    overflow: auto;
+    overflow: scroll; 
 
     height: 300px;
     width: 250px;
@@ -321,13 +324,13 @@ main{
 }
 
 .stats1{
-    background-color: red;
+    /* background-color: red; */
 }
 .stats2{
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 .stats3{
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .numb{
@@ -342,7 +345,74 @@ main{
     color:whitesmoke;
 }
 
+.funContent{
+    background-color: green ; 
+    display: flex;
+    /* flex-flow: column wrap; */
+    justify-content: center;
+    align-items: center;
+    
+    height: 600px;
+    width:100%;
+    
+    color: whitesmoke;
+    text-align: center;
 
+    position: relative;
+}
 
+.maxContent{
+    width: 60%;
+    display: flex;
+}
+
+.boxFun{
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    /* overflow: scroll; */
+
+    height: 300px;
+    width: 800%;
+
+    background-color: aqua;
+}
+
+#left{
+    position:absolute;
+
+    left: 22%;
+}
+
+#right{
+    position:absolute;
+
+    right: 22%;
+}
+
+.funFact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: calc(100%/2);
+    height: 100%;
+
+    background-color: #986E00;
+}
+
+.type{
+    font-family: "Princess Sofia";
+    /* font-size: 60px; */
+    
+}
+
+.content{
+    font-family: "Poppins";
+    /* font-size: 24px; */
+}
 
 

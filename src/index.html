@@ -44,36 +44,35 @@
       </header>
   
         <!-- Esta sección es para mostrar las cajitas para filtrar-->
-        <section id="filterHP">
-          <select id="selectAlphabet" class="boxSelect selectOrder">
-            <option value="AZ">A-Z</option>
-            <option value="ZA">Z-A</option>
-          </select>
+      <section id="filterHP">
+        <select id="selectAlphabet" class="boxSelect selectOrder">
+          <option value="AZ">A-Z</option>
+          <option value="ZA">Z-A</option>
+        </select>
   
-          <select id="boxSelectHouse" class="boxSelect selectHouse">
-            <option value="Gryffindor">Gryffindor</option>
-            <option value="Slytherin">Slytherin</option>
-            <option value="Ravenclaw">Ravenclaw</option>
-            <option value="Hufflepuff">Hufflepuff</option>
-          </select>
+        <select id="boxSelectHouse" class="boxSelect selectHouse">
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+        </select>
   
-          <select id="boxSelectBook" class="boxSelect selectBook">
-            <option value="1">Book 1</option>
-            <option value="2">Book 2</option>
-            <option value="3">Book 3</option>
-            <option value="4">Book 4</option>
-            <option value="5">Book 5</option>
-            <option value="6">Book 6</option>
-            <option value="7">Book 7</option>
-          </select>
-        </section>
+        <select id="boxSelectBook" class="boxSelect selectBook">
+          <option value="1">Book 1</option>
+          <option value="2">Book 2</option>
+          <option value="3">Book 3</option>
+          <option value="4">Book 4</option>
+          <option value="5">Book 5</option>
+          <option value="6">Book 6</option>
+          <option value="7">Book 7</option>
+        </select>  
+      </section>
         <!-- Esta sección es para mostrar la lista de datos de la data-->
       <main>
         <aside>
           <div id="containerDataHP" class="dataHP visibleScrollBar"></div>
         </aside>
-  
-        
+    
         <!-- Esta sección es para mostrar la cajita con los detalles de cada dato seleccionado-->
         <section id="detailsHP" class="detailsHP">
           <table id="tableDetailsHP" class="tableDetailsHP">
@@ -115,19 +114,19 @@
       <section id="statsContent">
         <section id="boxStats" class="boxStatsContent">
           <section id="boxStats1" class="statsBox stats1">
-            <div id="gryffindorBox" class="box">
+            <div id="gryffindorBox" class="box stats1">
               <p id="gryffNumber" class="numb numberStats1"></p>
               <p id="gryffDescription" class="info infoStats1">students in<br>Gryffindor</p>
             </div>
-            <div id="slytherinBox" class="box">
+            <div id="slytherinBox" class="box stats1">
               <p id="slytNumber" class="numb numberStats1"></p>
               <p id="slytDescription" class="info infoStats1">students in<br>Slytherin</p>
             </div>
-            <div id="ravenclawBox" class="box">
+            <div id="ravenclawBox" class="box stats1">
               <p id="ravenNumber" class="numb numberStats1"></p>
               <p id="ravenDescription" class="info infoStats1">students in<br>Ravenclaw</p>
             </div>
-            <div id="hufflepuffBox" class="box">
+            <div id="hufflepuffBox" class="box stats1">
               <p id="huffleNumber" class="numb numberStats1"></p>
               <p id="huffleDescription" class="info  infoStats1">students in<br>Hufflepuff</p>
             </div>
@@ -170,11 +169,60 @@
           </section>
         </section>
       </section>
+
+      <section id="funFactsContent" class="funContent">
+        <!-- <button id="left"><</button>
+        <button id="right">></button> -->
+        <div class="maxContent">
+          <section id="boxFunFacts" class="boxFun">
+            <div id="funfact1" class="funFact">
+              <p id="typeFun1" class="type"></p>
+              <p id="contentFun1" class="content"></p>
+            </div>
+  
+            <div id="funfact2" class="funFact">
+              <p id="typeFun2" class="type"></p>
+              <p id="contentFun2" class="content"></p>
+            </div>
+  
+            <div id="funfact3" class="funFact">
+              <p id="typeFun3" class="type"></p>
+              <p id="contentFun3" class="content"></p>
+            </div>
+  
+            <div id="funfact4" class="funFact">
+              <p id="typeFun4" class="type"></p>
+              <p id="contentFun4" class="content"></p>
+            </div>
+  
+            <div id="funfact5" class="funFact">
+              <p id="typeFun5" class="type"></p>
+              <p id="contentFun5" class="content"></p>
+            </div>
+  
+            <div id="funfact6" class="funFact">
+              <p id="typeFun6" class="type"></p>
+              <p id="contentFun6" class="content"></p>
+            </div>
+  
+            <div id="funfact7" class="funFact">
+              <p id="typeFun7" class="type"></p>
+              <p id="contentFun7" class="content"></p>
+            </div>
+  
+            <div id="funfact8" class="funFact">
+              <p id="typeFun8" class="type"></p>
+              <p id="contentFun8" class="content"></p>
+            </div>
+  
+          </section>
+        </div>
+        
+      </section>
       
       <!-- <footer>
         <p class="footerText">Derechos reservados</p>
       </footer> -->
-  
     </section>
     <script src="main.js" type="module"></script>
   </body>
