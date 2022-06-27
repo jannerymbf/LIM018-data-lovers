@@ -30,6 +30,7 @@
 .welcomeLogo{
     font-family: "Princess Sofia";
     font-size: 150px;
+    font-size:9.3rem;
     color: white;
 }
 
@@ -176,7 +177,7 @@ main{
     margin-left: 100px;
     height:400px;
     width:400px;
-    overflow: scroll;
+    overflow-y: scroll;
 
     /*background-color: green;*/
 }
@@ -216,7 +217,7 @@ main{
     font-size:20px;
     font-weight: 200;
 
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .tableDetailsHP{
@@ -275,11 +276,13 @@ main{
 #statsContent{
     background-color: #24152F;
 
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
+
+    height: 600px;
 
 }
 
@@ -305,7 +308,7 @@ main{
     justify-content: center;
     gap: 16px;
 
-    overflow: auto;
+    overflow: scroll; 
 
     height: 300px;
     width: 250px;
@@ -351,21 +354,69 @@ main{
     color:whitesmoke;
 }
 
+.funContent{ /*Sección nueva 26.06.22*/
+    background-color: green ; 
+    display: flex;
+    /* flex-flow: column wrap; */
+    justify-content: center;
+    align-items: center;
+    
+    height: 600px;
+    width:100%;
+    
+    color: whitesmoke;
+    text-align: center;
 
-
-/*sección para el carrusel*/
-.contenedor{
-    width: 100px;
-    margin: auto;
-
+    position: relative;
 }
 
 
-.arrowButtonLeft{
-   flex-direction: column;
+.boxFun{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    /* overflow: scroll; */
+
+    height: 300px;
+    width: 60%;
+
+    background-color: aqua;
 }
 
-.arrowButtonRigth{
+#left{
+    position:absolute;
+
+    left: 22%;
+}
+
+#right{
+    position:absolute;
+
+    right: 22%;
+}
+
+.funFact{
+    display: flex;
     flex-direction: column;
- }
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    /* height: 100%; */
+
+    background-color: #986E00;
+}
+
+.type{
+    font-family: "Princess Sofia";
+    /* font-size: 60px; */
+    
+}
+
+.content{
+    font-family: "Poppins";
+    /* font-size: 24px; */
+}
+
  

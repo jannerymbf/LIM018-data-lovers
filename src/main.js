@@ -35,6 +35,7 @@ const harryDataCharacters=harryPotterData.characters;
 const harryDataSpells=harryPotterData.spells;
 const harryDataPotions=harryPotterData.potions;
 const harryDataBooks=harryPotterData.books;
+const harryDataFunFacts=harryPotterData.funFacts;
 
 //Variables para jalar las filas de la cajita de detalles
 let genderRow=document.getElementById("genderRow");
@@ -137,11 +138,11 @@ function firstLoad(){
 }
 firstLoad();
 
-//comentario ¿? PERSONAJES
+//Cuando se haga un click indistinto se ejecuta la sección
 btnShowCharacters.addEventListener("click", ()=>{
   const arrayCharacters=getNames("characters");
 
-  detailColumn.innerHTML=""; //<-- esto no está funcionando
+
   pictureCategory.setAttribute("src", "pictures/wizard-hat_1.png");
 
   //Aquí ponemos las categorías en color negrito cuando son seleccionadas
@@ -150,7 +151,7 @@ btnShowCharacters.addEventListener("click", ()=>{
   btnShowPotions.classList.remove("navCategory");
   btnShowBooks.classList.remove("navCategory");
 
-  //comentario ¿?
+  //sección para volver visible a los elementos ocultos
   boxHouse.style.visibility="visible";
   boxBook.style.visibility="visible";
   genderRow.style.display="table-row";
@@ -162,19 +163,20 @@ btnShowCharacters.addEventListener("click", ()=>{
   spaceToShowData.innerHTML="";
   createDivs(arrayCharacters);
 
-  boxAlphabet.addEventListener("change", ()=>{ 
+  //Se ejecuta 
+  boxAlphabet.addEventListener("change", ()=>{ //cajita filtra A-Z
     spaceToShowData.innerHTML="";
     createDivs(sortData(arrayCharacters, boxAlphabet.value));
   });
   
-  boxHouse.addEventListener("change", ()=>{
+  boxHouse.addEventListener("change", ()=>{ //cajita filtra casas
     spaceToShowData.innerHTML="";
 
     let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
     createDivs(namesHouse);
   })
 
-  boxBook.addEventListener("change", ()=>{
+  boxBook.addEventListener("change", ()=>{ //cajita filtra libros
     spaceToShowData.innerHTML="";
 
     let namesBook=filterDataBook(harryDataCharacters,boxBook.value);
@@ -191,16 +193,17 @@ function hideData(){
   birthRow.style.display="none";
   ancestryRow.style.display="none";
   houseRow.style.display="none";
-  titleSpecies2.innerHTML="Description :";
+  titleSpecies2.innerHTML="Description :"; //lo vuelves a agregar
 }
 
 //comentario ¿? HECHIZOS
 btnShowSpells.addEventListener("click", ()=>{
-  let arraySpells=getNames("spells");
+  let arraySpells=getNames("spells"); 
 
   detailColumn.innerHTML="";
   pictureCategory.setAttribute("src", "pictures/magic-wand_1.png");
 
+  //Pone en negrita la categoría y indicada y limpia las otras
   btnShowSpells.classList.add("navCategory");
   btnShowCharacters.classList.remove("navCategory");
   btnShowPotions.classList.remove("navCategory");
@@ -221,6 +224,7 @@ btnShowSpells.addEventListener("click", ()=>{
 //comentario ¿? POCIONES
 btnShowPotions.addEventListener("click", ()=>{
   let arrayPotions=getNames("potions");
+  console.log(arrayPotions);
 
   detailColumn.innerHTML="";
   pictureCategory.setAttribute("src", "pictures/cauldron_1.png");
@@ -309,4 +313,97 @@ function statsCharactersInAllBooks(){
 }
 statsCharactersInAllBooks();
 
-//console.log(example, data);
+//Carrusel para computeStats
+
+
+// let slideIndex=0;
+// function carousel(){
+  
+//   let boxStats1=document.getElementsByClassName("stats1");
+
+//   for(let i=0; i<boxStats1.length; i++){
+//     boxStats1[i].style.display="none";
+//   }
+
+//   slideIndex++;
+//   if(slideIndex>boxStats1.length){
+//     slideIndex=1;
+//   }
+//   boxStats1[slideIndex-1].style.display="block";
+//   setTimeout(carousel,2000)
+// }
+
+// carousel();
+
+//Variables para jalar las curiosidades <!-- Sección nueva 26.06.22-->
+let type1=document.getElementById("typeFun1");
+let type2=document.getElementById("typeFun2");
+let type3=document.getElementById("typeFun3");
+let type4=document.getElementById("typeFun4");
+let type5=document.getElementById("typeFun5");
+let type6=document.getElementById("typeFun6");
+let type7=document.getElementById("typeFun7");
+let type8=document.getElementById("typeFun8");
+
+let content1=document.getElementById("contentFun1");
+let content2=document.getElementById("contentFun2");
+let content3=document.getElementById("contentFun3");
+let content4=document.getElementById("contentFun4");
+let content5=document.getElementById("contentFun5");
+let content6=document.getElementById("contentFun6");
+let content7=document.getElementById("contentFun7");
+let content8=document.getElementById("contentFun8");
+
+//harryDataFunFacts
+
+function funFacts (){
+ type1.innerHTML=harryDataFunFacts[0].type;
+ type2.innerHTML=harryDataFunFacts[1].type;
+ type3.innerHTML=harryDataFunFacts[2].type;
+ type4.innerHTML=harryDataFunFacts[3].type;
+ type5.innerHTML=harryDataFunFacts[4].type;
+ type6.innerHTML=harryDataFunFacts[5].type;
+ type7.innerHTML=harryDataFunFacts[6].type;
+ type8.innerHTML=harryDataFunFacts[7].type;
+
+ content1.innerHTML=harryDataFunFacts[0].content;
+ content2.innerHTML=harryDataFunFacts[1].content;
+ content3.innerHTML=harryDataFunFacts[2].content;
+ content4.innerHTML=harryDataFunFacts[3].content;
+ content5.innerHTML=harryDataFunFacts[4].content;
+ content6.innerHTML=harryDataFunFacts[5].content;
+ content7.innerHTML=harryDataFunFacts[6].content;
+ content8.innerHTML=harryDataFunFacts[7].content;
+}
+
+funFacts();
+
+// function hideFunFacts(){
+//   type2.style.display="none";
+//   type3.style.display="none";
+//   type4.style.display="none";
+//   type5.style.display="none";
+//   type6.style.display="none";
+//   type7.style.display="none";
+//   type8.style.display="none";
+
+//   content2.style.display="none";
+//   content3.style.display="none";
+//   content4.style.display="none";
+//   content5.style.display="none";
+//   content6.style.display="none";
+//   content7.style.display="none";
+//   content8.style.display="none";
+// }
+
+// hideFunFacts();
+
+
+
+
+
+
+
+
+
+
