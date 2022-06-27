@@ -196,6 +196,8 @@ btnShowCharacters.addEventListener("click", ()=>{
   
 });
 
+
+
 //La sgt función oculta los elementos extra que solo son necesarios en Characters
 function hideData(){
   boxHouse.style.visibility="hidden";
@@ -403,30 +405,111 @@ funFacts();
 
 // hideFunFacts();
 
-let funFactsBox=document.querySelector(".boxFun");
-console.log(funFactsBox);
+
+// Carrusel automático --> Lis
+
+// /********************en movimiento ******************/
+// const carrusel=document.querySelector('.maxContent');
+// let intervalo = null;
+// let step=0.5;
 
 
-let interval=null;
-let step=0.5;
-let maxScrollLeft=funFactsBox.scrollWidth-funFactsBox.clientWidth;
-console.log(funFactsBox.scrollWidth);
-console.log(funFactsBox.clientWidth);
 
-const start = () => {
-  interval=setInterval(function() {
-    funFactsBox.scrollLeft=funFactsBox.scrollLeft+step;
-    if(funFactsBox.scrollLeft==maxScrollLeft){
-      funFactsBox.scrollLeft=funFactsBox.scrollLeft-0.5;
-    }else if(funFactsBox.scrollLeft==0){
-      funFactsBox.scrollLeft=funFactsBox.scrollLeft+step;
-    }
-  },10)
+// const start=()=>{
+//  intervalo=setInterval(function(){
+//      carrusel.scrollLeft+=step;
 
+//      let maxScrollLeft= carrusel.scrollWidth- carrusel.clientWidth;
+
+//      if(carrusel.scrollLeft==maxScrollLeft){
+//         step=-0.5;
+//      } else if(carrusel.scrollLeft==0){
+//         step=0.5;
+//      }
+//  },10)
+// }
+// /*******************se detiene******************/
+// const stop=()=>{
+//   clearInterval(intervalo)
+// }
+// /*******************se detiene cuando pasas el mouse******************/
+// carrusel.addEventListener('mouseover',()=>{
+//   stop();
+// })
+// /*******************avanza cuando le quitas el mouse******************/
+// carrusel.addEventListener('mouseout',()=>{
+//   start()
+// })
+// start();
+// /********************con botones avanza al presionar ******************/
+// const buttonLeft=document.querySelector('#left');
+// const buttonRigth=document.querySelector('#right');
+// buttonLeft.addEventListener("click",()=>{
+//    carrusel.scrollLeft-=620;
+// });
+// buttonRigth.addEventListener("click",()=>{
+//    carrusel.scrollLeft+=620;
+// })
+
+//*******************************
+
+// let funFactsBox=document.querySelector(".boxFun");
+// console.log(funFactsBox);
+
+
+// let interval=null;
+// let step=0.5;
+// let maxScrollLeft=funFactsBox.scrollWidth-funFactsBox.clientWidth;
+// console.log(funFactsBox.scrollWidth);
+// console.log(funFactsBox.clientWidth);
+
+// const start = () => {
+//   interval=setInterval(function() {
+//     funFactsBox.scrollLeft=funFactsBox.scrollLeft+step;
+//     // if(funFactsBox.scrollLeft==maxScrollLeft){
+//     //   funFactsBox.scrollLeft=funFactsBox.scrollLeft-0.5;
+//     // }else if(funFactsBox.scrollLeft==0){
+//     //   funFactsBox.scrollLeft=funFactsBox.scrollLeft+step;
+//     // }
+//   },10)
+
+// }
+
+// start();
+
+let slideIndex=1;
+showDivs(slideIndex);
+
+function plusDivs(n){
+  showDivs(slideIndex+=n);
 }
 
-start();
+function showDivs(n){
+  let funFact=document.getElementsByClassName("funFact");
 
+  if(n>funFact.length){
+    slideIndex=1;
+  }
+  if(n<1){
+    slideIndex=funFact.length;
+  }
+
+  for(let i=0; i<funFact.length; i++){
+    funFact[i].style.display="none";
+  }
+  funFact[slideIndex-1].style.display="block";
+}
+
+const buttonLeft=document.querySelector('#left');
+const buttonRight=document.querySelector('#right'); 
+
+buttonLeft.addEventListener("click", ()=>{
+  plusDivs(-1);
+})
+
+buttonRight.addEventListener("click", ()=>{
+  plusDivs(1);
+})
 
 
 

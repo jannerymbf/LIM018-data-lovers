@@ -12029,7 +12029,7 @@ export default {
     },
     {
       "id": 3,
-      "type": "Antatagonist",
+      "type": "Antagonist",
       "content": "Lord Voldemort"
     },
     {
