@@ -354,8 +354,8 @@ main{
     color:whitesmoke;
 }
 
-.funContent{ /*Sección nueva 26.06.22*/
-    background-color: green ; 
+.funContent{
+    background-color: #10141B ; 
     display: flex;
     /* flex-flow: column wrap; */
     justify-content: center;
@@ -370,7 +370,6 @@ main{
     position: relative;
 }
 
-
 .boxFun{
     display: flex;
     /* flex-wrap: wrap; */
@@ -378,45 +377,69 @@ main{
     align-items: center;
     /* overflow: scroll; */
 
-    height: 300px;
-    width: 60%;
+    height: 400px;
+    width: 80%;
 
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 #left{
     position:absolute;
 
-    left: 22%;
+    left: 10%;
 }
 
 #right{
     position:absolute;
 
-    right: 22%;
+    right: 10%;
 }
 
 .funFact{
-    display: flex;
-    flex-direction: column;
+    display: none;
+    /* flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 
-    width: 100%;
+    width: 80%;
     /* height: 100%; */
 
-    background-color: #986E00;
+    /* background-color: #986E00; */
 }
 
 .type{
     font-family: "Princess Sofia";
-    /* font-size: 60px; */
+    font-size: 96px; 
     
 }
 
 .content{
     font-family: "Poppins";
-    /* font-size: 24px; */
+    font-size: 24px;
 }
 
- 
+.btnArrow{
+    border: 2px solid white;
+    border-radius: 50%;
+
+    width: 40px;
+    height: 40px;
+
+    color:#986E00;
+    font-size: 20px;
+    font-family: "Poppins";
+    font-weight: 600;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.btnArrow:hover{
+    background-color: rgba(217, 217, 217, 0.10)
+}
+
+.type{
+    line-height: 1;
+    margin:30px;
+}
