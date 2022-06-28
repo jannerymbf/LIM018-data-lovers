@@ -320,27 +320,71 @@ function statsCharactersInAllBooks(){
 }
 statsCharactersInAllBooks();
 
-//Carrusel para computeStats
+// Acá inicia el carrusel automático para computeStats
 
+//Declaramos variables
+const houseStatsCarousel=document.querySelector("#boxStats1");
+const bookStatsCarousel=document.querySelector("#boxStats2");
+let interval1;
+let interval2;
 
-// let slideIndex=0;
-// function carousel(){
-  
-//   let boxStats1=document.getElementsByClassName("stats1");
+//*función para mover el houseStats
+const start1=()=>{
+  let step1=0.5;
+  interval1=setInterval(() => {
+    houseStatsCarousel.scrollTop+=step1;
+    let maxScrollTop= houseStatsCarousel.scrollHeight-houseStatsCarousel.clientHeight;
 
-//   for(let i=0; i<boxStats1.length; i++){
-//     boxStats1[i].style.display="none";
-//   }
+    if(houseStatsCarousel.scrollTop==maxScrollTop){
+      step1=-0.5;
+    } else if(houseStatsCarousel.scrollTop==0){
+      step1=0.5;
+    }
+  },10)
+}
+start1();
+//*función para detener el carrusel
+const stop1=()=>{
+  clearInterval(interval1);
+}
+//****se detiene cuando pasas el mouse
+houseStatsCarousel.addEventListener('mouseover',()=>{
+  stop1();
+})
+//****avanza cuando le quitas el mouse
+houseStatsCarousel.addEventListener('mouseout',()=>{
+  start1();
+})
 
-//   slideIndex++;
-//   if(slideIndex>boxStats1.length){
-//     slideIndex=1;
-//   }
-//   boxStats1[slideIndex-1].style.display="block";
-//   setTimeout(carousel,2000)
-// }
+const start2=()=>{
+  let step2=0.5;
+  interval2=setInterval(() => {
+    bookStatsCarousel.scrollTop+=step2;
+    let maxScrollTop= bookStatsCarousel.scrollHeight-bookStatsCarousel.clientHeight;
 
-// carousel();
+    if(bookStatsCarousel.scrollTop==maxScrollTop){
+      step2=-0.5;
+    } else if(bookStatsCarousel.scrollTop==0){
+      step2=0.5;
+    }
+  },10)
+}
+start2();
+
+const stop2=()=>{
+  clearInterval(interval2);
+}
+
+bookStatsCarousel.addEventListener('mouseover',()=>{
+  stop2();
+})
+
+bookStatsCarousel.addEventListener('mouseout',()=>{
+  start2();
+})
+//********************* 
+
+//********************* 
 
 //Variables para jalar las curiosidades
 let type1=document.getElementById("typeFun1");
@@ -361,7 +405,7 @@ let content6=document.getElementById("contentFun6");
 let content7=document.getElementById("contentFun7");
 let content8=document.getElementById("contentFun8");
 
-//harryDataFunFacts
+//Rellenando el contenido en FunFacts
 
 function funFacts (){
  type1.innerHTML=harryDataFunFacts[0].type;
@@ -382,134 +426,43 @@ function funFacts (){
  content7.innerHTML=harryDataFunFacts[6].content;
  content8.innerHTML=harryDataFunFacts[7].content;
 }
-
 funFacts();
+//********************* 
 
-// function hideFunFacts(){
-//   type2.style.display="none";
-//   type3.style.display="none";
-//   type4.style.display="none";
-//   type5.style.display="none";
-//   type6.style.display="none";
-//   type7.style.display="none";
-//   type8.style.display="none";
+//Acá inicia el Slider de Fun facts
 
-//   content2.style.display="none";
-//   content3.style.display="none";
-//   content4.style.display="none";
-//   content5.style.display="none";
-//   content6.style.display="none";
-//   content7.style.display="none";
-//   content8.style.display="none";
-// }
-
-// hideFunFacts();
-
-
-// Carrusel automático --> Lis
-
-// /********************en movimiento ******************/
-// const carrusel=document.querySelector('.maxContent');
-// let intervalo = null;
-// let step=0.5;
-
-
-
-// const start=()=>{
-//  intervalo=setInterval(function(){
-//      carrusel.scrollLeft+=step;
-
-//      let maxScrollLeft= carrusel.scrollWidth- carrusel.clientWidth;
-
-//      if(carrusel.scrollLeft==maxScrollLeft){
-//         step=-0.5;
-//      } else if(carrusel.scrollLeft==0){
-//         step=0.5;
-//      }
-//  },10)
-// }
-// /*******************se detiene******************/
-// const stop=()=>{
-//   clearInterval(intervalo)
-// }
-// /*******************se detiene cuando pasas el mouse******************/
-// carrusel.addEventListener('mouseover',()=>{
-//   stop();
-// })
-// /*******************avanza cuando le quitas el mouse******************/
-// carrusel.addEventListener('mouseout',()=>{
-//   start()
-// })
-// start();
-// /********************con botones avanza al presionar ******************/
-// const buttonLeft=document.querySelector('#left');
-// const buttonRigth=document.querySelector('#right');
-// buttonLeft.addEventListener("click",()=>{
-//    carrusel.scrollLeft-=620;
-// });
-// buttonRigth.addEventListener("click",()=>{
-//    carrusel.scrollLeft+=620;
-// })
-
-//*******************************
-
-// let funFactsBox=document.querySelector(".boxFun");
-// console.log(funFactsBox);
-
-
-// let interval=null;
-// let step=0.5;
-// let maxScrollLeft=funFactsBox.scrollWidth-funFactsBox.clientWidth;
-// console.log(funFactsBox.scrollWidth);
-// console.log(funFactsBox.clientWidth);
-
-// const start = () => {
-//   interval=setInterval(function() {
-//     funFactsBox.scrollLeft=funFactsBox.scrollLeft+step;
-//     // if(funFactsBox.scrollLeft==maxScrollLeft){
-//     //   funFactsBox.scrollLeft=funFactsBox.scrollLeft-0.5;
-//     // }else if(funFactsBox.scrollLeft==0){
-//     //   funFactsBox.scrollLeft=funFactsBox.scrollLeft+step;
-//     // }
-//   },10)
-
-// }
-
-// start();
-
+let funFact=document.getElementsByClassName("funFact");
 let slideIndex=1;
-showDivs(slideIndex);
+showDivs(slideIndex,funFact);
 
-function plusDivs(n){
-  showDivs(slideIndex+=n);
+function plusDivs(n,data){
+  showDivs(slideIndex+=n,data);
 }
 
-function showDivs(n){
-  let funFact=document.getElementsByClassName("funFact");
-
-  if(n>funFact.length){
+function showDivs(n, data){
+  if(n>data.length){
     slideIndex=1;
   }
   if(n<1){
-    slideIndex=funFact.length;
+    slideIndex=data.length;
   }
-
-  for(let i=0; i<funFact.length; i++){
-    funFact[i].style.display="none";
+  for(let i=0; i<data.length; i++){
+    data[i].style.display="none";
   }
-  funFact[slideIndex-1].style.display="block";
+  data[slideIndex-1].style.display="block";
 }
 
 const buttonLeft=document.querySelector('#left');
 const buttonRight=document.querySelector('#right'); 
 
 buttonLeft.addEventListener("click", ()=>{
-  plusDivs(-1);
+  plusDivs(-1,funFact);
 })
 
 buttonRight.addEventListener("click", ()=>{
-  plusDivs(1);
+  plusDivs(1,funFact);
 })
+//*******************
 
 
 

@@ -2,10 +2,17 @@
     margin:0px;
 }
 
+/*Declaramos variables para nuestros colores principales*/
+:root{
+    --light-purple: #24152F;
+    --dark-purple: #10141B;
+    --yellow-hp: #986E00;
+}
+
 /*Estilo para Welcome Page*/
 
 .welcomePage{
-    background-color:#24152F;
+    background-color: var(--light-purple);
 
     display: flex;
     flex-direction: column;
@@ -70,7 +77,7 @@
 
 .mainContent{
     display:none;
-    background-color: #10141B;
+    background-color: var(--dark-purple);
 
     height:100vh; /*ojo: al agregar contenido, se ubicará debajo o conglomerará?*/
 }
@@ -83,7 +90,7 @@ header{
 
     height: 200px;
 
-    background-color: #24152F;
+    background-color: var(--light-purple);
 
     color: whitesmoke;
 }
@@ -101,7 +108,7 @@ nav{
 .logoHP{
     font-family: "Princess Sofia";
     font-size: 64px;
-    color: #986E00;;
+    color: var(--yellow-hp);
 
     margin-bottom: 10px;
     /*background-color: fuchsia;*/
@@ -179,10 +186,35 @@ main{
     margin-left: 100px;
     height:400px;
     width:400px;
-    overflow: scroll;
-
+    overflow-y: scroll;
     /*background-color: green;*/
 }
+
+.visibleScrollBar::-webkit-scrollbar{
+    width: 12px;
+}
+
+.visibleScrollBar::-webkit-scrollbar-track{
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9); */
+    border:2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: transparent;
+    /* #CCCCCC;*/
+}
+
+.visibleScrollBar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: whitesmoke;
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
+}
+
+.visibleScrollBar::-webkit-scrollbar-thumb:window-inactive {
+    display:none;
+ }
+
+.visibleScrollBar::-webkit-scrollbar-track:window-inactive {
+    display:none;
+ }
 
 .dataHP div:nth-child(n){
     padding:5px;
@@ -233,7 +265,7 @@ main{
 .titleTableColumn{
     width: 130px;
 
-    color: #986E00;
+    color: var(--yellow-hp);
 
     /*background-color: whitesmoke;*/
 }
@@ -258,7 +290,7 @@ main{
     height: 250px;
 
     border-radius: 200px;
-    border:20px solid #10141B;
+    border:20px solid var(--dark-purple);
 
     position:absolute;
     right: 500px;
@@ -276,11 +308,11 @@ main{
 }
 
 #statsContent{
-    background-color: #24152F;
+    background-color: var(--light-purple);
 
     /* height: 100vh; */
     display: flex;
-    flex-flow: column wrap;
+    /* flex-flow: column wrap; */
     align-items: center;
     justify-content: center;
 
@@ -289,27 +321,41 @@ main{
 }
 
 .boxStatsContent{
-    /*background-color: green;*/
+    /* background-color: green; */
 
     display:flex;
     flex-direction: row; /*flex-direction flex-wrap*/
     align-items: center;
     justify-content: center;
     gap:64px;
+
+    height:50%;
 }
 
 .statsBox{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     gap: 16px;
 
-    overflow: scroll; 
+    overflow-y: hidden; 
 
-    height: 300px;
+    height: 100%;
     width: 250px;
+}
 
+.stats1{
+    /* background-color: red; */
+    order:1;
+}
+.stats2{
+    /* background-color: yellow; */
+    order:3;
+}
+.stats3{
+    /* background-color: blue; */
+    order:2;
 }
 
 .box{
@@ -320,22 +366,15 @@ main{
     gap:5px;
 
     text-align: center;
+
+    /* background-color: aqua; */
 }
 
-.stats1{
-    /* background-color: red; */
-}
-.stats2{
-    /* background-color: yellow; */
-}
-.stats3{
-    /* background-color: blue; */
-}
 
 .numb{
     font-family: "Princess Sofia";
     font-size: 128px;
-    color: #986E00;
+    color: var(--yellow-hp);
 }
 
 .info{
@@ -344,8 +383,32 @@ main{
     color:whitesmoke;
 }
 
+/*Estilo para la imagen*/
+#pictureDivision{
+    display: flex;
+    width: 100%;
+    
+    position: relative;
+}
+
+.harryFriends{
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+
+#transparency{
+    position: absolute;
+    background-color: rgba(36, 21, 47, 0.65);
+
+    width: 100%;
+    height: 100%;
+}
+
+/*************/
+
 .funContent{
-    background-color: #10141B ; 
+    background-color: var(--dark-purple) ; 
     display: flex;
     /* flex-flow: column wrap; */
     justify-content: center;
@@ -416,7 +479,7 @@ main{
     width: 40px;
     height: 40px;
 
-    color:#986E00;
+    color: var(--yellow-hp);
     font-size: 20px;
     font-family: "Poppins";
     font-weight: 600;
@@ -433,4 +496,21 @@ main{
 .type{
     line-height: 1;
     margin:30px;
+}
+
+/*Estilo para el footer*/
+
+.footerContent{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    width:100%;
+    height: 100px;
+
+    background-color: var(--light-purple);
+
+    font-family: "Poppins";
+    font-size: 16px;
+    color:whitesmoke;
 }
