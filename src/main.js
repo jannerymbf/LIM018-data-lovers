@@ -18,7 +18,7 @@ let ancestrySpace=document.getElementById("detailAncestry");
 let houseSpace=document.getElementById("detailHouse");
 
 //Variable para jalar la columna de detalles
-let detailColumn=document.querySelectorAll(".detailTable");
+// let detailColumn=document.querySelectorAll(".detailTable");
 
 let boxAlphabet=document.getElementById("selectAlphabet");
 let boxHouse=document.getElementById("boxSelectHouse");

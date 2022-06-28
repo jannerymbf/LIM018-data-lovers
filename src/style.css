@@ -538,3 +538,28 @@ main{
     font-size: 16px;
     color:whitesmoke;
 }
+
+.footerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.gitHub{
+    /* margin-left: 75px; */
+    /* width:15%;
+    height: 15%; */
+    padding: 8px;
+    text-align: center;
+}
+
+
+.instagram{
+    /* margin-right: 35px; */
+    /* width: 15%;
+    height: 15%; */
+    padding: 8px;
+    text-align: center;
+}
