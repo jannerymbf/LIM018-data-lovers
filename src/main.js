@@ -149,13 +149,21 @@ function firstLoad(){
 }
 firstLoad();
 
-
-
+//La siguiente función limpia los campos de los detalles
+function cleanDetails(){
+  nameSpace.innerHTML="";
+  speciesSpace.innerHTML="";
+  genderSpace.innerHTML="";
+  birthSpace.innerHTML="";
+  ancestrySpace.innerHTML="";
+  houseSpace.innerHTML="";
+}
 
 btnShowCharacters.addEventListener("click", ()=>{
   const arrayCharacters=getNames("characters");
 
-  detailColumn.innerHTML=""; //<-- esto no está funcionando
+  // detailColumn.innerHTML=""; //<-- esto no está funcionando
+  cleanDetails();
   pictureCategory.setAttribute("src", "pictures/wizard-hat_1.png");
 
   //Aquí ponemos las categorías en color negrito cuando son seleccionadas
@@ -196,8 +204,6 @@ btnShowCharacters.addEventListener("click", ()=>{
   
 });
 
-
-
 //La sgt función oculta los elementos extra que solo son necesarios en Characters
 function hideData(){
   boxHouse.style.visibility="hidden";
@@ -212,7 +218,8 @@ function hideData(){
 btnShowSpells.addEventListener("click", ()=>{
   let arraySpells=getNames("spells");
 
-  detailColumn.innerHTML="";
+  // detailColumn.innerHTML="";
+  cleanDetails();
   pictureCategory.setAttribute("src", "pictures/magic-wand_1.png");
 
   btnShowSpells.classList.add("navCategory");
@@ -234,7 +241,8 @@ btnShowSpells.addEventListener("click", ()=>{
 btnShowPotions.addEventListener("click", ()=>{
   let arrayPotions=getNames("potions");
 
-  detailColumn.innerHTML="";
+  // detailColumn.innerHTML="";
+  cleanDetails();
   pictureCategory.setAttribute("src", "pictures/cauldron_1.png");
 
   btnShowPotions.classList.add("navCategory");
@@ -256,7 +264,8 @@ btnShowPotions.addEventListener("click", ()=>{
 btnShowBooks.addEventListener("click", ()=>{
   let arrayBooks=getNames("books");
 
-  detailColumn.innerHTML="";
+  // detailColumn.innerHTML="";
+  cleanDetails();
   pictureCategory.setAttribute("src", "pictures/open-book_1.png");
 
   btnShowBooks.classList.add("navCategory");

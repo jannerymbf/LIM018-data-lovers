@@ -25,20 +25,23 @@
 
 .welcomeMessage{
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
-    flex: 1 0 auto;/* flex-grow flex-shrink flex-basis*/
+    flex: 20 1 auto;/* flex-grow flex-shrink flex-basis*/
 
     gap:30px;     
 }
 
 .welcomeLogo{
     font-family: "Princess Sofia";
-    font-size: 150px;
     font-size:9.3rem;
-    color: white;
+    color: whitesmoke;
+
+    animation-duration: 3s;
+    animation-name: slidein;
 }
 
 .exploreBtn{
@@ -51,7 +54,7 @@
     font-family: "Poppins";
     font-size:20px;
     font-weight: 200;
-    color:white;
+    color:whitesmoke;
     text-align: center;
 
     width:200px;
@@ -68,27 +71,29 @@
     font-size: 10px;
     color:whitesmoke;
     
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
+    flex: 0 1 auto;
 
     padding: 20px;
 }
 
 /*Termina estilo para WelcomePage*/
-
 .mainContent{
     display:none;
     background-color: var(--dark-purple);
 
-    height:100vh; /*ojo: al agregar contenido, se ubicará debajo o conglomerará?*/
+    /* height:100vh; ojo: al agregar contenido, se ubicará debajo o conglomerará? */
 }
 
 header{
     display:flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
     height: 200px;
+    width: 100%;
 
     background-color: var(--light-purple);
 
@@ -96,12 +101,9 @@ header{
 }
 
 nav{
-    display:flex;
-    flex-flow:row wrap;
+    display: flex;
+    flex-direction: row;
     gap: 70px;
-
-    
-
     /*background-color: #F2B800;*/
 }
 
@@ -131,29 +133,32 @@ nav{
     font-size: 25px;
 }
 
-
-select:focus{
-    outline: none;
+/*Esta clase es para poner las categorías en negrita*/
+.navCategory{
+    font-weight: 600;
 }
 
+/*Estilo para la sección filtro*/
 #filterHP{
     display: flex;
     flex-flow:row wrap;
     gap: 20px;
-    margin: 40px 40px 40px 100px;
+    margin: 40px 100px 40px 100px;
+
+    
 }
 
 .boxSelect{
-    border: 2px solid white;
+    border: 2px solid whitesmoke;
     border-radius: 50px;
     background-color: transparent;
-    height:50px;
+    height: 50px;
     width: 100px;
 
     font-family: "Poppins";
     font-size:20px;
     font-weight: 200;
-    color:white;
+    color:whitesmoke;
     text-align: center;
 
     cursor:pointer;
@@ -163,18 +168,28 @@ select:focus{
     width: 200px;
 }
 
+select:focus{
+    outline: none;
+}
+
 .boxSelect:hover{
     background-color: rgba(217, 217, 217, 0.06);
 }
 
+/*Estilo para la sección de DataHP y detalles --> main*/
 main{
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
     justify-content:space-between;
+    align-items: center;
 
-    padding-bottom: 34px;/*ojo: cuando pasa 35px, se agrega una línea blanca*/
+    /* width: 100%; */
+
+    padding-bottom: 30px;
 
     position:relative;
+
+    height: 450px;
 }
 
 .dataHP{
@@ -235,9 +250,9 @@ main{
     
     margin-right: 100px;
     
-    display:flex;
-    flex-flow: row wrap;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; --> esto hace que el contenido aparezca incompleto*/
     justify-content: flex-end;
 
     width: 600px;
@@ -251,7 +266,7 @@ main{
     font-size:20px;
     font-weight: 200;
 
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .tableDetailsHP{
@@ -260,6 +275,7 @@ main{
     margin: 40px 20px 40px 20px;
 
     height: 300px;
+
 }
 
 .titleTableColumn{
@@ -302,10 +318,7 @@ main{
     height:100%;
 }
 
-/*Esta clase es para poner las categorías en negrita*/
-.navCategory{
-    font-weight: 600;
-}
+/*Estilo para las estadisticas*/
 
 #statsContent{
     background-color: var(--light-purple);
@@ -386,7 +399,10 @@ main{
 /*Estilo para la imagen*/
 #pictureDivision{
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 600px;
     
     position: relative;
 }
@@ -403,6 +419,14 @@ main{
 
     width: 100%;
     height: 100%;
+}
+
+.textPicture{
+    position: absolute;
+    
+    color: whitesmoke;
+    font-family: "Poppins";
+    font-size: 24px;   
 }
 
 /*************/
