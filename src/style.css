@@ -84,8 +84,8 @@ html{
 /*EMPIEZA ESTILO PARA EL CONTENIDO PRINCIPAL*/
 .mainContent{
     display: none;
-   /*  background-color: var(--dark-purple); */
-    background-color: papayawhip;
+    background-color: var(--dark-purple);
+  /*   background-color: papayawhip; */
     width: 100%;
 
 }
@@ -151,7 +151,7 @@ nav{
     flex-flow:row wrap;
     gap: 3%;
     margin: 2.5rem 6.25rem;
-    background-color: aqua;
+    /* background-color: aqua; */
     justify-content: flex-start;
  
 }
@@ -159,7 +159,7 @@ nav{
 
 .selectHouse, .selectBook{
     width: 200px;
-    background-color: red;
+    /* ckground-color: red; */
 }
 
 select:focus{
@@ -173,18 +173,21 @@ select:focus{
 /*Estilo para la sección de DataHP y detalles --> main*/
 main{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content:space-between;
     align-items: center;
-
+    flex-wrap: wrap;
+    row-gap: 50px;
     /* width: 100%; */
 
     padding-bottom: 30px;
 
-    position:relative;
+    /* position:relative; */
 
-    height: 450px;
-    background-color: blue;
+    /* height: 450px; */
+    margin: 20px 80px;
+    padding: 0px 20px;
+    /* background-color: blue; */
 }
 
 .dataHP{ /*letra de los divs*/
@@ -192,8 +195,8 @@ main{
     font-family: "Poppins";
     font-size:20px;
     font-weight: 200;
-
-    margin-left: 100px;
+/* 
+    margin-left: 100px; */
     height:400px;
     width:400px;
     overflow-y: scroll;
@@ -240,18 +243,25 @@ main{
 /*.visibleScrollBar::-webkit-scrollbar{
     scrollbar-color: red yellow;
 }*/
-
+.main-details{
+    display: flex;
+    align-items: center;
+}
+.container-img{
+    z-index: 1;
+    margin-right: -30px;
+}
 .detailsHP{
     
-    margin-right: 100px;
+    /* margin-right: 100px; */
     
     display: flex;
     flex-direction: row;
     /* align-items: center; --> esto hace que el contenido aparezca incompleto*/
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
 
-    width: 600px;
-    height: 400px;
+    /* width: 600px;*/
+    height: 400px; 
 
     border-radius: 50px;
     background: rgba(217, 217, 217, 0.06);
@@ -262,6 +272,7 @@ main{
     font-weight: 200;
 
     overflow-y: scroll;
+    padding: 0px 30px;
 }
 
 .tableDetailsHP{
@@ -277,14 +288,14 @@ main{
 
     color: var(--yellow-hp);
 
-    background-color: aqua;
+    /* background-color: aqua; */
 
 }
 
 .detailTable{
     width: 260px;
     
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
 }
 
 .nameDetail{ /*para hacer más grueso el nombre*/
@@ -309,8 +320,8 @@ main{
 
 .pictureCategory{
     object-fit: cover;
-    width:100%;
-    height:100%;
+    width:200px;
+    height:200px;
 }
 
 /*Estilo para las estadisticas*/
