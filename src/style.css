@@ -64,9 +64,9 @@ html{
     cursor:pointer;
 }
 
-.exploreBtn:hover{
+/* .exploreBtn:hover{
     background-color:rgba(217, 217, 217, 0.06);
-}
+} YA NO SIRVE*/
 
 .welcomeFooter{
     font-family: "Poppins";
@@ -105,9 +105,9 @@ header{
     color: whitesmoke;
 }
 
-nav{
+nav{/*Modificar con media querys*/
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     gap: 20%;
     align-items: center;
     justify-content: center;
@@ -120,7 +120,7 @@ nav{
     color: var(--yellow-hp);
 
     margin-bottom: 0.63rem;
-    background-color: fuchsia;
+    /* background-color: fuchsia; */
 }
 
 .cat{
@@ -132,7 +132,7 @@ nav{
 }
 
 .cat:hover{
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid whitesmoke;
     font-weight: 600;
 }
 
@@ -162,11 +162,11 @@ nav{
     /* ckground-color: red; */
 }
 
-select:focus{
+select:focus{ /*linea azul*/
     outline: none;
 }
 
-.boxSelect:hover{
+.buttonAll:hover{
     background-color: rgba(217, 217, 217, 0.06);
 }
 
@@ -177,33 +177,33 @@ main{
     justify-content:space-between;
     align-items: center;
     flex-wrap: wrap;
-    row-gap: 50px;
+    row-gap: 3.5rem; /*cuando pasa a la sgt fila*/
     /* width: 100%; */
 
-    padding-bottom: 30px;
+    padding-bottom: 2rem;
 
     /* position:relative; */
 
     /* height: 450px; */
-    margin: 20px 80px;
-    padding: 0px 20px;
+    margin: 1.5rem 5rem;
+    padding: 0px 1.5rem;
     /* background-color: blue; */
 }
 
 .dataHP{ /*letra de los divs*/
     color:whitesmoke;
     font-family: "Poppins";
-    font-size:20px;
+    font-size:1.25rem;
     font-weight: 200;
 /* 
     margin-left: 100px; */
-    height:400px;
-    width:400px;
+    height:25rem;
+    width:25rem;
     overflow-y: scroll;
     /*background-color: green;*/
 }
 
-.visibleScrollBar::-webkit-scrollbar{
+.visibleScrollBar::-webkit-scrollbar{ /*formato scroll*/
     width: 12px;
 }
 
@@ -221,17 +221,14 @@ main{
     /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
 }
 
-.visibleScrollBar::-webkit-scrollbar-thumb:window-inactive {
+.visibleScrollBar::-webkit-scrollbar :window-inactive {
     display:none;
- }
-
-.visibleScrollBar::-webkit-scrollbar-track:window-inactive {
-    display:none;
- }
+}
 
 .dataHP div:nth-child(n){
     padding:5px;
 }
+/*termina formato scroll*/
 
 .dataHP div:nth-child(n):hover{ /*sombra de cada div*/
     background-color: rgba(217, 217, 217, 0.06);
@@ -248,16 +245,18 @@ main{
     align-items: center;
 }
 .container-img{
-    z-index: 1;
+    z-index: 1; /*para q la img se vaya arriba*/
     margin-right: -30px;
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+    border: 20px solid var(--dark-purple);
 }
-.detailsHP{
-    
+.container-table{
     /* margin-right: 100px; */
-    
     display: flex;
-    flex-direction: row;
-    /* align-items: center; --> esto hace que el contenido aparezca incompleto*/
+    /* flex-direction: row; */
+    align-items: center; /*--> esto hace que el contenido aparezca incompleto*/
     /* justify-content: flex-end; */
 
     /* width: 600px;*/
@@ -277,9 +276,10 @@ main{
 
 .tableDetailsHP{
     /*background-color: aqua;*/
-    margin: 40px 20px 40px 20px;
-
+    margin: 40px 20px ;
+    background-color:blueviolet ;
     height: 300px;
+    justify-content: flex-end; 
 
 }
 
@@ -302,26 +302,25 @@ main{
     font-weight: 600;
 }
 
-.containerPictureCategory{
+/* NO VALE.containerPictureCategory{
     align-self: center;
 
     margin-right: 40px;
-    /*background-color: #ad364a;*/
-
+    background-color: #ad364a;
     width: 250px;
     height: 250px;
 
     border-radius: 200px;
     border:20px solid var(--dark-purple);
 
-    position:absolute;
-    right: 500px;
-}
+    position:absolute; 
+    /* right: 500px; 
+} */
 
 .pictureCategory{
     object-fit: cover;
-    width:200px;
-    height:200px;
+    width: 100%;
+    height: 100%;
 }
 
 /*Estilo para las estadisticas*/
@@ -531,10 +530,10 @@ main{
     cursor: pointer;
 }
 
-.btnArrow:hover{
+/* .btnArrow:hover{
     background-color: rgba(217, 217, 217, 0.10)
-}
-
+} YA NO SIRVE
+ */
 .type{
     line-height: 1;
     margin:30px;

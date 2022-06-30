@@ -335,34 +335,57 @@ let interval1;
 let interval2;
 
 //*función para mover el houseStats
-const start1=()=>{
-  let step1=0.5;
-  interval1=setInterval(() => {
-    houseStatsCarousel.scrollTop+=step1;
-    let maxScrollTop= houseStatsCarousel.scrollHeight-houseStatsCarousel.clientHeight;
+const start=(elementoHTML)=>{
 
-    if(houseStatsCarousel.scrollTop==maxScrollTop){
-      step1=-0.5;
-    } else if(houseStatsCarousel.scrollTop==0){
-      step1=0.5;
+  let step1 = 2; //avanza en 2px
+  return setInterval(() => {
+
+    elementoHTML.scrollTop += step1;
+    let maxScrollTop= elementoHTML.scrollHeight-elementoHTML.clientHeight;
+
+    if(elementoHTML.scrollTop==maxScrollTop){
+      step1=-2;
+    } 
+    
+    else if(elementoHTML.scrollTop==0){
+      step1=2;
     }
-  },10)
+
+  },50)
+  
 }
-start1();
+
+interval1=start(houseStatsCarousel);
+interval2=start(bookStatsCarousel);
+
 //*función para detener el carrusel
-const stop1=()=>{
-  clearInterval(interval1);
+const stop=(elIntervalo)=>{
+  clearInterval(elIntervalo);
 }
 //****se detiene cuando pasas el mouse
 houseStatsCarousel.addEventListener('mouseover',()=>{
-  stop1();
+  stop(interval1);
 })
 //****avanza cuando le quitas el mouse
 houseStatsCarousel.addEventListener('mouseout',()=>{
-  start1();
+  interval1=start(houseStatsCarousel);
 })
 
 
+bookStatsCarousel.addEventListener('mouseover',()=>{
+  stop(interval2);
+})
+
+bookStatsCarousel.addEventListener('mouseout',()=>{
+  interval2=start(bookStatsCarousel);
+}) 
+
+
+
+
+
+
+/* 
 
 const start2=()=>{
   let step2=0.5;
@@ -389,7 +412,8 @@ bookStatsCarousel.addEventListener('mouseover',()=>{
 
 bookStatsCarousel.addEventListener('mouseout',()=>{
   start2();
-})
+})  */
+
 //********************* 
 
 //********************* 
@@ -470,6 +494,7 @@ buttonLeft.addEventListener("click", ()=>{
 buttonRight.addEventListener("click", ()=>{
   plusDivs(1,funFact);
 })
+
 //*******************
 
 
