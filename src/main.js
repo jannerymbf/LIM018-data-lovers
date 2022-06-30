@@ -338,59 +338,43 @@ let interval1;
 let interval2;
 
 //*función para mover el houseStats
-const start1=()=>{
-  let step1=0.5;
-  interval1=setInterval(() => {
-    houseStatsCarousel.scrollTop+=step1;
-    let maxScrollTop= houseStatsCarousel.scrollHeight-houseStatsCarousel.clientHeight;
+const start=(statsData)=>{
+  let step=2;
+  return setInterval(() => {
+    statsData.scrollTop += step;
+    let maxScrollTop = statsData.scrollHeight-statsData.clientHeight;
 
-    if(houseStatsCarousel.scrollTop==maxScrollTop){
-      step1=-0.5;
-    } else if(houseStatsCarousel.scrollTop==0){
-      step1=0.5;
+    if(statsData.scrollTop==maxScrollTop){
+      step=-2;
+    }else if(statsData.scrollTop==0){
+      step=2;
     }
-  },10)
+  },50)
 }
-start1();
+
+interval1=start(houseStatsCarousel);
+interval2=start(bookStatsCarousel);
 //*función para detener el carrusel
-const stop1=()=>{
-  clearInterval(interval1);
+const stop=(theInterval)=>{
+  clearInterval(theInterval);
 }
 //****se detiene cuando pasas el mouse
 houseStatsCarousel.addEventListener('mouseover',()=>{
-  stop1();
+  stop(interval1);
 })
 //****avanza cuando le quitas el mouse
 houseStatsCarousel.addEventListener('mouseout',()=>{
-  start1();
+  interval1=start(houseStatsCarousel);
 })
-
-const start2=()=>{
-  let step2=0.5;
-  interval2=setInterval(() => {
-    bookStatsCarousel.scrollTop+=step2;
-    let maxScrollTop= bookStatsCarousel.scrollHeight-bookStatsCarousel.clientHeight;
-
-    if(bookStatsCarousel.scrollTop==maxScrollTop){
-      step2=-0.5;
-    } else if(bookStatsCarousel.scrollTop==0){
-      step2=0.5;
-    }
-  },10)
-}
-start2();
-
-const stop2=()=>{
-  clearInterval(interval2);
-}
-
+//****se detiene cuando pasas el mouse
 bookStatsCarousel.addEventListener('mouseover',()=>{
-  stop2();
+  stop(interval2);
+})
+//****avanza cuando le quitas el mouse
+bookStatsCarousel.addEventListener('mouseout',()=>{
+  interval2=start(bookStatsCarousel);
 })
 
-bookStatsCarousel.addEventListener('mouseout',()=>{
-  start2();
-})
 //********************* 
 
 //********************* 
