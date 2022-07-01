@@ -551,8 +551,8 @@ main{
     padding: 0rem 0.5rem;
 }
 
-@media screen and (max-width:480px) {
-    html{
-        font-size: 36px;
+/* @media screen and (max-width: 414px) and (orientation: portrait) {
+    nav{
+        flex-direction: column;
     }
-}
+} */
