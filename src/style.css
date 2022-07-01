@@ -550,3 +550,9 @@ main{
     height: 15%; */
     padding: 0rem 0.5rem;
 }
+
+@media screen and (max-width:480px) {
+    html{
+        font-size: 36px;
+    }
+}
