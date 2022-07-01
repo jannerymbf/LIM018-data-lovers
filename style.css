@@ -1,0 +1,552 @@
+*{
+    margin: 0%;
+}
+
+html{
+    font-size: 16px;
+}
+
+/*Declaramos variables para nuestros colores principales*/
+:root{
+    --light-purple: #24152F;
+    --dark-purple: #10141B;
+    --yellow-hp: #986E00;
+}
+
+/*Estilo para Welcome Page*/
+
+.welcomePage{
+    background-color: var(--light-purple);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+}
+
+.welcomeMessage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    flex: 1 1 auto;/* flex-grow flex-shrink flex-basis*/
+
+    height: 100%;
+    gap: 4%;     
+}
+
+.welcomeLogo{
+    font-family: "Princess Sofia";
+    font-size: 9.3rem;
+    color: whitesmoke;
+}
+
+.exploreBtn{
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    background-color: transparent;
+    height: 3.1rem;
+    width: 12.5rem;
+
+    font-family: "Poppins";
+    font-size: 1.25rem; /*leer más de rem*/
+    font-weight: 200;
+    color: whitesmoke;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.exploreBtn:hover{
+    background-color:rgba(217, 217, 217, 0.06);
+}
+
+.welcomeFooter{
+    font-family: "Poppins";
+    font-size: 0.63rem;
+    color:whitesmoke;
+    
+    /* flex-shrink: 0; */
+    flex: 0 1 auto;
+
+    padding: 1.25rem;
+}
+/*Termina estilo para WelcomePage*/
+
+/*Empieza estilo para el contenido principal*/
+.mainContent{
+    display: none;
+    background-color: var(--dark-purple);
+    width: 100%;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    height: 12.5rem;
+    width: 100%;
+
+    background-color: var(--light-purple);
+
+    color: whitesmoke;
+}
+
+nav{
+/* Modificar con media queries*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+}
+
+.logoHP{
+    font-family: "Princess Sofia";
+    font-size: 4rem;
+    color: var(--yellow-hp);
+
+    margin-bottom: 0.63rem;
+    /*background-color: fuchsia;*/
+}
+
+.cat{
+    font-family: 'Poppins';
+    font-weight: 200;
+    font-size: 1.5rem;
+
+    cursor: pointer;
+}
+
+.cat:hover{
+    border-bottom: 2px solid whitesmoke;
+    font-weight: 600;
+}
+
+.division{
+    font-size: 1.5rem;
+}
+
+/*Esta clase es para poner las categorías en negrita*/
+.navCategory{
+    font-weight: 600;
+}
+
+/*Estilo para la sección filtro*/
+#filterHP{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 3%;
+
+    margin: 2.5rem 6.25rem;    
+}
+
+.boxSelect{
+     /*MODIFICAR!! se está juntando con el boton Explore porque tienen las mismas características*/
+    border: 2px solid whitesmoke;
+    border-radius: 50px;
+    background-color: transparent;
+    height: 50px;
+    width: 100px;
+
+    font-family: "Poppins";
+    font-size: 20px;
+    font-weight: 200;
+    color: whitesmoke;
+    text-align: center;
+
+    cursor:pointer;
+}
+
+.selectHouse, .selectBook{
+    width: 200px;
+}
+
+select:focus{
+    outline: none;
+}
+
+.boxSelect:hover{
+     /*MODIFICAR!! se está juntando con el boton Explore porque tienen las mismas características*/
+    background-color: rgba(217, 217, 217, 0.06);
+}
+
+/*Estilo para la sección de DataHP y detalles --> main*/
+main{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 3.5rem;
+
+    /* width: 100%; */
+
+    padding-bottom: 2rem;
+
+    margin: 1.5rem 5rem;
+    padding: 0rem 1.5rem;
+}
+
+.dataHP{
+    color: whitesmoke;
+    font-family: "Poppins";
+    font-size: 1.25rem;
+    font-weight: 200;
+
+    /* margin-left: 100px; */
+    height: 25rem;
+    width: 25rem;
+    overflow-y: scroll;
+    /*background-color: green;*/
+}
+
+.visibleScrollBar::-webkit-scrollbar{
+    width: 12px;
+}
+
+.visibleScrollBar::-webkit-scrollbar-track{
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9); */
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: transparent;
+    /* #CCCCCC;*/
+}
+
+.visibleScrollBar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: whitesmoke;
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
+}
+
+.visibleScrollBar::-webkit-scrollbar:window-inactive {
+    display: none;
+ }
+
+.dataHP div:nth-child(n){
+    padding: 0.31rem;
+}
+
+.dataHP div:nth-child(n):hover{
+    background-color: rgba(217, 217, 217, 0.06);
+
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.detailsHP{
+    display:flex;
+    align-items: center;
+}
+
+.container-img{
+    /*Modificar esto!!!!*/
+    z-index: 1;
+    margin-right: -50px;
+    width: 15.6rem;
+    height: 15.6rem;
+
+    border-radius: 200px;
+    border:20px solid var(--dark-purple);
+}
+
+.container-table{
+    display: flex;
+    /* flex-direction: row; */
+    /* align-items: center; */
+    justify-content: flex-end;
+
+    height: 25rem;
+    /* width: 30rem; */
+
+    border-radius: 50px;
+    background-color: rgba(217, 217, 217, 0.06);
+
+    color: whitesmoke;
+    font-family: "Poppins";
+    font-size: 1.25rem;
+    font-weight: 200;
+
+    overflow-y: scroll;
+    padding: 0rem 1.88rem;
+}
+
+.tableDetailsHP{
+    margin: 2.5rem 1.25rem;
+
+    height: 18.75rem;
+    width: 25rem;
+
+    justify-content: flex-end;
+}
+
+.titleTableColumn{
+    width: 8.13rem;
+
+    color: var(--yellow-hp);
+
+    /*background-color: whitesmoke;*/
+}
+
+.detailTable{
+    width: 16.25rem;
+
+    /*background-color: blue;*/
+}
+
+.nameDetail{
+    font-weight: 600;
+}
+
+.pictureCategory{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/*Estilo para las estadisticas*/
+
+#statsContent{
+    background-color: var(--light-purple);
+
+    /* height: 100vh; */
+    display: flex;
+    /* flex-flow: column wrap; */
+    align-items: center;
+    justify-content: center;
+}
+
+.boxStatsContent{
+    /* background-color: green; */
+    display:flex;
+    flex-direction: row; /*flex-direction flex-wrap*/
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin: 9.25rem 0rem;
+    height: 18.75rem;
+}
+
+.statsBox{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    gap: 1rem;
+
+    overflow-y: hidden; 
+
+    height: 100%;
+    width: 15.63rem;
+}
+
+.stats1{
+    /* background-color: red; */
+    order:1;
+}
+.stats2{
+    /* background-color: yellow; */
+    order:3;
+}
+.stats3{
+    /* background-color: blue; */
+    order:2;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.31rem;
+    text-align: center;
+    /* background-color: aqua; */
+}
+
+.numb{
+    font-family: "Princess Sofia";
+    font-size: 8rem;
+    color: var(--yellow-hp);
+}
+
+.info{
+    font-family: "Poppins";
+    font-size: 1.25rem;
+    color:whitesmoke;
+}
+
+/*Estilo para la imagen*/
+#pictureDivision{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    /* height: 600px; */
+    position: relative;
+}
+
+.harryFriends{
+    object-fit: cover;
+    width: 100%;
+}
+
+#transparency{
+    position: absolute;
+    background-color: rgba(36, 21, 47, 0.65);
+
+    width: 100%;
+    height: 100%;
+}
+
+.textPicture{
+    position: absolute;
+
+    color: whitesmoke;
+    font-family: "Princess Sofia";
+    font-size: 2.5rem;   
+}
+
+/*************/
+
+.funContent{
+    background-color: var(--dark-purple) ; 
+    display: flex;
+    /* flex-flow: column wrap; */
+    justify-content: center;
+    align-items: center;
+    
+    /* height: 600px; */
+    width:100%;
+    
+    color: whitesmoke;
+    text-align: center;
+
+    position: relative;
+}
+
+.boxFun{
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    /* overflow: scroll; */
+
+    height: 25rem;
+    width: 80%;
+    margin: 9.25rem 0rem; 
+
+    /* background-color: aqua; */
+}
+
+#left{
+    position:absolute;
+
+    left: 10%;
+}
+
+#right{
+    position:absolute;
+
+    right: 10%;
+}
+
+.funFact{
+    display: none;
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    text-align: center;
+
+    width: 80%;
+    /* height: 100%; */
+
+    /* background-color: #986E00; */
+}
+
+.type{
+    font-family: "Princess Sofia";
+    font-size: 6rem; 
+    line-height: 1;
+    margin: 1.88rem;
+}
+
+.content{
+    font-family: "Poppins";
+    font-size: 1.5rem;
+}
+
+.btnArrow{
+    border: 2px solid white;
+    border-radius: 50%;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    color: var(--yellow-hp);
+    font-size: 1.25rem;
+    font-family: "Poppins";
+    font-weight: 600;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.btnArrow:hover{
+    /*MODIFICAR!! se está juntando con el boton Explore porque tienen las mismas características*/
+    background-color: rgba(217, 217, 217, 0.10)
+}
+
+/*Estilo para el footer*/
+
+.footerContent{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    width:100%;
+    /* height: 100px; */
+
+    background-color: var(--light-purple);
+
+    font-family: "Poppins";
+    font-size: 1rem;
+    color:whitesmoke;
+}
+
+.footerBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin: 2rem 0rem;
+}
+
+
+.gitHub{
+    /* margin-left: 75px; */
+    /* width:15%;
+    height: 15%; */
+    padding: 0rem 0.5rem;
+}
+
+
+.instagram{
+    /* margin-right: 35px; */
+    /* width: 15%;
+    height: 15%; */
+    padding: 0rem 0.5rem;
+}
