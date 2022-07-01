@@ -334,8 +334,8 @@ const bookStatsCarousel=document.querySelector("#boxStats2");
 let interval1;
 let interval2;
 
-//*función para mover el houseStats
-const start=(elementoHTML)=>{
+//*función para mover el carrusel computeStats
+const start=(elementoHTML)=>{ //mi elemento es toda mi sección
 
   let step1 = 2; //avanza en 2px
   return setInterval(() => {
@@ -350,7 +350,7 @@ const start=(elementoHTML)=>{
     else if(elementoHTML.scrollTop==0){
       step1=2;
     }
-
+  
   },50)
   
 }
@@ -469,11 +469,13 @@ showDivs(slideIndex,funFact);
 
 function plusDivs(n,data){
   showDivs(slideIndex+=n,data);
+  console.log("ndePlusDiv", n);
 }
 
 function showDivs(n, data){
   if(n>data.length){
     slideIndex=1;
+    console.log("ndeShowDiv", n);
   }
   if(n<1){
     slideIndex=data.length;
@@ -487,13 +489,15 @@ function showDivs(n, data){
 const buttonLeft=document.querySelector('#left');
 const buttonRight=document.querySelector('#right'); 
 
-buttonLeft.addEventListener("click", ()=>{
+ buttonLeft.addEventListener("click", ()=>{
   plusDivs(-1,funFact);
 })
 
 buttonRight.addEventListener("click", ()=>{
   plusDivs(1,funFact);
-})
+}) 
+
+
 
 //*******************
 
