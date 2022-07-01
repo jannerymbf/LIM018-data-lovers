@@ -588,14 +588,18 @@ main{
 
 
 @media (max-width: 414px) and (orientation:portrait) {
-    nav{
+/*     nav{
         flex-direction: column;
+        font-size: 20px;
     }
+
+    .welcomeMessage{
+        font-size: 24px;
+    } */
 
     html{
-        font-size: 24px;
+        font-size: 8px;
     }
-
 
 
 
