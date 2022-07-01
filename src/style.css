@@ -233,7 +233,7 @@ main{
  }
 
 .dataHP div:nth-child(n){
-    padding: 5px;
+    padding: 0.31rem;
 }
 
 .dataHP div:nth-child(n):hover{
@@ -243,21 +243,17 @@ main{
     cursor: pointer;
 }
 
-/*.visibleScrollBar::-webkit-scrollbar{
-    scrollbar-color: red yellow;
-}*/
-
 .detailsHP{
     display:flex;
     align-items: center;
 }
 
 .container-img{
+    /*Modificar esto!!!!*/
     z-index: 1;
-    margin-right: -30px;
-
-    width: 250px;
-    height: 250px;
+    margin-right: -50px;
+    width: 15.6rem;
+    height: 15.6rem;
 
     border-radius: 200px;
     border:20px solid var(--dark-purple);
@@ -266,35 +262,35 @@ main{
 .container-table{
     display: flex;
     /* flex-direction: row; */
-    align-items: center;
+    /* align-items: center; */
+    justify-content: flex-end;
 
-    height: 400px;
+    height: 25rem;
+    /* width: 30rem; */
 
     border-radius: 50px;
     background-color: rgba(217, 217, 217, 0.06);
 
     color: whitesmoke;
     font-family: "Poppins";
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 200;
 
     overflow-y: scroll;
-    padding: 0px 30px;
+    padding: 0rem 1.88rem;
 }
 
 .tableDetailsHP{
-    /*background-color: aqua;*/
+    margin: 2.5rem 1.25rem;
 
-    margin: 40px 20px;
+    height: 18.75rem;
+    width: 25rem;
 
-    height: 300px;
-
-    background-color: aqua;
-
+    justify-content: flex-end;
 }
 
 .titleTableColumn{
-    width: 130px;
+    width: 8.13rem;
 
     color: var(--yellow-hp);
 
@@ -302,7 +298,7 @@ main{
 }
 
 .detailTable{
-    width: 260px;
+    width: 16.25rem;
 
     /*background-color: blue;*/
 }
@@ -310,19 +306,6 @@ main{
 .nameDetail{
     font-weight: 600;
 }
-
-/* .containerPictureCategory{
-    align-self: center;
-
-    margin-right: 40px;
-    /*background-color: #4E488F;
-
-    width: 250px;
-    height: 250px;
-
-    border-radius: 200px;
-    border:20px solid var(--dark-purple);
-}*/
 
 .pictureCategory{
     object-fit: cover;
@@ -340,21 +323,17 @@ main{
     /* flex-flow: column wrap; */
     align-items: center;
     justify-content: center;
-
-    height: 600px;
-
 }
 
 .boxStatsContent{
     /* background-color: green; */
-
     display:flex;
     flex-direction: row; /*flex-direction flex-wrap*/
     align-items: center;
     justify-content: center;
-    gap:64px;
-
-    height:50%;
+    gap: 4rem;
+    margin: 9.25rem 0rem;
+    height: 18.75rem;
 }
 
 .statsBox{
@@ -362,12 +341,12 @@ main{
     flex-direction: column;
     /* align-items: center;
     justify-content: center; */
-    gap: 16px;
+    gap: 1rem;
 
     overflow-y: hidden; 
 
     height: 100%;
-    width: 250px;
+    width: 15.63rem;
 }
 
 .stats1{
@@ -388,23 +367,20 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:5px;
-
+    gap: 0.31rem;
     text-align: center;
-
     /* background-color: aqua; */
 }
 
-
 .numb{
     font-family: "Princess Sofia";
-    font-size: 128px;
+    font-size: 8rem;
     color: var(--yellow-hp);
 }
 
 .info{
     font-family: "Poppins";
-    font-size: 20px;
+    font-size: 1.25rem;
     color:whitesmoke;
 }
 
@@ -413,16 +389,15 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100%;
-    height: 600px;
-    
+    /* height: 600px; */
     position: relative;
 }
 
 .harryFriends{
     object-fit: cover;
-    width:100%;
-    height:100%;
+    width: 100%;
 }
 
 #transparency{
@@ -435,10 +410,10 @@ main{
 
 .textPicture{
     position: absolute;
-    
+
     color: whitesmoke;
     font-family: "Princess Sofia";
-    font-size: 40px;   
+    font-size: 2.5rem;   
 }
 
 /*************/
@@ -450,7 +425,7 @@ main{
     justify-content: center;
     align-items: center;
     
-    height: 600px;
+    /* height: 600px; */
     width:100%;
     
     color: whitesmoke;
@@ -467,8 +442,9 @@ main{
     align-items: center;
     /* overflow: scroll; */
 
-    height: 400px;
+    height: 25rem;
     width: 80%;
+    margin: 9.25rem 0rem; 
 
     /* background-color: aqua; */
 }
@@ -490,6 +466,7 @@ main{
     /* flex-direction: column;
     justify-content: center;
     align-items: center; */
+    text-align: center;
 
     width: 80%;
     /* height: 100%; */
@@ -499,24 +476,25 @@ main{
 
 .type{
     font-family: "Princess Sofia";
-    font-size: 96px; 
-    
+    font-size: 6rem; 
+    line-height: 1;
+    margin: 1.88rem;
 }
 
 .content{
     font-family: "Poppins";
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .btnArrow{
     border: 2px solid white;
     border-radius: 50%;
 
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
 
     color: var(--yellow-hp);
-    font-size: 20px;
+    font-size: 1.25rem;
     font-family: "Poppins";
     font-weight: 600;
 
@@ -530,11 +508,6 @@ main{
     background-color: rgba(217, 217, 217, 0.10)
 }
 
-.type{
-    line-height: 1;
-    margin:30px;
-}
-
 /*Estilo para el footer*/
 
 .footerContent{
@@ -543,12 +516,12 @@ main{
     align-items: center;
 
     width:100%;
-    height: 100px;
+    /* height: 100px; */
 
     background-color: var(--light-purple);
 
     font-family: "Poppins";
-    font-size: 16px;
+    font-size: 1rem;
     color:whitesmoke;
 }
 
@@ -557,6 +530,9 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
+    margin: 2rem 0rem;
 }
 
 
@@ -564,8 +540,7 @@ main{
     /* margin-left: 75px; */
     /* width:15%;
     height: 15%; */
-    padding: 8px;
-    text-align: center;
+    padding: 0rem 0.5rem;
 }
 
 
@@ -573,6 +548,5 @@ main{
     /* margin-right: 35px; */
     /* width: 15%;
     height: 15%; */
-    padding: 8px;
-    text-align: center;
+    padding: 0rem 0.5rem;
 }

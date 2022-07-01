@@ -338,6 +338,7 @@ let interval1;
 let interval2;
 
 //*función para mover el houseStats
+//No funciona en Chrome en Mac
 const start=(statsData)=>{
   let step=2;
   return setInterval(() => {
@@ -349,7 +350,7 @@ const start=(statsData)=>{
     }else if(statsData.scrollTop==0){
       step=2;
     }
-  },50)
+  },30)
 }
 
 interval1=start(houseStatsCarousel);
@@ -357,6 +358,7 @@ interval2=start(bookStatsCarousel);
 //*función para detener el carrusel
 const stop=(theInterval)=>{
   clearInterval(theInterval);
+  
 }
 //****se detiene cuando pasas el mouse
 houseStatsCarousel.addEventListener('mouseover',()=>{
