@@ -46,7 +46,7 @@ html{
     color: whitesmoke;
 }
 
-.exploreBtn{
+.buttonAll{
     border: 2px solid whitesmoke;
     border-radius: 50px;
     background-color: transparent;
@@ -62,7 +62,7 @@ html{
     cursor: pointer;
 }
 
-.exploreBtn:hover{
+.buttonAll:hover{
     background-color:rgba(217, 217, 217, 0.06);
 }
 
@@ -86,13 +86,15 @@ html{
 }
 
 header{
+    /*estoy modificando esto*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 
-    height: 12.5rem;
+    /* height: 12.5rem; */
+    padding: 3rem 0rem;
     width: 100%;
 
     background-color: var(--light-purple);
@@ -102,11 +104,12 @@ header{
 
 nav{
 /* Modificar con media queries*/
+/*estoy modificando esto*/
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 20%;
+    gap: 30%;
 }
 
 .logoHP{
@@ -150,23 +153,6 @@ nav{
     margin: 2.5rem 6.25rem;    
 }
 
-.boxSelect{
-     /*MODIFICAR!! se está juntando con el boton Explore porque tienen las mismas características*/
-    border: 2px solid whitesmoke;
-    border-radius: 50px;
-    background-color: transparent;
-    height: 50px;
-    width: 100px;
-
-    font-family: "Poppins";
-    font-size: 20px;
-    font-weight: 200;
-    color: whitesmoke;
-    text-align: center;
-
-    cursor:pointer;
-}
-
 .selectHouse, .selectBook{
     width: 200px;
 }
@@ -175,19 +161,14 @@ select:focus{
     outline: none;
 }
 
-.boxSelect:hover{
-     /*MODIFICAR!! se está juntando con el boton Explore porque tienen las mismas características*/
-    background-color: rgba(217, 217, 217, 0.06);
-}
-
 /*Estilo para la sección de DataHP y detalles --> main*/
 main{
     display: flex;
     /* flex-direction: row; */
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    row-gap: 3.5rem;
+    /* flex-wrap: wrap; */ /*estoy modificando esto*/
+    row-gap: 2rem; /*estoy modificando esto*/
 
     /* width: 100%; */
 
@@ -503,11 +484,6 @@ main{
     cursor: pointer;
 }
 
-.btnArrow:hover{
-    /*MODIFICAR!! se está juntando con el boton Explore porque tienen las mismas características*/
-    background-color: rgba(217, 217, 217, 0.10)
-}
-
 /*Estilo para el footer*/
 
 .footerContent{
@@ -551,8 +527,125 @@ main{
     padding: 0rem 0.5rem;
 }
 
-/* @media screen and (max-width: 414px) and (orientation: portrait) {
+@media screen and (max-width: 414px) and (orientation: portrait) {
+    .welcomeLogo{
+        font-size: 5rem;
+    }
+
+    .exploreBtn{
+        width: 10rem;
+    }
+    
     nav{
         flex-direction: column;
     }
-} */
+
+    #filterHP{
+        row-gap: 1rem;
+    }
+
+    main{
+        flex-direction: column;
+    }
+
+    .dataHP{
+        text-align: center;
+        width: 20rem;
+        margin-left: 0px;
+    }
+
+    .detailsHP{
+        flex-direction: column;
+    }
+
+    .container-img{
+        width: 10rem;
+        height: 10rem;
+        margin-right: 0px;
+        margin-bottom: -30px;
+    }
+
+    .container-table{
+        height: initial;
+        overflow-y:hidden;
+        padding: 0rem 0.5rem;
+    }
+    
+    .tableDetailsHP{
+        margin: 2.5rem;
+        width: initial;
+    }
+    
+    .titleTableColumn{
+        width: 5rem;
+    }
+
+    .boxStatsContent{
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        height: initial;
+    }
+
+    .box{
+        flex-direction: row;
+    }
+
+    .numb{
+        font-size: 4rem;
+    }
+
+    .info{
+        font-size: 1.25rem;
+    }
+
+    .stats2{
+        order:2;
+    }
+
+    .stats3{
+        order: 3;
+    }
+    
+    /* .detailTable{
+        width: 16.25rem;
+    
+        /*background-color: blue;*/
+
+    .textPicture{
+        font-size: 1.5rem;
+        padding: 0rem 5rem;
+    }
+
+    #left{
+        left: 6%;
+    }
+
+    #right{
+        right: 6%;
+    }
+
+    .boxFun{
+        height: initial;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .type{
+        font-size: 3rem;
+    }
+
+    .content{
+        font-size: 1.25rem;
+    }
+
+    .footerContent{
+        font-size: 0.7rem;
+    }
+
+    .footerBox{
+        margin: 1rem 0rem;
+    }
+   
+}

@@ -172,8 +172,8 @@ btnShowCharacters.addEventListener("click", ()=>{
   btnShowPotions.classList.remove("navCategory");
   btnShowBooks.classList.remove("navCategory");
 
-  boxHouse.style.visibility="visible";
-  boxBook.style.visibility="visible";
+  boxHouse.style.display="block";
+  boxBook.style.display="block";
   genderRow.style.display="table-row";
   birthRow.style.display="table-row";
   ancestryRow.style.display="table-row";
@@ -206,8 +206,8 @@ btnShowCharacters.addEventListener("click", ()=>{
 
 //La sgt función oculta los elementos extra que solo son necesarios en Characters
 function hideData(){
-  boxHouse.style.visibility="hidden";
-  boxBook.style.visibility="hidden";
+  boxHouse.style.display="none"; //estoy modificando esto
+  boxBook.style.display="none"; //estoy modificando esto
   genderRow.style.display="none";
   birthRow.style.display="none";
   ancestryRow.style.display="none";
