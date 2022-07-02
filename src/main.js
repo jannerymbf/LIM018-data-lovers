@@ -172,8 +172,8 @@ btnShowCharacters.addEventListener("click", ()=>{
   btnShowPotions.classList.remove("navCategory");
   btnShowBooks.classList.remove("navCategory");
 
-  boxHouse.style.display="block";
-  boxBook.style.display="block";
+  boxHouse.style.display="block"; //estoy modificando esto
+  boxBook.style.display="block"; //estoy modificando esto
   genderRow.style.display="table-row";
   birthRow.style.display="table-row";
   ancestryRow.style.display="table-row";
