@@ -1,99 +1,73 @@
-# Data Lovers html
+# HARRY POTTER LOVERS
 
 ## Índice MAS
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Consideraciones técnicas](#7-consideraciones-técnicas)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Checklist](#9-checklist)
+* [1. Resumen](#1-resumen)
+* [2. Investigación UX](#1-investigación-UX)
+* [3. Historias de usuario](#2-historias-de-usuario)
+* [4. Prototipo de baja fidelidad](#3-prototipo-de-baja-fidelidad)
+* [5. Prototipo de alta fidelidad](#4-prototipo-de-alta-fidelidad)
+* [6. GitHub pages](#4-github-pages)
+
 
 ***
 
-## 1. Preámbulo
+## 1. Resumen
 
-Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
-precedentes.
+En esta página web fue creada por y para los fans de Harry Potter, podras encontrar información exclusiva de tpu saga favorita. Bienvenido!!
 
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
+## 2. Investigación UX
 
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por el usuario
-al lado derecho.
+### :bust_in_silhouette: Usuarios
 
-![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
+Los usuarios de la página web son fanaticos de una de las más exitosas sagas de esta generación, Harry Potter.
+Nuestros usuarios desean acceder a información sobre sus personajes favoritos, la lista de hechizos y pociones menconados en las novelas, el resumen de cada uno de los libros, datos curiosos e información estadística general.
 
-## 2. Resumen del proyecto
+### :female_detective: Hallazgos
 
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
-necesita.
+Haciendo una investigación sobre la información que podrían necesitar nuestras usuarias encontramos que los datos de mayor interés son:
 
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mínimo, etc).
+* Información sobre los personajes como nombre, especie, género, fecha de nacimiento, saber si es muggle o conocer su casa de estudio.
+* El colegio Hogwarts de Magia y Hechicería utiliza el sistema de Casas. El cuerpo estudiantil de Hogwarts se divide en cuatro Casas ( Gryffindor, Hufflepuff, Ravenclaw y Slytherin;). A nuestras usarías les interesa saber cuantos estudiantes hay por cada casa.
+* Dentro del mundo mágico hay muchos hechizos que se pueden invocar, para nuestras usuarias es importante conocerlos y saber lo que hacen para estar preparadas.
+* Toda esta información se basa la saga de novelas de la autora J. K. Rowling, para nuestras usuarias es relevante conocer cuantos libros han sido publicados y les gustaría poder visualizar que personajes aparecen en cada libro.
+* Las pociones son una herramienta crucial en el mundo de Harry Potter, tener un diccionario para poder consultarlas es una petición de las usuarias.
 
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
+## 3. Historias de usuario
 
-Una vez que definas tu área de interés, buscar entender quién es tu usuario
-y qué necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
+### Historia de usuario 1
+Como fanático de HP
+Quiero ver 4 categorías (Personajes, hechizos, pociones, libros) en la barra de navegación
+Para revisar la información de manera ordenada
 
-Estos son datos que te proponemos:
+### Historia de usuario 2
+Como fanático de HP
+Quiero ver el listado de datos de cada categoría
+Para conocer que datos pertenecen a esa categoría
 
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
-  y Johto, junto con sus respectivas estadísticas usadas en el juego
-  [Pokémon GO](http://pokemongolive.com).
-  - [Investigación con jugadores de Pokémon Go](src/data/pokemon/README.md)
+### Historia de usuario 
+Como fanático de HP
+Quiero darle click a cada dato de la categoría
+Para ver mayor detalle de ese dato
 
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de datos muestra la lista de campeones en una liga del
-  juego League of Legends (LoL).
-  - [Investigación con jugadores de LoL](src/data/lol/README.md)
+### Historia de usuario 4
+Como fanático de HP
+Quiero ver los personajes por cada casa y por cada libro
+Para tener contexto general de personajes que participan en cada libro y a qué casa pertenecen
 
-* [Rick and Morty](src/data/rickandmorty/rickandmorty.json).
-  Este set nos proporciona la lista de los personajes de la serie Rick and
-  Morty. [API Rick and Morty](https://rickandmortyapi.com).
-  - [Investigación con seguidores de Rick and Morty](src/data/rickandmorty/README.md)
+### Historia de usuario 5
+Como fanático de HP
+Quiero conocer el número de estudiantes por casa y por libro, y el número de libros publicados
+Para tener data estadística de mi saga favorita
 
-* [Juegos Olímpicos de Río de Janeiro](src/data/athletes/athletes.json).
-  Este set nos proporciona la lista de los atletas que ganaron medallas en las
-  olímpiadas de Río de Janeiro.
-  - [Investigación con interesados en juegos olímpicos de Río de Janeiro](src/data/athletes/README.md)
+## 4. Prototipo de baja fidelidad
 
-* [Studio Ghibli](src/data/ghibli/ghibli.json).
-  En este set encontrarás una lista de las animaciones y sus personajes del
-  [Studio Ghibli](https://ghiblicollection.com/).
-  - [Investigación con seguidores de las animaciones del Studio Ghibli](src/data/ghibli/README.md)
+## 5. Prototipo de alta fidelidad
 
-* [Harry Potter](src/data/harrypotter/harry.json).
-  En este set encontrarás una lista de los personajes,libros pociones
-  y hechizos de toda la saga de
-  [Harry Potter](https://harrypotter.fandom.com).
-  - [Investigación con seguidoras de Harry Potter](src/data/harrypotter/README.md)
 
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
+## 6. Git Hub pages
 
-## 3. Objetivos de aprendizaje
 
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
 
 ### HTML
 

@@ -96,8 +96,9 @@ header{
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 3rem;
 
-    height: 12.5rem;
+   /*  height: 12.5rem; */
     width: 100%;
 
     background-color: var(--light-purple);
@@ -108,7 +109,8 @@ header{
 nav{/*Modificar con media querys*/
     display: flex;
     flex-direction: row; 
-    gap: 20%;
+    flex-wrap: wrap;
+    gap: 5%;
     align-items: center;
     justify-content: center;
     
@@ -601,6 +603,9 @@ main{
         font-size: 8px;
     }
 
+    nav{
+        flex-direction: column;
+    }
 
 
 

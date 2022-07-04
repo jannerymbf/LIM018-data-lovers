@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"> <!--Atributo que especifica la codificación de caracteres para el documento HTML-->
     <title>Data Lovers</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Joan&family=Poppins:ital,wght@0,200;0,600;1,700&family=Princess+Sofia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--controla las dimensiones y escala de la pag-->
+    <link rel="icon" href="pictureS/Favicon.png">  
   </head>
 
   <body>
@@ -15,7 +17,6 @@
     <!--Acá inicia la pantalla de bienvenida-->
     
     <section class="welcomePage">
-      <audio src="pictures/HarrySong.mp3" type="audio/mp3" autoplay></audio>
       <section class="welcomeMessage">
         <h1 class="welcomeLogo">Harry Potter</h1>
         <button class="buttonAll exploreBtn">Explore</button>
@@ -31,15 +32,13 @@
         <h1 class="logoHP">Harry Potter</h1>
   
         <nav>
-          <img>
           <h2 id="characters" class="cat showCharacters">Characters</h2>
-          <div class="division">|</div>
+          <!-- <div class="division">|</div> -->
           <h2 id="spells" class="cat showSpells">Spells</h2>
-          <div class="division">|</div>
+         <!--  <div class="division">|</div> -->
           <h2 id="potions" class="cat showPotions">Potions</h2>
-          <div class="division">|</div>
+          <!-- <div class="division">|</div> -->
           <h2 id="books" class="cat showBooks">Books</h2>
-          <img>
         </nav>
   
       </header>
@@ -82,27 +81,27 @@
           <div class="container-table visibleScrollBar"> 
             <table id="tableDetailsHP" class="tableDetailsHP">
               <tr id="nameRow" class="firstRow row">
-                <td id="titleName" class="titleTableColumn">Name :</td>
+                <td id="titleName" class="titleTableColumn">Name</td>
                 <td id="detailName" class="detailTable nameDetail"></td>
               </tr>
               <tr id="speciesRow" class="secondRow row">
-                <td id="titleSpecies" class="titleTableColumn">Species :</td>
+                <td id="titleSpecies" class="titleTableColumn">Species</td>
                 <td id="detailSpecies" class="detailTable"></td>
               </tr>
               <tr id="genderRow" class="thirdRow row">
-                <td id="titleGender" class="titleTableColumn">Gender :</td>
+                <td id="titleGender" class="titleTableColumn">Gender</td>
                 <td id="detailGender" class="detailTable"></td>
               </tr>
               <tr id="birthRow" class="fourthRow row">
-                <td id="titleBirth" class="titleTableColumn">Birth :</td>
+                <td id="titleBirth" class="titleTableColumn">Birth</td>
                 <td id="detailBirth" class="detailTable"></td>
               </tr>
               <tr id="ancestryRow" class="fifthRow row">
-                <td id="titleAncestry" class="titleTableColumn">Ancestry :</td>
+                <td id="titleAncestry" class="titleTableColumn">Ancestry</td>
                 <td id="detailAncestry" class="detailTable"></td>
               </tr>
               <tr id="houseRow" class="sixthRow row">
-                <td id="titleHouse" class="titleTableColumn">House :</td>
+                <td id="titleHouse" class="titleTableColumn">House</td>
                 <td id="detailHouse" class="detailTable"></td>
               </tr> 
             </table>

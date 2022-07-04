@@ -359,7 +359,7 @@ interval1=start(houseStatsCarousel);
 interval2=start(bookStatsCarousel);
 
 //*función para detener el carrusel
-const stop=(elIntervalo)=>{
+const stop=(elIntervalo)=>{  //el intervalo esta representando al interval1 y 2
   clearInterval(elIntervalo);
 }
 //****se detiene cuando pasas el mouse
@@ -378,8 +378,8 @@ bookStatsCarousel.addEventListener('mouseover',()=>{
 
 bookStatsCarousel.addEventListener('mouseout',()=>{
   interval2=start(bookStatsCarousel);
-}) 
-
+})  
+ 
 
 
 
@@ -464,27 +464,29 @@ funFacts();
 //Acá inicia el Slider de Fun facts
 
 let funFact=document.getElementsByClassName("funFact");
-let slideIndex=1;
-showDivs(slideIndex,funFact);
+let slideIndex=1; //inicie en el 1er slide
+showDivs(slideIndex,funFact); //llamo a la fx antes de declararla
 
-function plusDivs(n,data){
+function plusDivs(n,data){ //n=valor btn der(1) o izq(-1)
   showDivs(slideIndex+=n,data);
   console.log("ndePlusDiv", n);
+  console.log("dataPlusDiv" , data);
 }
 
-function showDivs(n, data){
+function showDivs(n, data){ //n resultado de plusDivs
   if(n>data.length){
     slideIndex=1;
-    console.log("ndeShowDiv", n);
+  /*   console.log("ndeShowDiv", n);
+    console.log("dataShowDiv" , data); */
   }
   if(n<1){
-    slideIndex=data.length;
+    slideIndex=data.length; //¿Siempre será 8?
   }
   for(let i=0; i<data.length; i++){
     data[i].style.display="none";
   }
   data[slideIndex-1].style.display="block";
-}
+} 
 
 const buttonLeft=document.querySelector('#left');
 const buttonRight=document.querySelector('#right'); 
@@ -495,7 +497,7 @@ const buttonRight=document.querySelector('#right');
 
 buttonRight.addEventListener("click", ()=>{
   plusDivs(1,funFact);
-}) 
+})  
 
 
 

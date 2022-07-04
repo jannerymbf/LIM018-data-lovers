@@ -39,8 +39,6 @@ export const sortData = (data, sortOrder) => {
         return 1;
       }else if(a>b){
         return -1;
-      }else if(a==b){
-        return 0;
       }
     })
   }
@@ -52,8 +50,8 @@ export const filterDataHouse = (data,condition) => {
   let arrayDataWithCondition;
   let namesHouseArray=[];
   
-  arrayDataWithCondition=data.filter(obj => {
-    return obj.house==condition;
+  arrayDataWithCondition=data.filter(obj => { //igualando 1 variable con 1 fx
+    return obj.house==condition; //con el (.) accedes a las propiedades de 1 obj
   })
   arrayDataWithCondition.forEach(obj => {
     namesHouseArray.push(obj.name);
