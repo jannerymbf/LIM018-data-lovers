@@ -527,7 +527,7 @@ main{
     padding: 0rem 0.5rem;
 }
 
-@media screen and (max-width: 414px) and (orientation: portrait) {
+@media all and (max-width: 480px){
     .welcomeLogo{
         font-size: 5rem;
         padding: 0rem 1rem;
