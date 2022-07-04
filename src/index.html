@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Joan&family=Poppins:ital,wght@0,200;0,600;1,700&family=Princess+Sofia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--controla las dimensiones y escala de la pag-->
-    <link rel="icon" href="pictureS/Favicon.png">  
+    <link rel="icon" href="pictures/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--controla las dimensiones y escala de la pag-->
   </head>
 
   <body>
@@ -19,7 +19,7 @@
     <section class="welcomePage">
       <section class="welcomeMessage">
         <h1 class="welcomeLogo">Harry Potter</h1>
-        <button class="buttonAll exploreBtn">Explore</button>
+        <button class="exploreBtn buttonAll">Explore</button>
       </section>
       <footer class="welcomeFooter">All rights reserved &#169 Kami &#38 Jannery</footer>
     </section>
@@ -35,7 +35,7 @@
           <h2 id="characters" class="cat showCharacters">Characters</h2>
           <!-- <div class="division">|</div> -->
           <h2 id="spells" class="cat showSpells">Spells</h2>
-         <!--  <div class="division">|</div> -->
+          <!-- <div class="division">|</div> -->
           <h2 id="potions" class="cat showPotions">Potions</h2>
           <!-- <div class="division">|</div> -->
           <h2 id="books" class="cat showBooks">Books</h2>
@@ -45,19 +45,19 @@
   
         <!-- Esta sección es para mostrar las cajitas para filtrar-->
       <section id="filterHP">
-        <select id="selectAlphabet" class="buttonAll boxSelect selectOrder">
+        <select id="selectAlphabet" class="boxSelect selectOrder buttonAll">
           <option value="AZ">A-Z</option>
           <option value="ZA">Z-A</option>
         </select>
   
-        <select id="boxSelectHouse" class="buttonAll boxSelect selectHouse">
+        <select id="boxSelectHouse" class="boxSelect selectHouse buttonAll">
           <option value="Gryffindor">Gryffindor</option>
           <option value="Slytherin">Slytherin</option>
           <option value="Ravenclaw">Ravenclaw</option>
           <option value="Hufflepuff">Hufflepuff</option>
         </select>
   
-        <select id="boxSelectBook" class="buttonAll boxSelect selectBook"> <!-- Sección nueva 26.06.22-->
+        <select id="boxSelectBook" class="boxSelect selectBook buttonAll">
           <option value="1">Book 1</option>
           <option value="2">Book 2</option>
           <option value="3">Book 3</option>
@@ -74,11 +74,12 @@
         </aside>
     
         <!-- Esta sección es para mostrar la cajita con los detalles de cada dato seleccionado-->
-        <section id="detailsHP" class="main-details" >
-          <div class="container-img">
-            <img id="pictureCategory" class="pictureCategory" src="pictures/wizard-hat_1.png" alt="Wizard-hat"> 
+        <section id="detailsHP" class="detailsHP">
+           <!--Esta sección contiene la foto que va al costado de la cajita de detalles-->
+          <div id="containerPictureCategory" class="container-img">
+            <img id="pictureCategory" class="pictureCategory" src="pictures/wizard-hat_1.png" alt="Wizard-hat">  
           </div>
-          <div class="container-table visibleScrollBar"> 
+          <div class="container-table visibleScrollBar">
             <table id="tableDetailsHP" class="tableDetailsHP">
               <tr id="nameRow" class="firstRow row">
                 <td id="titleName" class="titleTableColumn">Name</td>
@@ -105,14 +106,10 @@
                 <td id="detailHouse" class="detailTable"></td>
               </tr> 
             </table>
-          
           </div>
         </section>
   
-        <!--Esta sección contiene la foto que va al costado de la cajita de detalles-->
-        <!-- <section id="containerPictureCategory" class="containerPictureCategory">
-          <img id="pictureCategory" class="pictureCategory" src="pictures/wizard-hat_1.png" alt="Wizard-hat">  
-        </section> --->
+       
 
       </main>
 

@@ -15,8 +15,8 @@ describe('getNames', () => {
     expect(getNames("funFacts")).toContain("Author");
   });
 
-  it('Debería retornar "Harry Potter and the chamber of secrets" para "books"', () => {
-    expect(getNames("books")).toContain("Harry Potter and the chamber of secrets");
+  it('Debería retornar "Harry Potter and the Cursed Child" para "books"', () => {
+    expect(getNames("books")).toContain("Harry Potter and the Cursed Child");
   });
 
   it('No debería retornar "Accio" para books', () => {

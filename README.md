@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 # HARRY POTTER LOVERS
+=======
+# Harry Potter Lovers
+>>>>>>> 304b43efc9286ef6874b1ba08ef475414b3e7533
 
 ## Índice MAS
 
 * [1. Resumen](#1-resumen)
+<<<<<<< HEAD
 * [2. Investigación UX](#1-investigación-UX)
 * [3. Historias de usuario](#2-historias-de-usuario)
 * [4. Prototipo de baja fidelidad](#3-prototipo-de-baja-fidelidad)
@@ -10,16 +15,29 @@
 * [6. GitHub pages](#4-github-pages)
 
 
+=======
+* [2. Investigación UX](#2-investigación-ux)
+* [3. Historias de usuario](#3-historias-de-usuario)
+* [4. Prototipo de baja fidelidad](#4-prototipo-de-baja-fidelidad)
+* [5. Prototipo de alta fidelidad](#5-prototipo-de-alta-fidelidad)
+* [6. GitHub Pages](#5-github-pages)
+>>>>>>> 304b43efc9286ef6874b1ba08ef475414b3e7533
 ***
 
 ## 1. Resumen
 
+<<<<<<< HEAD
 En esta página web fue creada por y para los fans de Harry Potter, podras encontrar información exclusiva de tpu saga favorita. Bienvenido!!
+=======
+Esta página web fue creada por y para los fans de Harry Potter. En esta página web 
+podrás encontrar información exclusiva de tu saga favorita.
+>>>>>>> 304b43efc9286ef6874b1ba08ef475414b3e7533
 
 ## 2. Investigación UX
 
 ### :bust_in_silhouette: Usuarios
 
+<<<<<<< HEAD
 Los usuarios de la página web son fanaticos de una de las más exitosas sagas de esta generación, Harry Potter.
 Nuestros usuarios desean acceder a información sobre sus personajes favoritos, la lista de hechizos y pociones menconados en las novelas, el resumen de cada uno de los libros, datos curiosos e información estadística general.
 
@@ -595,3 +613,45 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 * [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
 * [ ] UI: Permite filtrar data en base a una condición.
 * [ ] UI: Es _responsive_.
+=======
+Los usuarios de la página web son fanáticos de una de las más exitosas sagas de esta generación, Harry Potter. Nuestros usuarios desean acceder a información sobre sus personajes favoritos, la lista hechizos y pociones mencionados en las novelas, el resumen de cada uno de los libros, datos curiosos e información estadística en general.
+
+### :mag_right: Hallazgos
+
+Haciendo una investigación sobre la información que podrían necesitar
+nuestras usuarias encontramos que los datos de mayor interés son:
+
+- Información sobre los personajes como nombre, especie, género, fecha de
+  nacimiento, saber si es _muggle_ o conocer su casa de estudio.
+- El colegio Hogwarts de Magia y Hechicería utiliza el sistema de Casas.
+  El cuerpo estudiantil de Hogwarts se divide en cuatro Casas ( Gryffindor,
+  Hufflepuff, Ravenclaw y Slytherin;). A nuestras usarías les interesa saber
+  cuantos estudiantes hay por cada casa.
+- Dentro del mundo mágico hay muchos hechizos que se pueden invocar, para
+  nuestras usuarias es importante conocerlos y saber lo que hacen
+  para estar preparadas.
+- Toda esta información se basa la saga de novelas de la autora J. K. Rowling,
+  para nuestras usuarias es relevante conocer cuantos libros han sido publicados
+  y les gustaría poder visualizar que personajes aparecen en cada libro.
+- Las pociones son una herramienta crucial en el mundo de Harry Potter,
+  tener un diccionario para poder consultarlas es una petición de las usuarias.
+
+## 3. Historias de usuario
+
+### :one: Historia de usuario 1
+Como fanático de HP quiero ver 4 categorías (Personajes, hechizos, pociones, libros) en la barra de navegación para revisar la información de manera ordenada.
+### :two: Historia de usuario 2
+Como fanático de HP quiero ver el listado de datos de cada categoría para conocer que datos pertenecen a esa categoría.
+### :three: Historia de usuario 3 
+Como fanático de HP quiero darle click a cada dato de la categoría para ver mayor detalle de ese dato.
+### :four: Historia de usuario 4
+Como fanático de HP quiero ver los personajes por cada casa y por cada libro para tener contexto general de personajes que participan en cada libro y a qué casa pertenecen.
+### :five: Historia de usuario 5
+Como fanático de HP quiero conocer el número de estudiantes por casa y por libro, y el número de libros publicados para tener data estadística de mi saga favorita.
+
+## 4. Prototipo de baja fidelidad
+
+## 5. Prototipo de baja fidelidad
+
+
+>>>>>>> 304b43efc9286ef6874b1ba08ef475414b3e7533

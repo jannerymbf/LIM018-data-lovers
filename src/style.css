@@ -4,7 +4,11 @@ html{
 }
 
 *{
-    margin:0%;
+    margin: 0%;
+}
+
+html{
+    font-size: 16px;
 }
 
 /*Declaramos variables para nuestros colores principales*/
@@ -36,16 +40,15 @@ html{
     text-align: center;
 
     flex: 1 1 auto;/* flex-grow flex-shrink flex-basis*/
-   /*  background-color: aqua ; */
+
     height: 100%;
-    gap:3%;     
+    gap: 4%;     
 }
 
 .welcomeLogo{
     font-family: "Princess Sofia";
-    font-size:9.3rem; /*  ESTUDIAR + */
+    font-size: 9.3rem;
     color: whitesmoke;
-
 }
 
 .buttonAll{
@@ -56,15 +59,15 @@ html{
     width: 12.5rem;
 
     font-family: "Poppins";
-    font-size:  1.25rem;
+    font-size: 1.25rem; /*leer más de rem*/
     font-weight: 200;
-    color:whitesmoke;
+    color: whitesmoke;
     text-align: center;
 
-    cursor:pointer;
+    cursor: pointer;
 }
 
-/* .exploreBtn:hover{
+.buttonAll:hover{
     background-color:rgba(217, 217, 217, 0.06);
 } YA NO SIRVE*/
 
@@ -78,19 +81,17 @@ html{
 
     padding: 1.25rem;
 }
-
 /*Termina estilo para WelcomePage*/
 
-/*EMPIEZA ESTILO PARA EL CONTENIDO PRINCIPAL*/
+/*Empieza estilo para el contenido principal*/
 .mainContent{
     display: none;
     background-color: var(--dark-purple);
-  /*   background-color: papayawhip; */
     width: 100%;
-
 }
 
 header{
+    /*estoy modificando esto*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,7 +99,8 @@ header{
     text-align: center;
     padding: 3rem;
 
-   /*  height: 12.5rem; */
+    /* height: 12.5rem; */
+    padding: 3rem 0rem;
     width: 100%;
 
     background-color: var(--light-purple);
@@ -106,14 +108,14 @@ header{
     color: whitesmoke;
 }
 
-nav{/*Modificar con media querys*/
+nav{
+/* Modificar con media queries*/
+/*estoy modificando esto*/
     display: flex;
-    flex-direction: row; 
-    flex-wrap: wrap;
-    gap: 5%;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    
+    gap: 30%;
 }
 
 .logoHP{
@@ -122,7 +124,7 @@ nav{/*Modificar con media querys*/
     color: var(--yellow-hp);
 
     margin-bottom: 0.63rem;
-    /* background-color: fuchsia; */
+    /*background-color: fuchsia;*/
 }
 
 .cat{
@@ -150,14 +152,12 @@ nav{/*Modificar con media querys*/
 /*Estilo para la sección filtro*/
 #filterHP{
     display: flex;
-    flex-flow:row wrap;
-    gap: 3%;
-    margin: 2.5rem 6.25rem;
-    /* background-color: aqua; */
+    flex-flow: row wrap;
     justify-content: flex-start;
- 
-}
+    gap: 3%;
 
+    margin: 2.5rem 6.25rem;    
+}
 
 .selectHouse, .selectBook{
     width: 200px;
@@ -168,39 +168,32 @@ select:focus{ /*linea azul*/
     outline: none;
 }
 
-.buttonAll:hover{
-    background-color: rgba(217, 217, 217, 0.06);
-}
-
 /*Estilo para la sección de DataHP y detalles --> main*/
 main{
     display: flex;
     /* flex-direction: row; */
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    row-gap: 3.5rem; /*cuando pasa a la sgt fila*/
+    /* flex-wrap: wrap; */ /*estoy modificando esto*/
+    row-gap: 2rem; /*estoy modificando esto*/
+
     /* width: 100%; */
 
     padding-bottom: 2rem;
 
-    /* position:relative; */
-
-    /* height: 450px; */
     margin: 1.5rem 5rem;
-    padding: 0px 1.5rem;
-    /* background-color: blue; */
+    padding: 0rem 1.5rem;
 }
 
-.dataHP{ /*letra de los divs*/
-    color:whitesmoke;
+.dataHP{
+    color: whitesmoke;
     font-family: "Poppins";
-    font-size:1.25rem;
+    font-size: 1.25rem;
     font-weight: 200;
-/* 
-    margin-left: 100px; */
-    height:25rem;
-    width:25rem;
+
+    /* margin-left: 100px; */
+    height: 25rem;
+    width: 25rem;
     overflow-y: scroll;
     /*background-color: green;*/
 }
@@ -211,7 +204,7 @@ main{
 
 .visibleScrollBar::-webkit-scrollbar-track{
     /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9); */
-    border:2px solid whitesmoke;
+    border: 2px solid whitesmoke;
     border-radius: 10px;
     background-color: transparent;
     /* #CCCCCC;*/
@@ -223,8 +216,12 @@ main{
     /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
 }
 
-.visibleScrollBar::-webkit-scrollbar :window-inactive {
-    display:none;
+.visibleScrollBar::-webkit-scrollbar:window-inactive {
+    display: none;
+ }
+
+.dataHP div:nth-child(n){
+    padding: 0.31rem;
 }
 
 .dataHP div:nth-child(n){
@@ -236,36 +233,36 @@ main{
     background-color: rgba(217, 217, 217, 0.06);
 
     border-radius: 50px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-/*.visibleScrollBar::-webkit-scrollbar{
-    scrollbar-color: red yellow;
-}*/
-.main-details{
-    display: flex;
+.detailsHP{
+    display:flex;
     align-items: center;
 }
+
 .container-img{
-    z-index: 1; /*para q la img se vaya arriba*/
-    margin-right: -30px;
-    height: 12.5rem;
-    width: 12.5rem;
+    /*Modificar esto!!!!*/
+    z-index: 1;
+    margin-right: -50px;
+    width: 15.6rem;
+    height: 15.6rem;
+
     border-radius: 200px;
-    border: 20px solid var(--dark-purple);
+    border:20px solid var(--dark-purple);
 }
+
 .container-table{
-    /* margin-right: 100px; */
     display: flex;
     /* flex-direction: row; */
-    /* align-items: center; */ /*--> esto hace que el contenido aparezca incompleto*/
-    /* justify-content: flex-end; */
+    /* align-items: center; */
+    justify-content: flex-end;
 
-    /* width: 600px;*/
-    height: 25rem; 
+    height: 25rem;
+    /* width: 30rem; */
 
     border-radius: 50px;
-    background: rgba(217, 217, 217, 0.06);
+    background-color: rgba(217, 217, 217, 0.06);
 
     color: whitesmoke;
     font-family: "Poppins";
@@ -277,12 +274,12 @@ main{
 }
 
 .tableDetailsHP{
-    /*background-color: aqua;*/
-    margin: 2.5rem 1.25rem ;
-    /* background-color:blueviolet ; */
-    height: 18.75rem;
-    justify-content: flex-end; 
+    margin: 2.5rem 1.25rem;
 
+    height: 18.75rem;
+    width: 25rem;
+
+    justify-content: flex-end;
 }
 
 .titleTableColumn{
@@ -296,28 +293,13 @@ main{
 
 .detailTable{
     width: 16.25rem;
-    
-    /* background-color: greenyellow; */
+
+    /*background-color: blue;*/
 }
 
 .nameDetail{ /*para hacer más grueso el nombre*/
     font-weight: 600;
 }
-
-/* NO VALE.containerPictureCategory{
-    align-self: center;
-
-    margin-right: 40px;
-    background-color: #ad364a;
-    width: 250px;
-    height: 250px;
-
-    border-radius: 200px;
-    border:20px solid var(--dark-purple);
-
-    position:absolute; 
-    /* right: 500px; 
-} */
 
 .pictureCategory{
     object-fit: cover;
@@ -336,24 +318,17 @@ main{
     /* flex-flow: column wrap; */
     align-items: center;
     justify-content: center;
-
-    /* height: 600px; */
-
 }
 
 .boxStatsContent{
-    background-color: green; 
-
+    /* background-color: green; */
     display:flex;
     flex-direction: row; /*flex-direction flex-wrap*/
     align-items: center;
     justify-content: center;
     gap: 4rem;
-
+    margin: 9.25rem 0rem;
     height: 18.75rem;
-    margin: 9.25rem 0rem ;
-
-    
 }
 
 
@@ -368,7 +343,7 @@ main{
     overflow-y: hidden; 
 
     height: 100%;
-    width:  15.63rem;
+    width: 15.63rem;
 }
 
 .stats1{
@@ -390,16 +365,11 @@ main{
     align-items: center;
     justify-content: center;
     gap: 0.31rem;
-
     text-align: center;
-
     /* background-color: aqua; */
 }
 
-
-
-
-.numb{ /*información del número*/
+.numb{
     font-family: "Princess Sofia";
     font-size: 8rem;
     color: var(--yellow-hp);
@@ -416,17 +386,15 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100%;
     /* height: 600px; */
-    text-align: center;
-    
     position: relative;
 }
 
 .harryFriends{
     object-fit: cover;
-    width:100%;
-    /* height:80%; */
+    width: 100%;
 }
 
 #transparency{
@@ -439,11 +407,10 @@ main{
 
 .textPicture{
     position: absolute;
-    
+
     color: whitesmoke;
     font-family: "Princess Sofia";
     font-size: 2.5rem;   
-    text-align: center;
 }
 
 /*************/
@@ -473,9 +440,9 @@ main{
     text-align: center;
     /* overflow: scroll; */
 
-    height: 400px;
+    height: 25rem;
     width: 80%;
-    margin: 9rem 0rem;
+    margin: 9.25rem 0rem; 
 
     background-color: aqua;
 }
@@ -510,7 +477,6 @@ main{
     font-size: 6rem; 
     line-height: 1;
     margin: 1.88rem;
-    
 }
 
 .content{
@@ -535,13 +501,6 @@ main{
     cursor: pointer;
 }
 
-/* .btnArrow:hover{
-    background-color: rgba(217, 217, 217, 0.10)
-} YA NO SIRVE
- */
-
-
-
 /*Estilo para el footer*/
 
 .footerContent{
@@ -564,8 +523,9 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0rem;
     text-align: center;
+
+    margin: 2rem 0rem;
 }
 
 
@@ -574,7 +534,6 @@ main{
     /* width:15%;
     height: 15%; */
     padding: 0rem 0.5rem;
-
 }
 
 
@@ -582,31 +541,129 @@ main{
     /* margin-right: 35px; */
     /* width: 15%;
     height: 15%; */
-    padding:  0rem 0.5rem;
-    
+    padding: 0rem 0.5rem;
 }
 
-
-
-
-@media (max-width: 414px) and (orientation:portrait) {
-/*     nav{
-        flex-direction: column;
-        font-size: 20px;
+@media all and (max-width: 480px){
+    .welcomeLogo{
+        font-size: 5rem;
+        padding: 0rem 1rem;
     }
 
-    .welcomeMessage{
-        font-size: 24px;
-    } */
-
-    html{
-        font-size: 8px;
+    .exploreBtn{
+        width: 10rem;
     }
-
+    
     nav{
         flex-direction: column;
     }
 
+    #filterHP{
+        row-gap: 1rem;
+    }
 
+    main{
+        flex-direction: column;
+    }
 
+    .dataHP{
+        text-align: center;
+        width: 20rem;
+        margin-left: 0px;
+    }
+
+    .detailsHP{
+        flex-direction: column;
+    }
+
+    .container-img{
+        width: 10rem;
+        height: 10rem;
+        margin-right: 0px;
+        margin-bottom: -30px;
+    }
+
+    .container-table{
+        height: initial;
+        overflow-y:hidden;
+        padding: 0rem 0.5rem;
+    }
+    
+    .tableDetailsHP{
+        margin: 2.5rem;
+        width: initial;
+    }
+    
+    .titleTableColumn{
+        width: 5rem;
+    }
+
+    .boxStatsContent{
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        height: initial;
+    }
+
+    .box{
+        flex-direction: row;
+    }
+
+    .numb{
+        font-size: 4rem;
+    }
+
+    .info{
+        font-size: 1.25rem;
+    }
+
+    .stats2{
+        order:2;
+    }
+
+    .stats3{
+        order: 3;
+    }
+    
+    /* .detailTable{
+        width: 16.25rem;
+    
+        /*background-color: blue;*/
+
+    .textPicture{
+        font-size: 1.5rem;
+        padding: 0rem 5rem;
+    }
+
+    #left{
+        left: 6%;
+    }
+
+    #right{
+        right: 6%;
+    }
+
+    .boxFun{
+        height: initial;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .type{
+        font-size: 3rem;
+    }
+
+    .content{
+        font-size: 1.25rem;
+    }
+
+    .footerContent{
+        font-size: 0.7rem;
+    }
+
+    .footerBox{
+        margin: 1rem 0rem;
+    }
+   
 }

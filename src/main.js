@@ -161,9 +161,8 @@ btnShowCharacters.addEventListener("click", ()=>{
   btnShowPotions.classList.remove("navCategory");
   btnShowBooks.classList.remove("navCategory");
 
-  //sección para volver visible a los elementos ocultos
-  boxHouse.style.visibility="visible";
-  boxBook.style.visibility="visible";
+  boxHouse.style.display="block"; //estoy modificando esto
+  boxBook.style.display="block"; //estoy modificando esto
   genderRow.style.display="table-row";
   birthRow.style.display="table-row";
   ancestryRow.style.display="table-row";
@@ -197,8 +196,8 @@ btnShowCharacters.addEventListener("click", ()=>{
 
 //La sgt función oculta los elementos extra que solo son necesarios en Characters
 function hideData(){
-  boxHouse.style.visibility="hidden";
-  boxBook.style.visibility="hidden";
+  boxHouse.style.display="none"; //estoy modificando esto
+  boxBook.style.display="none"; //estoy modificando esto
   genderRow.style.display="none";
   birthRow.style.display="none";
   ancestryRow.style.display="none";
@@ -334,33 +333,27 @@ const bookStatsCarousel=document.querySelector("#boxStats2");
 let interval1;
 let interval2;
 
-//*función para mover el carrusel computeStats
-const start=(elementoHTML)=>{ //mi elemento es toda mi sección
-
-  let step1 = 2; //avanza en 2px
+//*función para mover el houseStats
+const start=(statsData)=>{
+  let step=2;
   return setInterval(() => {
+    statsData.scrollTop += step;
+    let maxScrollTop = statsData.scrollHeight-statsData.clientHeight;
 
-    elementoHTML.scrollTop += step1;
-    let maxScrollTop= elementoHTML.scrollHeight-elementoHTML.clientHeight;
-
-    if(elementoHTML.scrollTop==maxScrollTop){
-      step1=-2;
-    } 
-    
-    else if(elementoHTML.scrollTop==0){
-      step1=2;
+    if(statsData.scrollTop==maxScrollTop){
+      step=-2;
+    }else if(statsData.scrollTop==0){
+      step=2;
     }
-  
-  },50)
-  
+  },30)
 }
 
 interval1=start(houseStatsCarousel);
 interval2=start(bookStatsCarousel);
-
 //*función para detener el carrusel
-const stop=(elIntervalo)=>{  //el intervalo esta representando al interval1 y 2
-  clearInterval(elIntervalo);
+const stop=(theInterval)=>{
+  clearInterval(theInterval);
+  
 }
 //****se detiene cuando pasas el mouse
 houseStatsCarousel.addEventListener('mouseover',()=>{
@@ -370,49 +363,14 @@ houseStatsCarousel.addEventListener('mouseover',()=>{
 houseStatsCarousel.addEventListener('mouseout',()=>{
   interval1=start(houseStatsCarousel);
 })
-
-
+//****se detiene cuando pasas el mouse
 bookStatsCarousel.addEventListener('mouseover',()=>{
   stop(interval2);
 })
-
+//****avanza cuando le quitas el mouse
 bookStatsCarousel.addEventListener('mouseout',()=>{
   interval2=start(bookStatsCarousel);
-})  
- 
-
-
-
-
-
-/* 
-
-const start2=()=>{
-  let step2=0.5;
-  interval2=setInterval(() => {
-    bookStatsCarousel.scrollTop+=step2;
-    let maxScrollTop= bookStatsCarousel.scrollHeight-bookStatsCarousel.clientHeight;
-
-    if(bookStatsCarousel.scrollTop==maxScrollTop){
-      step2=-0.5;
-    } else if(bookStatsCarousel.scrollTop==0){
-      step2=0.5;
-    }
-  },10)
-}
-start2();
-
-const stop2=()=>{
-  clearInterval(interval2);
-}
-
-bookStatsCarousel.addEventListener('mouseover',()=>{
-  stop2();
 })
-
-bookStatsCarousel.addEventListener('mouseout',()=>{
-  start2();
-})  */
 
 //********************* 
 
