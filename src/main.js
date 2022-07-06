@@ -108,6 +108,29 @@ spaceToShowData.addEventListener("click", (event)=>{
 }*/
 //Aqui termina funcion showDetails 
 
+//Función para filtrar datos de PERSONAJES
+function orderAndFilter(){
+  const arrayCharacters=getNames("characters");
+  boxAlphabet.addEventListener("change", ()=>{ 
+    spaceToShowData.innerHTML="";
+    createDivs(sortData(arrayCharacters, boxAlphabet.value));
+  }); 
+
+  boxHouse.addEventListener("change", ()=>{
+    spaceToShowData.innerHTML="";
+
+    let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
+    createDivs(namesHouse);
+  })
+
+  boxBook.addEventListener("change", ()=>{
+    spaceToShowData.innerHTML="";
+
+    let namesBook=filterDataBook(harryDataCharacters,boxBook.value);
+    createDivs(namesBook);
+  }) 
+}
+
 //Función para pintar datos en la primera carga
 function firstLoad(){
   const arrayCharacters=getNames("characters");
@@ -127,25 +150,7 @@ function firstLoad(){
   })
 
   btnShowCharacters.classList.add("navCategory");
-
-  boxAlphabet.addEventListener("change", ()=>{ 
-    spaceToShowData.innerHTML="";
-    createDivs(sortData(arrayCharacters, boxAlphabet.value));
-  }); 
-
-  boxHouse.addEventListener("change", ()=>{
-    spaceToShowData.innerHTML="";
-
-    let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
-    createDivs(namesHouse);
-  })
-
-  boxBook.addEventListener("change", ()=>{
-    spaceToShowData.innerHTML="";
-
-    let namesBook=filterDataBook(harryDataCharacters,boxBook.value);
-    createDivs(namesBook);
-  })
+  orderAndFilter();
 }
 firstLoad();
 
@@ -183,25 +188,7 @@ btnShowCharacters.addEventListener("click", ()=>{
   spaceToShowData.innerHTML="";
   createDivs(arrayCharacters);
 
-  boxAlphabet.addEventListener("change", ()=>{ 
-    spaceToShowData.innerHTML="";
-    createDivs(sortData(arrayCharacters, boxAlphabet.value));
-  });
-  
-  boxHouse.addEventListener("change", ()=>{
-    spaceToShowData.innerHTML="";
-
-    let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
-    createDivs(namesHouse);
-  })
-
-  boxBook.addEventListener("change", ()=>{
-    spaceToShowData.innerHTML="";
-
-    let namesBook=filterDataBook(harryDataCharacters,boxBook.value);
-    createDivs(namesBook);
-  })
-  
+  orderAndFilter();
 });
 
 //La sgt función oculta los elementos extra que solo son necesarios en Characters
@@ -358,7 +345,6 @@ interval2=start(bookStatsCarousel);
 //*función para detener el carrusel
 const stop=(theInterval)=>{
   clearInterval(theInterval);
-  
 }
 //****se detiene cuando pasas el mouse
 houseStatsCarousel.addEventListener('mouseover',()=>{
@@ -366,7 +352,7 @@ houseStatsCarousel.addEventListener('mouseover',()=>{
 })
 //****avanza cuando le quitas el mouse
 houseStatsCarousel.addEventListener('mouseout',()=>{
-  interval1=start(houseStatsCarousel);
+  interval1;
 })
 //****se detiene cuando pasas el mouse
 bookStatsCarousel.addEventListener('mouseover',()=>{
@@ -374,11 +360,8 @@ bookStatsCarousel.addEventListener('mouseover',()=>{
 })
 //****avanza cuando le quitas el mouse
 bookStatsCarousel.addEventListener('mouseout',()=>{
-  interval2=start(bookStatsCarousel);
+  interval2;
 })
-
-//********************* 
-
 //********************* 
 
 //Variables para jalar las curiosidades
@@ -428,11 +411,6 @@ funFacts();
 
 let funFact=document.getElementsByClassName("funFact");
 let slideIndex=1;
-showDivs(slideIndex,funFact);
-
-function plusDivs(n,data){
-  showDivs(slideIndex+=n,data);
-}
 
 function showDivs(n, data){
   if(n>data.length){
@@ -445,6 +423,12 @@ function showDivs(n, data){
     data[i].style.display="none";
   }
   data[slideIndex-1].style.display="block";
+}
+
+showDivs(slideIndex,funFact);
+
+function plusDivs(n,data){
+  showDivs(slideIndex+=n,data);
 }
 
 const buttonLeft=document.querySelector('#left');
