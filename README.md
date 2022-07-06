@@ -56,6 +56,20 @@ Como fanático de HP quiero conocer el número de estudiantes por casa y por lib
 
 ## 4. Prototipo de baja fidelidad
 
+![PrototipoBajaFidelidad1](pictures/Prototype1.jpg)
+
+![PrototipoBajaFidelidad2](pictures/Prototype2.jpg)
+
+![PrototipoBajaFidelidad3](pictures/Prototype3.jpg)
+
 ## 5. Prototipo de baja fidelidad
+
+![PrototipoAltaFidelidad1](pictures/HPDesktop.png)
+
+![PrototipoAltaFidelidad1](pictures/HPMobile.png)
+
+## 6. GitHub Pages
+
+Acceda a la página web mediante el siguiente enlace: https://jannerymbf.github.io/LIM018-data-lovers/
 
 
