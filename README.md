@@ -56,17 +56,17 @@ Como fanático de HP quiero conocer el número de estudiantes por casa y por lib
 
 ## 4. Prototipo de baja fidelidad
 
-![PrototipoBajaFidelidad1](pictures/Prototype1.jpg)
+![PrototipoBajaFidelidad1](Prototype1.jpg)
 
-![PrototipoBajaFidelidad2](pictures/Prototype2.jpg)
+![PrototipoBajaFidelidad2](Prototype2.jpg)
 
-![PrototipoBajaFidelidad3](pictures/Prototype3.jpg)
+![PrototipoBajaFidelidad3](Prototype3.jpg)
 
 ## 5. Prototipo de baja fidelidad
 
-![PrototipoAltaFidelidad1](pictures/HPDesktop.png)
+![PrototipoAltaFidelidad1](HPDesktop.png)
 
-![PrototipoAltaFidelidad1](pictures/HPMobile.png)
+![PrototipoAltaFidelidad1](HPMobile.png)
 
 ## 6. GitHub Pages
 
