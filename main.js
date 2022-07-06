@@ -45,7 +45,7 @@ let btnExplore=document.querySelector(".exploreBtn");
 
 btnExplore.addEventListener("click", () => {
   document.querySelector(".welcomePage").style.display="none";
-  document.querySelector(".mainContent").style.display="inherit";
+  document.querySelector(".mainContent").style.display="block";
 })
 
 //Función para crear Divs automáticamente
@@ -172,13 +172,13 @@ btnShowCharacters.addEventListener("click", ()=>{
   btnShowPotions.classList.remove("navCategory");
   btnShowBooks.classList.remove("navCategory");
 
-  boxHouse.style.display="block";
-  boxBook.style.display="block";
+  boxHouse.style.display="block"; //estoy modificando esto
+  boxBook.style.display="block"; //estoy modificando esto
   genderRow.style.display="table-row";
   birthRow.style.display="table-row";
   ancestryRow.style.display="table-row";
   houseRow.style.display="table-row";
-  titleSpecies2.innerHTML="Species :";
+  titleSpecies2.innerHTML="Species";
 
   spaceToShowData.innerHTML="";
   createDivs(arrayCharacters);
@@ -212,7 +212,7 @@ function hideData(){
   birthRow.style.display="none";
   ancestryRow.style.display="none";
   houseRow.style.display="none";
-  titleSpecies2.innerHTML="Description :";
+  titleSpecies2.innerHTML="Description";
 }
 
 btnShowSpells.addEventListener("click", ()=>{
@@ -338,7 +338,7 @@ let interval1;
 let interval2;
 
 //*función para mover el houseStats
-//No funciona en Chrome en Mac
+//No funciona en Chrome en Mac --> Ya funciona!
 const start=(statsData)=>{
   let step=2;
   return setInterval(() => {
@@ -402,7 +402,7 @@ let content8=document.getElementById("contentFun8");
 
 //Rellenando el contenido en FunFacts
 
-function funFacts (){
+function funFacts(){
  type1.innerHTML=harryDataFunFacts[0].type;
  type2.innerHTML=harryDataFunFacts[1].type;
  type3.innerHTML=harryDataFunFacts[2].type;

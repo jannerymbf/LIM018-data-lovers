@@ -35,8 +35,6 @@ export const sortData = (data, sortOrder) => {
         return 1;
       }else if(a>b){
         return -1;
-      }else if(a==b){
-        return 0;
       }
     })
   }
@@ -86,7 +84,7 @@ export const computeStatsBook = (data,book) => {
   data.forEach(obj => {
     obj.books_featured_in.forEach(number => {
       if(number==book){
-        numberCharactersPerBook++
+        numberCharactersPerBook++;
       }
     })   
   })
