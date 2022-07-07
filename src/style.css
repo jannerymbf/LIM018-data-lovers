@@ -167,7 +167,7 @@ main{
     /* flex-direction: row; */
     justify-content: space-between;
     align-items: center;
-    /* flex-wrap: wrap; */ /*estoy modificando esto*/
+    /* flex-wrap: wrap; estoy modificando esto */
     row-gap: 2rem; /*estoy modificando esto*/
 
     /* width: 100%; */
@@ -175,6 +175,7 @@ main{
     padding-bottom: 2rem;
 
     margin: 1.5rem 5rem;
+    margin-bottom: 3rem;
     padding: 0rem 1.5rem;
 }
 
@@ -242,13 +243,10 @@ main{
 
 .container-table{
     display: flex;
-    /* flex-direction: row; */
-    /* align-items: center; */
     justify-content: flex-end;
 
     height: 25rem;
-    /* width: 30rem; */
-
+    
     border-radius: 50px;
     background-color: rgba(217, 217, 217, 0.06);
 
@@ -263,26 +261,20 @@ main{
 
 .tableDetailsHP{
     margin: 2.5rem 1.25rem;
+    margin-left: 3rem;
 
     height: 18.75rem;
     width: 25rem;
-
-    justify-content: flex-end;
 }
 
 .titleTableColumn{
-    width: 8.13rem;
-
     color: var(--yellow-hp);
-
-    /*background-color: whitesmoke;*/
+    vertical-align: top;
 }
 
 .detailTable{
-    width: 16.25rem;
-
-    /*background-color: blue;*/
-}
+    vertical-align: top;
+} 
 
 .nameDetail{
     font-weight: 600;
