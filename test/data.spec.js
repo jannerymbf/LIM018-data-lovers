@@ -1,5 +1,4 @@
 import { getNames,sortData, filterDataHouse, filterDataBook, computeStatsHouse, computeStatsBook, computeStatsCharacterBook} from '../src/data.js';
-//importar la data o copiar una parte pequeñitav de la data
 
 //testeando getNames
 describe('getNames', () => {
@@ -26,20 +25,23 @@ describe('getNames', () => {
 
 //testeando sortData
 describe('sortData', () => {
+  const dataExample = ["bea", "ana", "diana", "camila"];
+  const dataExample2 = ["bea", "ana", "diana", "bea"];
+
   it('is a function', () => {
     expect(typeof sortData).toBe('function');
   });
 
   it('Debería retornar ["ana", "bea", "camila", "diana"] para ["bea", "ana", "diana", "camila"]', () => {
-    expect(sortData(["bea", "ana", "diana", "camila"],"AZ")).toEqual(["ana", "bea", "camila", "diana"]);
+    expect(sortData(dataExample,"AZ")).toEqual(["ana", "bea", "camila", "diana"]);
   });
 
   it('Debería retornar ["diana", "camila", "bea", "ana"] para ["bea", "ana", "diana", "camila"]', () => {
-    expect(sortData(["bea", "ana", "diana", "camila"],"ZA")).toEqual(["diana", "camila", "bea", "ana"]);
+    expect(sortData(dataExample,"ZA")).toEqual(["diana", "camila", "bea", "ana"]);
   });
 
   it('Debería retornar ["diana", "bea", "bea", "ana"] para ["bea", "ana", "diana", "bea"]', () => {
-    expect(sortData(["bea", "ana", "diana", "bea"],"ZA")).toEqual(["diana", "bea", "bea", "ana"]);
+    expect(sortData(dataExample2,"ZA")).toEqual(["diana", "bea", "bea", "ana"]);
   });
 
 });

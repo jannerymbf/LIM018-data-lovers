@@ -100,6 +100,29 @@ spaceToShowData.addEventListener("click", (event)=>{
 })
 
 
+//Función para filtrar datos de PERSONAJES
+function orderAndFilter(){
+  const arrayCharacters=getNames("characters");
+  boxAlphabet.addEventListener("change", ()=>{ 
+    spaceToShowData.innerHTML="";
+    createDivs(sortData(arrayCharacters, boxAlphabet.value));
+  }); 
+
+  boxHouse.addEventListener("change", ()=>{
+    spaceToShowData.innerHTML="";
+
+    let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
+    createDivs(namesHouse);
+  })
+
+  boxBook.addEventListener("change", ()=>{
+    spaceToShowData.innerHTML="";
+
+    let namesBook=filterDataBook(harryDataCharacters,boxBook.value);
+    createDivs(namesBook);
+  }) 
+}
+
 //Función para pintar datos en la primera carga
 function firstLoad(){
   const arrayCharacters=getNames("characters");
@@ -119,24 +142,8 @@ function firstLoad(){
       }
   })
 
-  btnShowCharacters.classList.add("navCategory"); //añade 1 clase al elemento - no lo tenemos en el HTML,se agrego en el CSS directamente
-
-  boxAlphabet.addEventListener("change", ()=>{  // Cambia el evento - cajita filtra A-Z
-    spaceToShowData.innerHTML="";
-    createDivs(sortData(arrayCharacters, boxAlphabet.value));
-  }); 
-
-  boxHouse.addEventListener("change", ()=>{
-    spaceToShowData.innerHTML="";
-    let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
-    createDivs(namesHouse);
-  })
-
-  boxBook.addEventListener("change", ()=>{
-    spaceToShowData.innerHTML="";
-    let namesBook=filterDataBook(harryDataCharacters,boxBook.value);
-    createDivs(namesBook);
-  })
+  btnShowCharacters.classList.add("navCategory");
+  orderAndFilter();
 }
 firstLoad();
 
@@ -169,31 +176,12 @@ btnShowCharacters.addEventListener("click", ()=>{
   birthRow.style.display="table-row";
   ancestryRow.style.display="table-row";
   houseRow.style.display="table-row";
-  titleSpecies2.innerHTML="Species :"; //como lo explico ¿?
+  titleSpecies2.innerHTML="Species";
 
   spaceToShowData.innerHTML="";
   createDivs(arrayCharacters);
 
-  //Se ejecuta 
-  boxAlphabet.addEventListener("change", ()=>{ //cajita filtra A-Z
-    spaceToShowData.innerHTML="";
-    createDivs(sortData(arrayCharacters, boxAlphabet.value));
-  });
-  
-  boxHouse.addEventListener("change", ()=>{ //cajita filtra casas
-    spaceToShowData.innerHTML="";
-
-    let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
-    createDivs(namesHouse);
-  })
-
-  boxBook.addEventListener("change", ()=>{ //cajita filtra libros
-    spaceToShowData.innerHTML="";
-
-    let namesBook=filterDataBook(harryDataCharacters,boxBook.value);
-    createDivs(namesBook);
-  })
-  
+  orderAndFilter();
 });
 
 //La sgt función oculta los elementos extra que solo son necesarios en Characters
@@ -204,7 +192,7 @@ function hideData(){
   birthRow.style.display="none";
   ancestryRow.style.display="none";
   houseRow.style.display="none";
-  titleSpecies2.innerHTML="Description :"; //lo vuelves a agregar
+  titleSpecies2.innerHTML="Description";
 }
 
 //HECHIZOS
@@ -336,6 +324,7 @@ let interval1;
 let interval2;
 
 //*función para mover el houseStats
+//No funciona en Chrome en Mac --> Ya funciona!
 const start=(statsData)=>{
   let step=2;
   return setInterval(() => {
@@ -355,7 +344,6 @@ interval2=start(bookStatsCarousel);
 //*función para detener el carrusel
 const stop=(theInterval)=>{
   clearInterval(theInterval);
-  
 }
 //****se detiene cuando pasas el mouse
 houseStatsCarousel.addEventListener('mouseover',()=>{
@@ -363,7 +351,7 @@ houseStatsCarousel.addEventListener('mouseover',()=>{
 })
 //****avanza cuando le quitas el mouse
 houseStatsCarousel.addEventListener('mouseout',()=>{
-  interval1=start(houseStatsCarousel);
+  interval1;
 })
 //****se detiene cuando pasas el mouse
 bookStatsCarousel.addEventListener('mouseover',()=>{
@@ -371,11 +359,8 @@ bookStatsCarousel.addEventListener('mouseover',()=>{
 })
 //****avanza cuando le quitas el mouse
 bookStatsCarousel.addEventListener('mouseout',()=>{
-  interval2=start(bookStatsCarousel);
+  interval2;
 })
-
-//********************* 
-
 //********************* 
 
 //Variables para jalar las curiosidades <!-- Sección nueva 26.06.22-->
@@ -399,7 +384,7 @@ let content8=document.getElementById("contentFun8");
 
 //Rellenando el contenido en FunFacts
 
-function funFacts (){
+function funFacts(){
  type1.innerHTML=harryDataFunFacts[0].type;
  type2.innerHTML=harryDataFunFacts[1].type;
  type3.innerHTML=harryDataFunFacts[2].type;
@@ -424,14 +409,7 @@ funFacts();
 //Acá inicia el Slider de Fun facts
 
 let funFact=document.getElementsByClassName("funFact");
-let slideIndex=1; //inicie en el 1er slide
-showDivs(slideIndex,funFact); //llamo a la fx antes de declararla
-
-function plusDivs(n,data){ //n=valor btn der(1) o izq(-1)
-  showDivs(slideIndex+=n,data);
-  console.log("ndePlusDiv", n);
-  console.log("dataPlusDiv" , data);
-}
+let slideIndex=1;
 
 function showDivs(n, data){ //n resultado de plusDivs
   if(n>data.length){
@@ -448,6 +426,12 @@ function showDivs(n, data){ //n resultado de plusDivs
   data[slideIndex-1].style.display="block";
 } 
 
+showDivs(slideIndex,funFact);
+
+function plusDivs(n,data){
+  showDivs(slideIndex+=n,data);
+}
+
 const buttonLeft=document.querySelector('#left');
 const buttonRight=document.querySelector('#right'); 
 
@@ -462,7 +446,6 @@ buttonRight.addEventListener("click", ()=>{
 
 
 //*******************
-
 
 
 

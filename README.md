@@ -1,4 +1,5 @@
-# Harry Potter Lovers
+
+# HARRY POTTER LOVERS
 
 ## Índice MAS
 
@@ -61,12 +62,23 @@ Para tener data estadística de mi saga favorita
 
 ## 4. Prototipo de baja fidelidad
 
+![PrototipoBajaFidelidad1](Prototype1.jpg)
+
+![PrototipoBajaFidelidad2](Prototype2.jpg)
+
+![PrototipoBajaFidelidad3](Prototype3.jpg)
+
 ## 5. Prototipo de alta fidelidad
 
+![PrototipoAltaFidelidad1](HPDesktop.png)
 
-## 6. Git Hub pages
+![PrototipoAltaFidelidad2](HPMobile.png)
 
+## 6. GitHub Pages
 
+Acceda a la página web mediante el siguiente enlace: https://kami17la.github.io/LIM018-data-lovers/
+
+___________________________________________________________________________________________________________________
 
 ### HTML
 

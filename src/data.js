@@ -94,7 +94,7 @@ export const computeStatsBook = (data,book) => {
   data.forEach(obj => {
     obj.books_featured_in.forEach(number => {
       if(number==book){
-        numberCharactersPerBook++
+        numberCharactersPerBook++;
       }
     })   
   })
