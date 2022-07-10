@@ -29,16 +29,18 @@ export const getNames = (category) => {
 };
 
 //Función sortData
-export const sortData = (data, sortOrder) => {
+export const sortData = (data,sortOrder) => {
 
   if(sortOrder=="AZ"){
     data.sort();
   }else{
     data.sort(function compare(a,b){
       if(b>a){
-        return 1;
-      }else if(a>b){
-        return -1;
+        return 1; //b se va a situar en un indice menor a A
+      }else if(a>b){ 
+        return -1; //a se va a situar en 1 indice menor a B
+      }else if (a=b){ 
+        return 0; //no hay cambios
       }
     })
   }

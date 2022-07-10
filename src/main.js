@@ -19,16 +19,15 @@ let birthSpace=document.getElementById("detailBirth");
 let ancestrySpace=document.getElementById("detailAncestry");
 let houseSpace=document.getElementById("detailHouse");
 
-//Variable para jalar la columna de detalles
-// let detailColumn=document.querySelectorAll(".detailTable");
+//Variables para jalar la foto que va al costado de la cajita de detalles
+let pictureCategory=document.getElementById("pictureCategory");
 
 //Variables para mostrar las cajitas para filtrar
 let boxAlphabet=document.getElementById("selectAlphabet");
 let boxHouse=document.getElementById("boxSelectHouse");
 let boxBook=document.getElementById("boxSelectBook");
 
-//Variables para jalar la foto que va al costado de la cajita de detalles
-let pictureCategory=document.getElementById("pictureCategory");
+
 
 //IMPORTANTE Muestra la data con su respectiva categoría
 const harryDataCharacters=harryPotterData.characters;
@@ -51,11 +50,12 @@ let btnExplore=document.querySelector(".exploreBtn");
 
 btnExplore.addEventListener("click", () => {
   document.querySelector(".welcomePage").style.display="none";
-  document.querySelector(".mainContent").style.display="inherit";
+  document.querySelector(".mainContent").style.display="block";
 })
 
 //Función para crear Divs automáticamente
 function createDivs(arrayCategory){
+  console.log(arrayCategory);
   for(let i=0; i<arrayCategory.length; i++){
     let newDiv=document.createElement("div");
     let newDivText=document.createTextNode(arrayCategory[i]);
@@ -68,8 +68,9 @@ function createDivs(arrayCategory){
 
 //Evento para mostar los detalles de cada dato
 spaceToShowData.addEventListener("click", (event)=>{
-  harryDataCharacters.forEach(character => { //¿?
-    if(character.name === event.target.innerText){
+  /* console.log(spaceToShowData); */
+  harryDataCharacters.forEach(character => { 
+    if(character.name === event.target.innerText){ //(e.T)sí al texto del elemento al que se le hace click
       nameSpace.innerHTML=character.name;
       speciesSpace.innerHTML=character.species;
       genderSpace.innerHTML=character.gender;
@@ -102,11 +103,12 @@ spaceToShowData.addEventListener("click", (event)=>{
 //Función para pintar datos en la primera carga
 function firstLoad(){
   const arrayCharacters=getNames("characters");
+  /* console.log(arrayCharacters); */
   
   spaceToShowData.innerHTML="";
   createDivs(arrayCharacters);
 
-  harryDataCharacters.forEach(character => { //en la 1ra carga q muestre la data de HP
+  harryDataCharacters.forEach(character => { //en la 1ra carga q muestre la data de HP en la tabla
       if(character.name === "Harry Potter"){
         nameSpace.innerHTML=character.name;
         speciesSpace.innerHTML=character.species;
@@ -117,9 +119,9 @@ function firstLoad(){
       }
   })
 
-  btnShowCharacters.classList.add("navCategory"); //no lo tenemos en el HTML, se agrego en el CSS directamente
+  btnShowCharacters.classList.add("navCategory"); //añade 1 clase al elemento - no lo tenemos en el HTML,se agrego en el CSS directamente
 
-  boxAlphabet.addEventListener("change", ()=>{  // Cambio el evento - cajita filtra A-Z
+  boxAlphabet.addEventListener("change", ()=>{  // Cambia el evento - cajita filtra A-Z
     spaceToShowData.innerHTML="";
     createDivs(sortData(arrayCharacters, boxAlphabet.value));
   }); 
@@ -205,7 +207,7 @@ function hideData(){
   titleSpecies2.innerHTML="Description :"; //lo vuelves a agregar
 }
 
-//comentario ¿? HECHIZOS
+//HECHIZOS
 btnShowSpells.addEventListener("click", ()=>{
   let arraySpells=getNames("spells"); 
 
