@@ -55,7 +55,7 @@ btnExplore.addEventListener("click", () => {
 
 //Función para crear Divs automáticamente
 function createDivs(arrayCategory){
-  console.log(arrayCategory);
+  /* console.log(arrayCategory); */
   for(let i=0; i<arrayCategory.length; i++){
     let newDiv=document.createElement("div");
     let newDivText=document.createTextNode(arrayCategory[i]);
@@ -103,6 +103,7 @@ spaceToShowData.addEventListener("click", (event)=>{
 //Función para filtrar datos de PERSONAJES
 function orderAndFilter(){
   const arrayCharacters=getNames("characters");
+  
   boxAlphabet.addEventListener("change", ()=>{ 
     spaceToShowData.innerHTML="";
     createDivs(sortData(arrayCharacters, boxAlphabet.value));
@@ -112,6 +113,7 @@ function orderAndFilter(){
     spaceToShowData.innerHTML="";
 
     let namesHouse=filterDataHouse(harryDataCharacters,boxHouse.value);
+    /* console.log(harryDataCharacters); */
     createDivs(namesHouse);
   })
 
@@ -147,6 +149,7 @@ function firstLoad(){
 }
 firstLoad();
 
+
 //La siguiente función limpia los campos de los detalles
 function cleanDetails(){
   nameSpace.innerHTML="";
@@ -160,7 +163,6 @@ function cleanDetails(){
 btnShowCharacters.addEventListener("click", ()=>{
   const arrayCharacters=getNames("characters");
 
-  // detailColumn.innerHTML=""; //<-- esto no está funcionando
   cleanDetails();
   pictureCategory.setAttribute("src", "pictures/wizard-hat_1.png");
 
@@ -170,8 +172,8 @@ btnShowCharacters.addEventListener("click", ()=>{
   btnShowPotions.classList.remove("navCategory");
   btnShowBooks.classList.remove("navCategory");
 
-  boxHouse.style.display="block"; //estoy modificando esto
-  boxBook.style.display="block"; //estoy modificando esto
+  boxHouse.style.display="block"; //cajita solo para personajes
+  boxBook.style.display="block"; //cajita solo para personajes
   genderRow.style.display="table-row";
   birthRow.style.display="table-row";
   ancestryRow.style.display="table-row";
@@ -199,7 +201,7 @@ function hideData(){
 btnShowSpells.addEventListener("click", ()=>{
   let arraySpells=getNames("spells"); 
 
-  // detailColumn.innerHTML="";
+
   cleanDetails();
   pictureCategory.setAttribute("src", "pictures/magic-wand_1.png");
 
@@ -221,12 +223,12 @@ btnShowSpells.addEventListener("click", ()=>{
 });
 
 
-//comentario ¿? POCIONES
+//POCIONES
 btnShowPotions.addEventListener("click", ()=>{
   let arrayPotions=getNames("potions");
-  console.log(arrayPotions);
+  /* console.log(arrayPotions); */
 
-  // detailColumn.innerHTML="";
+ 
   cleanDetails();
   pictureCategory.setAttribute("src", "pictures/cauldron_1.png");
 
@@ -294,7 +296,7 @@ let statsBook5=document.getElementById("book5Number");
 let statsBook6=document.getElementById("book6Number");
 let statsBook7=document.getElementById("book7Number");
 
-//La sgt función llama a computeStats para mostrar los personajes por libro
+//La sgt función llama a computeStatsBook para mostrar los personajes por libro
 function statsCharactersPerBook(){
   statsBook1.innerHTML=computeStatsBook(harryDataCharacters,1);
   statsBook2.innerHTML=computeStatsBook(harryDataCharacters,2);
@@ -315,6 +317,8 @@ function statsCharactersInAllBooks(){
 }
 statsCharactersInAllBooks();
 
+
+
 // Acá inicia el carrusel automático para computeStats
 
 //Declaramos variables
@@ -323,47 +327,59 @@ const bookStatsCarousel=document.querySelector("#boxStats2");
 let interval1;
 let interval2;
 
-//*función para mover el houseStats
-//No funciona en Chrome en Mac --> Ya funciona!
-const start=(statsData)=>{
-  let step=2;
-  return setInterval(() => {
-    statsData.scrollTop += step;
-    let maxScrollTop = statsData.scrollHeight-statsData.clientHeight;
+const start=(elementoHTML)=>{ //mi elemento es toda mi sección
 
-    if(statsData.scrollTop==maxScrollTop){
-      step=-2;
-    }else if(statsData.scrollTop==0){
-      step=2;
+  let step1 = 2; //cuánto en cuánto se movera la transición 2px
+  return setInterval(() => {
+    elementoHTML.scrollTop += step1;
+
+    let maxScrollTop = elementoHTML.scrollHeight - elementoHTML.clientHeight;
+
+    if(elementoHTML.scrollTop==maxScrollTop){
+      step1 = -2;
+
+    }else if(elementoHTML.scrollTop==0){
+      step1 = 2;
     }
-  },30)
+
+  },60) //tiempo q pasará la transición
 }
 
 interval1=start(houseStatsCarousel);
 interval2=start(bookStatsCarousel);
+
 //*función para detener el carrusel
-const stop=(theInterval)=>{
-  clearInterval(theInterval);
+const stop=(elIntervalo)=>{
+  clearInterval(elIntervalo);
 }
+ 
+//House stats
 //****se detiene cuando pasas el mouse
 houseStatsCarousel.addEventListener('mouseover',()=>{
   stop(interval1);
 })
 //****avanza cuando le quitas el mouse
 houseStatsCarousel.addEventListener('mouseout',()=>{
-  interval1;
+  interval1=start(houseStatsCarousel);
 })
+
+
+//Book stats
 //****se detiene cuando pasas el mouse
 bookStatsCarousel.addEventListener('mouseover',()=>{
   stop(interval2);
 })
 //****avanza cuando le quitas el mouse
 bookStatsCarousel.addEventListener('mouseout',()=>{
-  interval2;
+  interval2=start(bookStatsCarousel);
 })
+
+ 
+
+
 //********************* 
 
-//Variables para jalar las curiosidades <!-- Sección nueva 26.06.22-->
+//Variables para jalar las curiosidades 
 let type1=document.getElementById("typeFun1");
 let type2=document.getElementById("typeFun2");
 let type3=document.getElementById("typeFun3");
@@ -411,27 +427,29 @@ funFacts();
 let funFact=document.getElementsByClassName("funFact");
 let slideIndex=1;
 
-function showDivs(n, data){ //n resultado de plusDivs
-  if(n>data.length){
+showDivs(slideIndex,funFact); //hoisting- llamas a la fx antes de ser declarada
+
+function plusDivs(n,data){ //n=1 resultado de plusDivs
+  showDivs(slideIndex+=n,data);
+  /* console.log("nPlusDiv" , n); */
+}
+
+function showDivs(n, data){ //n=9 resultado de showDivs
+  if(n>data.length){ //data.length=8
     slideIndex=1;
-  /*   console.log("ndeShowDiv", n);
-    console.log("dataShowDiv" , data); */
+  /*   console.log("nShowDiv" , n); */
   }
   if(n<1){
-    slideIndex=data.length; //¿Siempre será 8?
+    slideIndex=data.length;
   }
   for(let i=0; i<data.length; i++){
     data[i].style.display="none";
   }
+
   data[slideIndex-1].style.display="block";
 } 
 
-showDivs(slideIndex,funFact);
-
-function plusDivs(n,data){
-  showDivs(slideIndex+=n,data);
-}
-
+//Dirección que elijas
 const buttonLeft=document.querySelector('#left');
 const buttonRight=document.querySelector('#right'); 
 
@@ -442,13 +460,3 @@ const buttonRight=document.querySelector('#right');
 buttonRight.addEventListener("click", ()=>{
   plusDivs(1,funFact);
 })  
-
-
-
-//*******************
-
-
-
-
-
-

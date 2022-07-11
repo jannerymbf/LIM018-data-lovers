@@ -6,13 +6,13 @@ import harryPotterData from './data/harrypotter/data.js';
 export const getNames = (category) => {
   let categoryArray=[];
 
-  //la 'i' representa los keys (propiedades) de la data de HP - 4categorias
-  for(let i in harryPotterData){ //voy a recorrer los índices de las 4 categorías del obj HP
+  //la 'i' representara los keys (propiedades) de la data de HP - 4categorias
+  for(let i in harryPotterData){ //voy a recorrer las categorías del obj HP
     let keyHarryData=harryPotterData[i]; //esto es un array de las propiedades (categorías) de mi obj
-    //console.log(keyHarryData);
-    //console.log(harryPotterData);
+   /*console.log(keyHarryData);*/
+   /*console.log(harryPotterData);*/
     
-    if(category===i){ //le digo a mi categoría que sí es = a 1 índices de mi obj pase
+    if(category===i){ //le digo a mi categoría que sí es = a 1 índice de mi obj pase
       for(let j=0; j<keyHarryData.length; j++){
         if(keyHarryData[j].hasOwnProperty("name")){//estoy en el array de los personajes
           categoryArray.push(keyHarryData[j].name); //al array se le agregue ese valor
@@ -39,8 +39,8 @@ export const sortData = (data,sortOrder) => {
         return 1; //b se va a situar en un indice menor a A
       }else if(a>b){ 
         return -1; //a se va a situar en 1 indice menor a B
-      }else if (a=b){ 
-        return 0; //no hay cambios
+      }else if (a==b){ 
+        return 0; 
       }
     })
   }
@@ -113,33 +113,3 @@ export const computeStatsCharacterBook = (data) => {
   return numberCharacterAllBook;
 }
 
-
-
-
-
-
-/*export const showData = (container) => {
-  //1. Con el primer for voy a recorrer las keys del objeto harryPotterData
-  //2. 'j' representa un key de harryPotterData
-  // Importante: for...in solo acepta la notación de corchetes de los objetos
-  for(let j in harryPotterData){
-    let keyObjectHarry=harryPotterData[j];
-    // 1. Con el segundo for voy a recorrer del arreglo de cada key
-    // 2. El 'i' representa la posición de un elemento del array de cada key
-    for(let i=0; i<keyObjectHarry.length; i++){
-      let newDiv = document.createElement("div");
-      let newDivText = document.createTextNode(keyObjectHarry[i].name); //Idea: Para los elementos que no tienen name, puedo utilizar 'hasOwnProperty'
-  
-      newDiv.appendChild(newDivText);
-      container.appendChild(newDiv);
-    }
-  }
-  return 'showData';
-};*/
-
-//En vez de showData() --> getNames() 
-//Que la función getNames() retorne un array
-
-/*export const showDetails = (element) => {
-  
-};*/

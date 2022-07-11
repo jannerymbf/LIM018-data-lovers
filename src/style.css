@@ -67,9 +67,6 @@ html{
     cursor: pointer;
 }
 
-.buttonAll:hover{
-    background-color:rgba(217, 217, 217, 0.06);
-} YA NO SIRVE*/
 
 .welcomeFooter{
     font-family: "Poppins";
@@ -192,14 +189,15 @@ main{
     font-size: 1.25rem;
     font-weight: 200;
 
-    /* margin-left: 100px; */
     height: 25rem;
     width: 25rem;
     overflow-y: scroll;
-    /*background-color: green;*/
+    
 }
 
-.visibleScrollBar::-webkit-scrollbar{ /*formato scroll*/
+
+/*Inicia el formato scroll*/
+.visibleScrollBar::-webkit-scrollbar{ 
     width: 12px;
 }
 
@@ -243,11 +241,10 @@ main{
 }
 
 .container-img{
-    /*Modificar esto!!!!*/
     z-index: 1;
     margin-right: -50px;
-    width: 15.6rem;
-    height: 15.6rem;
+    width: 12rem;
+    height: 12rem;
 
     border-radius: 200px;
     border:20px solid var(--dark-purple);
@@ -407,8 +404,7 @@ main{
 /*************/
 
 .funContent{
-    /* background-color: var(--dark-purple) ;  */
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
     display: flex;
     /* flex-flow: column wrap; */
     justify-content: center;
@@ -435,7 +431,6 @@ main{
     width: 80%;
     margin: 9.25rem 0rem; 
 
-    background-color: aqua;
 }
 
 #left{
@@ -452,15 +447,9 @@ main{
 
 .funFact{
     display: none;
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     text-align: center;
-
     width: 80%;
-    /* height: 100%; */
 
-    background-color: #986E00;
 }
 
 .type{
@@ -521,19 +510,17 @@ main{
 
 
 .gitHub{
-    /* margin-left: 75px; */
-    /* width:15%;
-    height: 15%; */
+
     padding: 0rem 0.5rem;
 }
 
 
 .instagram{
-    /* margin-right: 35px; */
-    /* width: 15%;
-    height: 15%; */
+
     padding: 0rem 0.5rem;
 }
+
+/* Versión celular */
 
 @media all and (max-width: 480px){
     .welcomeLogo{
@@ -617,10 +604,6 @@ main{
         order: 3;
     }
     
-    /* .detailTable{
-        width: 16.25rem;
-    
-        /*background-color: blue;*/
 
     .textPicture{
         font-size: 1.5rem;
