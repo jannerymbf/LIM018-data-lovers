@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"> <!--Atributo que especifica la codificación de caracteres para el documento HTML-->
     <title>Data Lovers</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Joan&family=Poppins:ital,wght@0,200;0,600;1,700&family=Princess+Sofia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="pictures/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--controla las dimensiones y escala de la pag-->
   </head>
 
   <body>
@@ -16,7 +17,6 @@
     <!--Acá inicia la pantalla de bienvenida-->
     
     <section class="welcomePage">
-      <audio src="pictures/HarrySong.mp3" type="audio/mp3" autoplay></audio>
       <section class="welcomeMessage">
         <h1 class="welcomeLogo">Harry Potter</h1>
         <button class="exploreBtn buttonAll">Explore</button>
@@ -31,8 +31,7 @@
       <header>
         <h1 class="logoHP">Harry Potter</h1>
   
-        <nav>
-          <img>
+        <nav> <!--categorías de la barra de navegación-->
           <h2 id="characters" class="cat showCharacters">Characters</h2>
           <!-- <div class="division">|</div> -->
           <h2 id="spells" class="cat showSpells">Spells</h2>
@@ -40,7 +39,6 @@
           <h2 id="potions" class="cat showPotions">Potions</h2>
           <!-- <div class="division">|</div> -->
           <h2 id="books" class="cat showBooks">Books</h2>
-          <img>
         </nav>
   
       </header>
@@ -71,8 +69,9 @@
       </section>
         <!-- Esta sección es para mostrar la lista de datos de la data-->
       <main>
-        <aside>
+        <aside> <!--Divs creados-->
           <div id="containerDataHP" class="dataHP visibleScrollBar"></div>
+         
         </aside>
     
         <!-- Esta sección es para mostrar la cajita con los detalles de cada dato seleccionado-->
@@ -81,7 +80,7 @@
           <div id="containerPictureCategory" class="container-img">
             <img id="pictureCategory" class="pictureCategory" src="pictures/wizard-hat_1.png" alt="Wizard-hat">  
           </div>
-          <div class="container-table">
+          <div class="container-table  visibleScrollBar">
             <table id="tableDetailsHP" class="tableDetailsHP">
               <tr id="nameRow" class="firstRow row">
                 <td id="titleName" class="titleTableColumn">Name</td>
@@ -115,6 +114,7 @@
 
       </main>
 
+  
       <!--Esta sección muestra las estadísticas-->
       <section id="statsContent">
         <section id="boxStats" class="boxStatsContent">
@@ -232,8 +232,8 @@
       <footer class="footerContent">
         <div class="footerBox">
           <p class="footerText">All rights reserved &#169 Kami &#38 Jannery</p>
-          <div class="footerIcons">
-            <a href="https://github.com/jannerymbf/LIM018-data-lovers" target="_blank"><img class="gitHub" src="pictures/GitHub.png"></a>
+          <div>
+            <a href="https://github.com/Kami17LA/LIM018-data-lovers/blob/main/README.md" target="_blank"> <img class="gitHub" src="pictures/GitHub.png" ></a>
             <img class="instagram" src="pictures/Instagram.png">
           </div>
         </div> 

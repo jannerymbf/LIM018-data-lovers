@@ -2,17 +2,20 @@
 // estas funciones son de ejemplo
 import harryPotterData from './data/harrypotter/data.js';
 
+//Función getNames
 export const getNames = (category) => {
   let categoryArray=[];
 
-  //la 'i' representa los keys de la data de HP
-  for(let i in harryPotterData){
-    let keyHarryData=harryPotterData[i]; //esto es un array
-
-    if(category===i){
+  //la 'i' representara los keys (propiedades) de la data de HP - 4categorias
+  for(let i in harryPotterData){ //voy a recorrer las categorías del obj HP
+    let keyHarryData=harryPotterData[i]; //esto es un array de las propiedades (categorías) de mi obj
+   /*console.log(keyHarryData);*/
+   /*console.log(harryPotterData);*/
+    
+    if(category===i){ //le digo a mi categoría que sí es = a 1 índice de mi obj pase
       for(let j=0; j<keyHarryData.length; j++){
-        if(keyHarryData[j].hasOwnProperty("name")){
-          categoryArray.push(keyHarryData[j].name);
+        if(keyHarryData[j].hasOwnProperty("name")){//estoy en el array de los personajes
+          categoryArray.push(keyHarryData[j].name); //al array se le agregue ese valor
         }else if(keyHarryData[j].hasOwnProperty("type")){
           categoryArray.push(keyHarryData[j].type);
         }else if(keyHarryData[j].hasOwnProperty("title")){
@@ -25,28 +28,32 @@ export const getNames = (category) => {
 
 };
 
-export const sortData = (data, sortOrder) => {
+//Función sortData
+export const sortData = (data,sortOrder) => {
 
   if(sortOrder=="AZ"){
     data.sort();
   }else{
     data.sort(function compare(a,b){
       if(b>a){
-        return 1;
-      }else if(a>b){
-        return -1;
+        return 1; //b se va a situar en un indice menor a A
+      }else if(a>b){ 
+        return -1; //a se va a situar en 1 indice menor a B
+      }else if (a==b){ 
+        return 0; 
       }
     })
   }
   return data;
 }
 
+//Función filterDataHouse
 export const filterDataHouse = (data,condition) => {
   let arrayDataWithCondition;
   let namesHouseArray=[];
   
-  arrayDataWithCondition=data.filter(obj => {
-    return obj.house==condition;
+  arrayDataWithCondition=data.filter(obj => { //igualando 1 variable con 1 fx
+    return obj.house==condition; //con el (.) accedes a las propiedades de 1 obj
   })
   arrayDataWithCondition.forEach(obj => {
     namesHouseArray.push(obj.name);
@@ -54,6 +61,7 @@ export const filterDataHouse = (data,condition) => {
   return namesHouseArray; //Nos arroja un array con los nombres de los personajes según la casa
 }
 
+//Función filterDataBook
 export const filterDataBook = (data,condition) => {
   let arrayDataWithCondition=[];
 
@@ -67,6 +75,7 @@ export const filterDataBook = (data,condition) => {
   return arrayDataWithCondition;
 }
 
+//Función computeStatsHouse
 export const computeStatsHouse = (data,house) => {
   let numberCharactersPerHouse=0;
 
@@ -78,6 +87,7 @@ export const computeStatsHouse = (data,house) => {
   return numberCharactersPerHouse;
 }
 
+//Función computeStatsBook
 export const computeStatsBook = (data,book) => {
   let numberCharactersPerBook=0;
 
@@ -91,6 +101,7 @@ export const computeStatsBook = (data,book) => {
   return numberCharactersPerBook;
 }
 
+//Función computeStatsCharacterBook
 export const computeStatsCharacterBook = (data) => {
   let numberCharacterAllBook=0;
   
@@ -102,36 +113,3 @@ export const computeStatsCharacterBook = (data) => {
   return numberCharacterAllBook;
 }
 
-
-
-
-
-
-/*export const showData = (container) => {
-
-  //1. Con el primer for voy a recorrer las keys del objeto harryPotterData
-  //2. 'j' representa un key de harryPotterData
-  // Importante: for...in solo acepta la notación de corchetes de los objetos
-  for(let j in harryPotterData){
-    let keyObjectHarry=harryPotterData[j];
-
-    // 1. Con el segundo for voy a recorrer del arreglo de cada key
-    // 2. El 'i' representa la posición de un elemento del array de cada key
-    for(let i=0; i<keyObjectHarry.length; i++){
-      let newDiv = document.createElement("div");
-      let newDivText = document.createTextNode(keyObjectHarry[i].name); //Idea: Para los elementos que no tienen name, puedo utilizar 'hasOwnProperty'
-  
-      newDiv.appendChild(newDivText);
-      container.appendChild(newDiv);
-    }
-  }
-
-  return 'showData';
-};*/
-
-//En vez de showData() --> getNames() 
-//Que la función getNames() retorne un array
-
-/*export const showDetails = (element) => {
-  
-};*/

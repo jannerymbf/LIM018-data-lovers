@@ -18,9 +18,9 @@ describe('getNames', () => {
     expect(getNames("books")).toContain("Harry Potter and the Cursed Child");
   });
 
-  it('No debería retornar "Accio" para "books"', () => {
+  it('No debería retornar "Accio" para books', () => {
     expect(getNames("books")).not.toContain("Accio");
-  });  
+  });
 });
 
 //testeando sortData
@@ -75,7 +75,7 @@ describe('computeStatsHouse', ()=> {
   });
 
   it('Debería retornar "2" para "Gryffindor"', () => {
-    expect(computeStatsHouse([{name: "Stewart Ackerley", house: "Gryffindor"},{name: "Avery I", house: "Gryffindor"}, {name: "Draco Malfoy", house: "Slytherin"}],"Gryffindor")).toBe(2);
+    expect(computeStatsHouse([{name: "Stewart Ackerley", house: "Gryffindor"},{name: "Avery I", house: "Gryffindor"},{name: "Draco Malfoy", house: "Slytherin"}],"Gryffindor")).toBe(2);
   })
 })
 
@@ -86,7 +86,7 @@ describe('computeStatsBook',()=> {
   });
   
   it('Debería retornar "2" para "book 2"', ()=> {
-    expect(computeStatsBook([{name: "Stewart Ackerley", books_featured_in:[2]},{name: "Avery I", books_featured_in:[2]}, {name: "Pansy Parkinson", books_featured_in:[3]}],2)).toBe(2);
+    expect(computeStatsBook([{name: "Stewart Ackerley", books_featured_in:[2]},{name: "Avery I", books_featured_in:[2]},{name: "Draco Malfoy", books_featured_in:[4,5]}],2)).toBe(2);
   })
 })
 
@@ -97,7 +97,7 @@ describe('computeStatsCharacterBook',()=> {
   });
   
   it('Debería retornar "2" para "harryPotterData"', () => {
-    expect(computeStatsCharacterBook([{name: "Stewart Ackerley", books_featured_in:[1, 2, 3, 4, 5, 6, 7]},{name: "Avery I", books_featured_in:[1, 2, 3, 4, 5, 6, 7]}, {name: "The fat lady", books_featured_in:[1, 2, 3]}])).toBe(2);
+    expect(computeStatsCharacterBook([{name: "Stewart Ackerley", books_featured_in:[1, 2, 3, 4, 5, 6, 7]},{name: "Avery I", books_featured_in:[1, 2, 3, 4, 5, 6, 7]},{name:"Marauders", books_featured_in:[3, 4, 5, 6, 7]}])).toBe(2);
   })
 
 })
